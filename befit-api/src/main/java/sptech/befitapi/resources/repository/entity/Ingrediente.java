@@ -25,6 +25,8 @@ public class Ingrediente {
 
     private Double caloria;
 
+    private Boolean ativo;
+
     public Integer getId() {
         return id;
     }
@@ -87,5 +89,13 @@ public class Ingrediente {
 
     public void setCaloria(Double caloria) {
         this.caloria = caloria;
+    }
+
+    public Boolean getAtivo() {
+        return ativo;
+    }
+
+    public void setAtivo(Boolean ativo) {
+        this.ativo = ativo;
     }
 }
