@@ -15,6 +15,6 @@ public interface UsuarioRepository extends JpaRepository<Usuario, Integer> {
 
     Usuario findByPersonId(String personId);
 
-    List<Treino> findTreinoByNivel(NivelType nivel);
+    List<Treino> findTreinoByNivel(String nivel);
 
 }

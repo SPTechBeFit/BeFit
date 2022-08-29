@@ -55,29 +55,13 @@ public class UsuarioService {
             return usuario;
     }
 
-    public List<Treino> treinosDeAcordoComNivel(Usuario usuario){
+    public List<Treino> obterTreinoStratergy(Login login){
 
-        List<Treino> treinos = usuarioRepository.findTreinoByNivel(usuario.getNivel());
-
-        return treinos;
-
-    }
-
-    public List<Treino> retornaTreinoUsuario(Login login){
         Usuario usuario = usuarioRepository.findUsuarioByEmailAndSenha(login.getEmail(), login.getSenha());
 
-        if (usuario.getNivel().equals(NivelType.INICIANTE)){
+        NivelType nivelType = NivelType.valueOf(usuario.getNivel().toString());
 
-            return treinosDeAcordoComNivel(usuario);
-
-        }else if (usuario.getNivel().equals(NivelType.INTERMEDIARIO)){
-
-            return treinosDeAcordoComNivel(usuario);
-
-        }else {
-
-            return treinosDeAcordoComNivel(usuario);
-        }
+        return   nivelType.obterTreino();
     }
 
 }
