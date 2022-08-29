@@ -1,11 +1,17 @@
 package sptech.befitapi.resources.repository.entity;
 
-import org.springframework.format.annotation.DateTimeFormat;
+import lombok.Data;
+import sptech.befitapi.application.entity.dieta.Dieta;
+import sptech.befitapi.application.entity.dieta.DietaFavorita;
+import sptech.befitapi.application.entity.treino.Treino;
+import sptech.befitapi.application.entity.treino.TreinoFavorito;
 
 import javax.persistence.*;
 import java.util.Date;
+import java.util.List;
 import java.util.UUID;
 
+@Data
 @Entity
 public class Usuario {
     @Id
@@ -39,6 +45,18 @@ public class Usuario {
     private Integer xp = 0;
 
     private Boolean logado = false;
+
+    @OneToMany
+    private List<Treino> treinos;
+
+    @OneToMany
+    private TreinoFavorito treinoFavorito;
+
+    @OneToMany
+    private List<Dieta> dietas;
+
+    @OneToMany
+    private DietaFavorita dietaFavorita;
 
     public Integer getId() {
         return id;
