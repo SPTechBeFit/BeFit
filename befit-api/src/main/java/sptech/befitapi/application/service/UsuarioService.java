@@ -4,7 +4,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import sptech.befitapi.application.entity.Login;
 import sptech.befitapi.application.entity.Logout;
+import sptech.befitapi.application.entity.treino.Treino;
 import sptech.befitapi.resources.repository.UsuarioRepository;
+import sptech.befitapi.resources.repository.entity.NivelType;
 import sptech.befitapi.resources.repository.entity.Usuario;
 
 import java.util.List;
@@ -52,4 +54,30 @@ public class UsuarioService {
 
             return usuario;
     }
+
+    public List<Treino> treinosDeAcordoComNivel(Usuario usuario){
+
+        List<Treino> treinos = usuarioRepository.findTreinoByNivel(usuario.getNivel());
+
+        return treinos;
+
+    }
+
+    public List<Treino> retornaTreinoUsuario(Login login){
+        Usuario usuario = usuarioRepository.findUsuarioByEmailAndSenha(login.getEmail(), login.getSenha());
+
+        if (usuario.getNivel().equals(NivelType.INICIANTE)){
+
+            return treinosDeAcordoComNivel(usuario);
+
+        }else if (usuario.getNivel().equals(NivelType.INTERMEDIARIO)){
+
+            return treinosDeAcordoComNivel(usuario);
+
+        }else {
+
+            return treinosDeAcordoComNivel(usuario);
+        }
+    }
+
 }
