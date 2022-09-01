@@ -23,6 +23,4 @@ public class TreinoFavorito {
     @Temporal(TemporalType.DATE)
     private Date autalizadoEm;
 
-    @OneToMany
-    private List<Treino> treinos;
 }

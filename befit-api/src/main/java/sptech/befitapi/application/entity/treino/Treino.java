@@ -15,10 +15,6 @@ public class Treino {
 
     private String nome;
     private String descricao;
-
-    @OneToMany
-    private List<Serie> series;
-
     private Integer ativo;
 
 }

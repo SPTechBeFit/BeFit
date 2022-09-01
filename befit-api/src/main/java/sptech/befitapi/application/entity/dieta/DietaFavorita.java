@@ -25,6 +25,4 @@ public class DietaFavorita {
     @Temporal(TemporalType.DATE)
     private Date atualizadoEm;
 
-    @OneToMany
-    private List<Dieta> dietas;
 }

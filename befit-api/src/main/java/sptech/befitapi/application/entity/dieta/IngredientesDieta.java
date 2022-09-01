@@ -21,6 +21,4 @@ public class IngredientesDieta {
     @Enumerated(EnumType.STRING)
     private NivelType nivel;
 
-    @OneToMany
-    private Ingrediente ingrediente;
 }

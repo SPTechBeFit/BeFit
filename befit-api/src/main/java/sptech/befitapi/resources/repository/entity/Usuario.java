@@ -46,18 +46,6 @@ public class Usuario {
 
     private Boolean logado = false;
 
-    @OneToMany
-    private List<Treino> treinos;
-
-    @OneToMany
-    private TreinoFavorito treinoFavorito;
-
-    @OneToMany
-    private List<Dieta> dietas;
-
-    @OneToMany
-    private DietaFavorita dietaFavorita;
-
     public Integer getId() {
         return id;
     }

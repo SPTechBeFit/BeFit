@@ -21,7 +21,4 @@ public class Serie {
     @Temporal(TemporalType.TIME)
     private Time Tempo;
 
-    @OneToMany
-    private Exercicio exercicio;
-
 }

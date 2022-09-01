@@ -19,6 +19,4 @@ public class Dieta {
     private String descricao;
     private Integer ativo;
 
-    @OneToMany
-    private List<IngredientesDieta> ingredientesDietas;
 }

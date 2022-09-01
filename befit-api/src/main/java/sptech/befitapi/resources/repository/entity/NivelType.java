@@ -1,6 +1,5 @@
 package sptech.befitapi.resources.repository.entity;
 
-import sptech.befitapi.application.entity.Login;
 import sptech.befitapi.application.entity.treino.Treino;
 import sptech.befitapi.application.service.TreinoAvancadoService;
 import sptech.befitapi.application.service.TreinoInicianteService;
