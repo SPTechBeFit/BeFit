@@ -1,5 +1,7 @@
 package sptech.befitapi.resources.repository.entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import javax.persistence.*;
 import java.util.Date;
 import java.util.UUID;
@@ -62,6 +64,7 @@ public class Usuario {
         this.email = email;
     }
 
+    @JsonIgnore
     public String getSenha() {
         return senha;
     }
