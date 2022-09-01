@@ -64,11 +64,6 @@ public class Usuario {
         this.email = email;
     }
 
-    @JsonIgnore
-    public String getSenha() {
-        return senha;
-    }
-
     public void setSenha(String senha) {
         this.senha = senha;
     }
