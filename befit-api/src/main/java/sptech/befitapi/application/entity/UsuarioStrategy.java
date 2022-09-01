@@ -1,14 +1,12 @@
-package sptech.befitapi.resources.repository.entity;
+package sptech.befitapi.application.entity;
 
-import javax.persistence.*;
+import sptech.befitapi.resources.repository.entity.FuncaoType;
+import sptech.befitapi.resources.repository.entity.NivelType;
+import sptech.befitapi.resources.repository.entity.ObjetivoType;
 import java.util.Date;
 import java.util.UUID;
 
-@Entity
-public class Usuario {
-    @Id
-    @GeneratedValue(strategy= GenerationType.AUTO)
-    private Integer id;
+public abstract class UsuarioStrategy {
 
     private String nome;
 
@@ -18,32 +16,32 @@ public class Usuario {
 
     private String personId = UUID.randomUUID().toString();
 
-    @Enumerated(EnumType.STRING)
     private ObjetivoType objetivo;
 
     private Double altura;
 
     private Double peso;
 
-    @Temporal(TemporalType.DATE)
     private Date dataNascimento;
 
-    @Enumerated(EnumType.STRING)
     private FuncaoType funcao;
 
-    @Enumerated(EnumType.STRING)
     private NivelType nivel;
 
     private Integer xp = 0;
 
     private Boolean logado = false;
 
-    public Integer getId() {
-        return id;
-    }
-
-    public void setId(Integer id) {
-        this.id = id;
+    public UsuarioStrategy(String nome, String email, String senha, ObjetivoType objetivo, Double altura, Double peso, Date dataNascimento, FuncaoType funcao, NivelType nivel) {
+        this.nome = nome;
+        this.email = email;
+        this.senha = senha;
+        this.objetivo = objetivo;
+        this.altura = altura;
+        this.peso = peso;
+        this.dataNascimento = dataNascimento;
+        this.funcao = funcao;
+        this.nivel = nivel;
     }
 
     public String getNome() {
@@ -60,6 +58,10 @@ public class Usuario {
 
     public void setEmail(String email) {
         this.email = email;
+    }
+
+    public String getSenha() {
+        return senha;
     }
 
     public void setSenha(String senha) {
@@ -137,4 +139,7 @@ public class Usuario {
     public void setLogado(Boolean logado) {
         this.logado = logado;
     }
+
+    // TODO: implementar na sprint 2 public abstract List<Treino> findCatalogoTreino();
 }
+
