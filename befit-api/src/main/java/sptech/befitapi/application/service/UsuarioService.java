@@ -3,10 +3,10 @@ package sptech.befitapi.application.service;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import sptech.befitapi.application.entity.*;
-import sptech.befitapi.application.entity.strategy.StrategyXp;
-import sptech.befitapi.application.entity.strategy.XpAvancado;
-import sptech.befitapi.application.entity.strategy.XpIniciante;
-import sptech.befitapi.application.entity.strategy.XpIntermediario;
+import sptech.befitapi.application.entity.strategy.XpStrategy;
+import sptech.befitapi.application.entity.strategy.XpAvancadoStrategy;
+import sptech.befitapi.application.entity.strategy.XpInicianteStrategy;
+import sptech.befitapi.application.entity.strategy.XpIntermediarioStrategy;
 import sptech.befitapi.resources.repository.UsuarioRepository;
 import sptech.befitapi.resources.repository.entity.*;
 import sptech.befitapi.resources.repository.entity.types.NivelType;
@@ -18,6 +18,8 @@ import java.util.List;
 public class UsuarioService {
     @Autowired
     private UsuarioRepository usuarioRepository;
+
+    private XpStrategy strategy;
 
     public List<Usuario> usuarios(){
             return usuarioRepository.findAll();
@@ -64,11 +66,11 @@ public class UsuarioService {
         }
 
         if (usuario.getNivel().equals(NivelType.INICIANTE)) {
-            this.setStrategy(new XpIniciante());
+            this.setStrategy(new XpInicianteStrategy());
         } else if (usuario.getNivel().equals(NivelType.INTERMEDIARIO)) {
-            this.setStrategy(new XpIntermediario());
+            this.setStrategy(new XpIntermediarioStrategy());
         } else if (usuario.getNivel().equals(NivelType.AVANCADO)) {
-            this.setStrategy(new XpAvancado());
+            this.setStrategy(new XpAvancadoStrategy());
         }
 
         this.executeStrategy(usuario);
@@ -78,9 +80,7 @@ public class UsuarioService {
         return usuario;
     }
 
-    private StrategyXp strategy;
-
-    private void setStrategy(StrategyXp strategy){
+    private void setStrategy(XpStrategy strategy){
         this.strategy = strategy;
     }
 

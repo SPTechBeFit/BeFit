@@ -2,7 +2,7 @@ package sptech.befitapi.application.entity.strategy;
 
 import sptech.befitapi.resources.repository.entity.Usuario;
 
-public class XpAvancado implements StrategyXp{
+public class XpAvancadoStrategy implements XpStrategy {
 
 
     @Override

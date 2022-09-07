@@ -2,11 +2,11 @@ package sptech.befitapi.application.entity.strategy;
 
 import sptech.befitapi.resources.repository.entity.Usuario;
 
-public class XpIniciante implements StrategyXp{
+public class XpIntermediarioStrategy implements XpStrategy {
 
 
     @Override
     public void ganharXp(Usuario usuario) {
-        usuario.setXp(usuario.getXp() + 100);
+        usuario.setXp(usuario.getXp() + 150);
     }
 }
