@@ -1,5 +1,9 @@
 package sptech.befitapi.resources.repository.entity;
 
+import sptech.befitapi.resources.repository.entity.types.FuncaoType;
+import sptech.befitapi.resources.repository.entity.types.NivelType;
+import sptech.befitapi.resources.repository.entity.types.ObjetivoType;
+
 import javax.persistence.*;
 import java.util.Date;
 import java.util.UUID;

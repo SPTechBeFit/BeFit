@@ -5,7 +5,6 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import sptech.befitapi.application.entity.Login;
-import sptech.befitapi.application.entity.Logout;
 import sptech.befitapi.application.service.UsuarioService;
 import sptech.befitapi.resources.repository.entity.Usuario;
 
@@ -38,11 +37,17 @@ public class UsuarioController {
         return (usuario != null) ? ResponseEntity.status(HttpStatus.OK).body(usuario) : ResponseEntity.status(HttpStatus.BAD_REQUEST).body(null);
     }
 
-    @PatchMapping("/logout")
-    public ResponseEntity<Usuario> logout(@RequestBody Logout logout) {
+    @PatchMapping("/logout/{personId}")
+    public ResponseEntity<Usuario> logout(@PathVariable String personId) {
 
-        Usuario usuario = usuarioService.logout(logout);
+        Usuario usuario = usuarioService.logout(personId);
 
+        return (usuario != null) ? ResponseEntity.status(HttpStatus.OK).body(usuario) : ResponseEntity.status(HttpStatus.BAD_REQUEST).body(null);
+    }
+
+    @PatchMapping("/xp/{personId}")
+    public ResponseEntity<Usuario> xp(@PathVariable String personId) {
+        Usuario usuario = usuarioService.xp(personId);
         return (usuario != null) ? ResponseEntity.status(HttpStatus.OK).body(usuario) : ResponseEntity.status(HttpStatus.BAD_REQUEST).body(null);
     }
 }
