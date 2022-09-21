@@ -48,6 +48,6 @@ public class UsuarioController {
     @PatchMapping("/xp/{personId}")
     public ResponseEntity<Usuario> xp(@PathVariable String personId) {
         Usuario usuario = usuarioService.xp(personId);
-        return (usuario != null) ? ResponseEntity.status(HttpStatus.OK).body(usuario) : ResponseEntity.status(HttpStatus.BAD_REQUEST).body(null);
+        return (usuario != null) ? ResponseEntity.status(HttpStatus.OK).body(usuario) : ResponseEntity.status(HttpStatus.UNAUTHORIZED).body(null);
     }
 }
