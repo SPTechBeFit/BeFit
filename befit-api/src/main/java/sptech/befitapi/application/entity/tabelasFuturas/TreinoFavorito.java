@@ -1,17 +1,14 @@
-package sptech.befitapi.application.entity.dieta;
+package sptech.befitapi.application.entity.tabelasFuturas;
 
 import lombok.Data;
 import lombok.ToString;
-import net.bytebuddy.dynamic.loading.InjectionClassLoader;
 
 import javax.persistence.*;
 import java.util.Date;
-import java.util.List;
 
 @Data
 @ToString
-@Entity
-public class DietaFavorita {
+public class TreinoFavorito {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -20,9 +17,9 @@ public class DietaFavorita {
     @Temporal(TemporalType.DATE)
     private Date criadoEm;
 
-    private Integer diaSequencial;
+    private Integer diasSequencia;
 
     @Temporal(TemporalType.DATE)
-    private Date atualizadoEm;
+    private Date autalizadoEm;
 
 }

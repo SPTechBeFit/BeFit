@@ -1,14 +1,13 @@
-package sptech.befitapi.application.entity.dieta;
+package sptech.befitapi.application.entity.tabelasFuturas;
 
 import lombok.Data;
 import lombok.ToString;
-import sptech.befitapi.resources.repository.entity.NivelType;
+import sptech.befitapi.resources.repository.entity.types.NivelType;
 
 import javax.persistence.*;
 
 @Data
 @ToString
-@Entity
 public class IngredientesDieta {
 
 
@@ -20,5 +19,6 @@ public class IngredientesDieta {
 
     @Enumerated(EnumType.STRING)
     private NivelType nivel;
+
 
 }

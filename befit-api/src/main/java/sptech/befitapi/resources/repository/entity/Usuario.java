@@ -1,13 +1,18 @@
 package sptech.befitapi.resources.repository.entity;
 
+import lombok.Data;
+import sptech.befitapi.application.entity.dieta.Dieta;
+import sptech.befitapi.application.entity.treino.Treino;
 import sptech.befitapi.resources.repository.entity.types.FuncaoType;
 import sptech.befitapi.resources.repository.entity.types.NivelType;
 import sptech.befitapi.resources.repository.entity.types.ObjetivoType;
 
 import javax.persistence.*;
 import java.util.Date;
+import java.util.List;
 import java.util.UUID;
 
+@Data
 @Entity
 public class Usuario {
     @Id
@@ -42,81 +47,26 @@ public class Usuario {
 
     private Boolean logado = false;
 
-    public Integer getId() {
-        return id;
-    }
+    @OneToMany(fetch = FetchType.LAZY)
+    @JoinColumn(name = "FK_USUARIO")
+    private List<Dieta> dietas;
 
-    public void setId(Integer id) {
-        this.id = id;
-    }
+    @OneToMany(fetch = FetchType.LAZY)
+    @JoinColumn(name = "FK_USUARIO")
+    private List<Treino> treinos;
 
-    public String getNome() {
-        return nome;
-    }
+    @ManyToMany
+    @JoinTable(name = "TREINO_FAVORITO",
+    joinColumns = @JoinColumn (name = "FK_USUARIO"),
+    inverseJoinColumns = @JoinColumn(name = "FK_TREINO"))
+    private List<Treino> treinoFavorito;
 
-    public void setNome(String nome) {
-        this.nome = nome;
-    }
+    @ManyToMany
+    @JoinTable(name = "DIETA_FAVORITO",
+            joinColumns = @JoinColumn (name = "FK_USUARIO"),
+            inverseJoinColumns = @JoinColumn(name = "FK_DIETA"))
+    private List<Dieta> dietaFavorita;
 
-    public String getEmail() {
-        return email;
-    }
-
-    public void setEmail(String email) {
-        this.email = email;
-    }
-
-    public void setSenha(String senha) {
-        this.senha = senha;
-    }
-
-    public String getPersonId() {
-        return personId;
-    }
-
-    public void setPersonId(String personId) {
-        this.personId = personId;
-    }
-
-    public ObjetivoType getObjetivo() {
-        return objetivo;
-    }
-
-    public void setObjetivo(ObjetivoType objetivo) {
-        this.objetivo = objetivo;
-    }
-
-    public Double getAltura() {
-        return altura;
-    }
-
-    public void setAltura(Double altura) {
-        this.altura = altura;
-    }
-
-    public Double getPeso() {
-        return peso;
-    }
-
-    public void setPeso(Double peso) {
-        this.peso = peso;
-    }
-
-    public Date getDataNascimento() {
-        return dataNascimento;
-    }
-
-    public void setDataNascimento(Date dataNascimento) {
-        this.dataNascimento = dataNascimento;
-    }
-
-    public FuncaoType getFuncao() {
-        return funcao;
-    }
-
-    public void setFuncao(FuncaoType funcao) {
-        this.funcao = funcao;
-    }
 
     public NivelType getNivel() {
         return nivel;

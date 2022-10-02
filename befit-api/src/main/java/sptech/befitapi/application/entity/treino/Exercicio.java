@@ -2,9 +2,11 @@ package sptech.befitapi.application.entity.treino;
 
 import lombok.Data;
 import lombok.ToString;
-import sptech.befitapi.resources.repository.entity.NivelType;
+import sptech.befitapi.application.entity.dieta.Dieta;
+import sptech.befitapi.resources.repository.entity.types.NivelType;
 
 import javax.persistence.*;
+import java.util.List;
 
 @Data
 @ToString
@@ -24,4 +26,9 @@ public class Exercicio {
 
     private Integer ativo;
 
+    @ManyToMany
+    @JoinTable(name = "SERIE",
+            joinColumns = @JoinColumn (name = "FK_EXERCICIO"),
+            inverseJoinColumns = @JoinColumn(name = "FK_TREINO"))
+    private List<Dieta> serie;
 }

@@ -1,14 +1,15 @@
-package sptech.befitapi.application.entity.treino;
+package sptech.befitapi.application.entity.tabelasFuturas;
 
 import lombok.Data;
 import lombok.ToString;
 
-import javax.persistence.*;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
 import java.sql.Time;
 
 @Data
 @ToString
-@Entity
 public class Serie {
 
     @Id
@@ -18,7 +19,7 @@ public class Serie {
     private Integer quantidade;
     private Integer repeticao;
 
-    @Temporal(TemporalType.TIME)
+    //@Temporal(TemporalType.TIME)
     private Time Tempo;
 
 }

@@ -3,10 +3,8 @@ package sptech.befitapi.application.entity.dieta;
 import lombok.Data;
 import lombok.ToString;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
+import java.util.List;
 
 @Data
 @ToString
@@ -25,4 +23,10 @@ public class Ingrediente {
     private Double sodio;
     private Double caloria;
     private Integer ativo;
+
+    @ManyToMany
+    @JoinTable(name = "INGREDIENTE_DIETA",
+            joinColumns = @JoinColumn (name = "FK_INGREDIENTE"),
+            inverseJoinColumns = @JoinColumn(name = "FK_DIETA"))
+    private List<Dieta> ingredienteDieta;
 }
