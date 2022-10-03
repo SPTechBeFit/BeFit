@@ -1,12 +1,9 @@
-package sptech.befitapi.application.entity.treino;
-
-import lombok.Data;
-import sptech.befitapi.resources.repository.entity.Usuario;
+package sptech.befitapi.resources.repository.entity;
 
 import javax.persistence.*;
 import java.util.List;
 
-@Data
+
 @Entity
 public class Treino {
 

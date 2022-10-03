@@ -1,8 +1,7 @@
-package sptech.befitapi.application.entity.treino;
+package sptech.befitapi.resources.repository.entity;
 
 import lombok.Data;
 import lombok.ToString;
-import sptech.befitapi.application.entity.dieta.Dieta;
 import sptech.befitapi.resources.repository.entity.types.NivelType;
 
 import javax.persistence.*;

@@ -1,8 +1,7 @@
-package sptech.befitapi.application.entity.dieta;
+package sptech.befitapi.resources.repository.entity;
 
 import lombok.Data;
 import lombok.ToString;
-import sptech.befitapi.resources.repository.entity.Usuario;
 
 import javax.persistence.*;
 import java.util.List;

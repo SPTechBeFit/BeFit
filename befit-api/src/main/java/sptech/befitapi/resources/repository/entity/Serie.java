@@ -1,4 +1,4 @@
-package sptech.befitapi.application.entity.tabelasFuturas;
+package sptech.befitapi.resources.repository.entity;
 
 import lombok.Data;
 import lombok.ToString;
