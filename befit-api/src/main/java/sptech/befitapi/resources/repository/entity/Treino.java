@@ -1,5 +1,7 @@
 package sptech.befitapi.resources.repository.entity;
 
+import sptech.befitapi.resources.repository.entity.types.NivelType;
+
 import javax.persistence.*;
 import java.util.List;
 
@@ -8,21 +10,16 @@ import java.util.List;
 public class Treino {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
     private String nome;
     private String descricao;
-    private Integer ativo;
 
-    @ManyToOne
-    @JoinColumn(name = "FK_USUARIO")
-    private Usuario usuario;
+    @Enumerated(EnumType.STRING)
+    private NivelType nivel;
 
-    @ManyToMany(mappedBy = "treinoFavorito")
-    private List<Usuario> usuarios;
-
-    @ManyToMany(mappedBy = "serie")
-    private List<Exercicio> exercicios;
-
+    @OneToMany(mappedBy="Usuario")
+    private Integer criador_id;
+    private Boolean ativo = true;
 }

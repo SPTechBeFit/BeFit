@@ -3,9 +3,7 @@ package sptech.befitapi.resources.repository.entity;
 import lombok.Data;
 import lombok.ToString;
 
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 import java.sql.Time;
 
 @Data
@@ -13,13 +11,19 @@ import java.sql.Time;
 public class Serie {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
+    @OneToMany(mappedBy="Treino")
+    private Integer treinoId;
+
+    @OneToMany(mappedBy="Exercicio")
+    private Integer exercicioId;
+
     private Integer quantidade;
+    private Time tempo;
     private Integer repeticao;
 
-    //@Temporal(TemporalType.TIME)
-    private Time Tempo;
+
 
 }

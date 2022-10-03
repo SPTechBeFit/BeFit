@@ -5,7 +5,6 @@ import lombok.ToString;
 import sptech.befitapi.resources.repository.entity.types.NivelType;
 
 import javax.persistence.*;
-import java.util.List;
 
 @Data
 @ToString
@@ -13,7 +12,7 @@ import java.util.List;
 public class Exercicio {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
     private String nome;
@@ -23,11 +22,5 @@ public class Exercicio {
     @Enumerated(EnumType.STRING)
     private NivelType nivel;
 
-    private Integer ativo;
-
-    @ManyToMany
-    @JoinTable(name = "SERIE",
-            joinColumns = @JoinColumn (name = "FK_EXERCICIO"),
-            inverseJoinColumns = @JoinColumn(name = "FK_TREINO"))
-    private List<Dieta> serie;
+    private Boolean ativo = true;
 }

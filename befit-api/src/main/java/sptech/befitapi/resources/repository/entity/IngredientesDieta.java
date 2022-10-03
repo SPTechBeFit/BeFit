@@ -12,13 +12,17 @@ public class IngredientesDieta {
 
 
     @Id
-    @GeneratedValue(strategy= GenerationType.AUTO)
+    @GeneratedValue(strategy= GenerationType.IDENTITY)
     private Integer id;
+
+    @OneToMany(mappedBy="Dieta")
+    private Integer dietaId;
+
+    @OneToMany(mappedBy="Ingrediente")
+    private Integer ingredienteId;
 
     private Double quantidade;
 
-    @Enumerated(EnumType.STRING)
-    private NivelType nivel;
 
 
 }

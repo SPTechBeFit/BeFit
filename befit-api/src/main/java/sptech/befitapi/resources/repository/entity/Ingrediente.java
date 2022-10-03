@@ -1,13 +1,12 @@
 package sptech.befitapi.resources.repository.entity;
 
 import javax.persistence.*;
-import java.util.List;
 
 @Entity
 public class Ingrediente {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
     private String nome;
@@ -18,12 +17,6 @@ public class Ingrediente {
     private Double sodio;
     private Double caloria;
     private Boolean ativo = true;
-
-    @ManyToMany
-    @JoinTable(name = "INGREDIENTE_DIETA",
-            joinColumns = @JoinColumn (name = "FK_INGREDIENTE"),
-            inverseJoinColumns = @JoinColumn(name = "FK_DIETA"))
-    private List<Dieta> ingredienteDieta;
 
     public Integer getId() {
         return id;

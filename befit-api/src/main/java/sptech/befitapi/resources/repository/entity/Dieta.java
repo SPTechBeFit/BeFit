@@ -2,6 +2,7 @@ package sptech.befitapi.resources.repository.entity;
 
 import lombok.Data;
 import lombok.ToString;
+import sptech.befitapi.resources.repository.entity.types.NivelType;
 
 import javax.persistence.*;
 import java.util.List;
@@ -12,21 +13,17 @@ import java.util.List;
 public class Dieta {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
-
-    @ManyToOne
-    @JoinColumn(name = "FK_USUARIO")
-    private Usuario usuario;
 
     private String nome;
     private String descricao;
-    private Integer ativo;
 
-    @ManyToMany(mappedBy = "dietaFavorita")
-    private List<Usuario> usuarios;
+    @Enumerated(EnumType.STRING)
+    private NivelType nivel;
 
-    @ManyToMany(mappedBy = "ingredienteDieta")
-    private List<Ingrediente> ingredientes;
+    @OneToMany(mappedBy="Usuario")
+    private Integer criadorId;
 
+    private Boolean ativo = true;
 }

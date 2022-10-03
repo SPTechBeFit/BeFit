@@ -5,6 +5,7 @@ import sptech.befitapi.resources.repository.entity.types.NivelType;
 import sptech.befitapi.resources.repository.entity.types.ObjetivoType;
 
 import javax.persistence.*;
+import java.time.LocalDate;
 import java.util.Date;
 import java.util.List;
 import java.util.UUID;
@@ -30,8 +31,7 @@ public class Usuario {
 
     private Double peso;
 
-    @Temporal(TemporalType.DATE)
-    private Date dataNascimento;
+    private LocalDate dataNascimento;
 
     @Enumerated(EnumType.STRING)
     private FuncaoType funcao;
@@ -42,27 +42,6 @@ public class Usuario {
     private Integer xp = 0;
 
     private Boolean logado = false;
-
-    @OneToMany(fetch = FetchType.LAZY)
-    @JoinColumn(name = "FK_USUARIO")
-    private List<Dieta> dietas;
-
-    @OneToMany(fetch = FetchType.LAZY)
-    @JoinColumn(name = "FK_USUARIO")
-    private List<Treino> treinos;
-
-    @ManyToMany
-    @JoinTable(name = "TREINO_FAVORITO",
-    joinColumns = @JoinColumn (name = "FK_USUARIO"),
-    inverseJoinColumns = @JoinColumn(name = "FK_TREINO"))
-    private List<Treino> treinoFavorito;
-
-    @ManyToMany
-    @JoinTable(name = "DIETA_FAVORITO",
-            joinColumns = @JoinColumn (name = "FK_USUARIO"),
-            inverseJoinColumns = @JoinColumn(name = "FK_DIETA"))
-    private List<Dieta> dietaFavorita;
-
 
     public Integer getId() {
         return id;
@@ -120,11 +99,11 @@ public class Usuario {
         this.peso = peso;
     }
 
-    public Date getDataNascimento() {
+    public LocalDate getDataNascimento() {
         return dataNascimento;
     }
 
-    public void setDataNascimento(Date dataNascimento) {
+    public void setDataNascimento(LocalDate dataNascimento) {
         this.dataNascimento = dataNascimento;
     }
 

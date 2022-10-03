@@ -4,6 +4,7 @@ import lombok.Data;
 import lombok.ToString;
 
 import javax.persistence.*;
+import java.time.LocalDate;
 import java.util.Date;
 
 @Data
@@ -11,15 +12,19 @@ import java.util.Date;
 public class DietaFavorita {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
-    @Temporal(TemporalType.DATE)
-    private Date criadoEm;
+    @OneToMany(mappedBy="Usuario")
+    private Integer usuarioId;
 
-    private Integer diaSequencial;
+    @OneToMany(mappedBy="Dieta")
+    private Integer dietaId;
 
-    @Temporal(TemporalType.DATE)
-    private Date atualizadoEm;
+    private LocalDate criadoEm;
+
+    private Integer diasSequencia;
+
+    private LocalDate atualizadoEm;
 
 }
