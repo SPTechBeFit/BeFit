@@ -21,7 +21,7 @@ public class UsuarioController {
     public ResponseEntity<List<Usuario>> usuarios() {
         List<Usuario> usuarios = usuarioService.usuarios();
 
-        return (!usuarios.isEmpty()) ? ResponseEntity.status(HttpStatus.OK).body(usuarios) : ResponseEntity.status(HttpStatus.NO_CONTENT).body(null);
+        return (!usuarios.isEmpty()) ? ResponseEntity.status(HttpStatus.OK).body(usuarios) : ResponseEntity.status(HttpStatus.NO_CONTENT).build();
     }
 
     @PostMapping
@@ -34,7 +34,7 @@ public class UsuarioController {
 
         Usuario usuario = usuarioService.login(login);
 
-        return (usuario != null) ? ResponseEntity.status(HttpStatus.OK).body(usuario) : ResponseEntity.status(HttpStatus.BAD_REQUEST).body(null);
+        return (usuario != null) ? ResponseEntity.status(HttpStatus.OK).body(usuario) : ResponseEntity.status(HttpStatus.BAD_REQUEST).build();
     }
 
     @PatchMapping("/logout/{personId}")
@@ -42,12 +42,12 @@ public class UsuarioController {
 
         Usuario usuario = usuarioService.logout(personId);
 
-        return (usuario != null) ? ResponseEntity.status(HttpStatus.OK).body(usuario) : ResponseEntity.status(HttpStatus.BAD_REQUEST).body(null);
+        return (usuario != null) ? ResponseEntity.status(HttpStatus.OK).body(usuario) : ResponseEntity.status(HttpStatus.BAD_REQUEST).build();
     }
 
     @PatchMapping("/xp/{personId}")
     public ResponseEntity<Usuario> xp(@PathVariable String personId) {
         Usuario usuario = usuarioService.xp(personId);
-        return (usuario != null) ? ResponseEntity.status(HttpStatus.OK).body(usuario) : ResponseEntity.status(HttpStatus.UNAUTHORIZED).body(null);
+        return (usuario != null) ? ResponseEntity.status(HttpStatus.OK).body(usuario) : ResponseEntity.status(HttpStatus.UNAUTHORIZED).build();
     }
 }
