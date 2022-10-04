@@ -1,8 +1,11 @@
 package sptech.befitapi.resources.repository.entity;
 
+import lombok.Data;
+
 import javax.persistence.*;
 import java.time.LocalDateTime;
 
+@Data
 @Entity
 public class UsuarioHistorico {
 
@@ -10,8 +13,8 @@ public class UsuarioHistorico {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
-    @OneToMany(mappedBy="Treino")
-    private Integer usuarioId;
+    @ManyToOne
+    private Usuario usuario;
 
     private Integer xp;
 

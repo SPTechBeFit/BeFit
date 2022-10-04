@@ -2,25 +2,23 @@ package sptech.befitapi.resources.repository.entity;
 
 
 import lombok.Data;
-import lombok.ToString;
 
 import javax.persistence.*;
 import java.time.LocalDate;
-import java.util.Date;
 
 @Data
-@ToString
+@Entity
 public class TreinoFavorito {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
-    @OneToMany(mappedBy="Usuario")
-    private Integer usuarioId;
+    @ManyToOne
+    private Usuario usuario;
 
-    @OneToMany(mappedBy="Treino")
-    private Integer treinoId;
+    @ManyToOne
+    private Treino treino;
 
     private LocalDate criadoEm;
 

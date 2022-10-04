@@ -1,28 +1,23 @@
 package sptech.befitapi.resources.repository.entity;
 
 import lombok.Data;
-import lombok.ToString;
-import sptech.befitapi.resources.repository.entity.types.NivelType;
 
 import javax.persistence.*;
 
 @Data
-@ToString
+@Entity
 public class IngredientesDieta {
-
 
     @Id
     @GeneratedValue(strategy= GenerationType.IDENTITY)
     private Integer id;
 
-    @OneToMany(mappedBy="Dieta")
-    private Integer dietaId;
+    @ManyToOne
+    private Dieta dietaId;
 
-    @OneToMany(mappedBy="Ingrediente")
-    private Integer ingredienteId;
+    @ManyToOne
+    private Ingrediente ingrediente;
 
     private Double quantidade;
-
-
 
 }

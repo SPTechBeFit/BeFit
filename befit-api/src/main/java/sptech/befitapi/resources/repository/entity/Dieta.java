@@ -1,14 +1,11 @@
 package sptech.befitapi.resources.repository.entity;
 
 import lombok.Data;
-import lombok.ToString;
 import sptech.befitapi.resources.repository.entity.types.NivelType;
 
 import javax.persistence.*;
-import java.util.List;
 
 @Data
-@ToString
 @Entity
 public class Dieta {
 
@@ -22,8 +19,8 @@ public class Dieta {
     @Enumerated(EnumType.STRING)
     private NivelType nivel;
 
-    @OneToMany(mappedBy="Usuario")
-    private Integer criadorId;
+    @ManyToOne
+    private Usuario criador;
 
     private Boolean ativo = true;
 }

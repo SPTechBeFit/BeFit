@@ -1,27 +1,28 @@
 package sptech.befitapi.resources.repository.entity;
 
 import lombok.Data;
-import lombok.ToString;
 
 import javax.persistence.*;
 import java.sql.Time;
 
 @Data
-@ToString
+@Entity
 public class Serie {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
-    @OneToMany(mappedBy="Treino")
-    private Integer treinoId;
+    @ManyToOne
+    private Treino treino;
 
-    @OneToMany(mappedBy="Exercicio")
-    private Integer exercicioId;
+    @ManyToOne
+    private Exercicio exercicio;
 
     private Integer quantidade;
+
     private Time tempo;
+
     private Integer repeticao;
 
 

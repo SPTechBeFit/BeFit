@@ -1,7 +1,10 @@
 package sptech.befitapi.resources.repository.entity;
 
+import lombok.Data;
+
 import javax.persistence.*;
 
+@Data
 @Entity
 public class Ingrediente {
 
@@ -17,76 +20,4 @@ public class Ingrediente {
     private Double sodio;
     private Double caloria;
     private Boolean ativo = true;
-
-    public Integer getId() {
-        return id;
-    }
-
-    public void setId(Integer id) {
-        this.id = id;
-    }
-
-    public String getNome() {
-        return nome;
-    }
-
-    public void setNome(String nome) {
-        this.nome = nome;
-    }
-
-    public Integer getPorcao() {
-        return porcao;
-    }
-
-    public void setPorcao(Integer porcao) {
-        this.porcao = porcao;
-    }
-
-    public Double getProteina() {
-        return proteina;
-    }
-
-    public void setProteina(Double proteina) {
-        this.proteina = proteina;
-    }
-
-    public Double getLipidio() {
-        return lipidio;
-    }
-
-    public void setLipidio(Double lipidio) {
-        this.lipidio = lipidio;
-    }
-
-    public Double getCarboidrato() {
-        return carboidrato;
-    }
-
-    public void setCarboidrato(Double carboidrato) {
-        this.carboidrato = carboidrato;
-    }
-
-    public Double getSodio() {
-        return sodio;
-    }
-
-    public void setSodio(Double sodio) {
-        this.sodio = sodio;
-    }
-
-    public Double getCaloria() {
-        return caloria;
-    }
-
-    public void setCaloria(Double caloria) {
-        this.caloria = caloria;
-    }
-
-    public Boolean getAtivo() {
-        return ativo;
-    }
-
-    public void setAtivo(Boolean ativo) {
-        this.ativo = ativo;
-    }
 }

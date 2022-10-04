@@ -1,11 +1,11 @@
 package sptech.befitapi.resources.repository.entity;
 
+import lombok.Data;
 import sptech.befitapi.resources.repository.entity.types.NivelType;
 
 import javax.persistence.*;
-import java.util.List;
 
-
+@Data
 @Entity
 public class Treino {
 
@@ -19,7 +19,8 @@ public class Treino {
     @Enumerated(EnumType.STRING)
     private NivelType nivel;
 
-    @OneToMany(mappedBy="Usuario")
-    private Integer criador_id;
+    @ManyToOne
+    private Usuario criador;
+
     private Boolean ativo = true;
 }
