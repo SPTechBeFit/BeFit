@@ -1,0 +1,44 @@
+:root {
+  --cyan: #5ce1e6;
+  --blue: #38b6ff;
+  --pink: #d88b92;
+  --off-white: #f2f2f2;
+  --pure-black: #000000;
+  --pure-black-transparent: #000000b2;
+  --dark-color: #333333;
+  --btn-green: #27ae60;
+  --font-defaut: "Roboto Mono", monospace;
+  --font-dark-color: #383838;
+  --purple: #5662b7;
+  --light-color: #f2f2f2;
+  --light-color-2: #8f8f8f;
+}
+
+/*mudar para nossas cores ^ */
+
+.logo {
+  width: 458px;
+  height: 168px;
+  left: 21px;
+  top: 42px;
+}
+
+.innerHeader {
+    display: flex;
+  position: absolute;
+  width: 100%;
+  height: 22vh;
+  left: 0px;
+  top: 0px;
+
+  background: #c2c2c2;
+}
+
+.options {
+    margin: 0 auto;
+    display: flex;
+    height: 70px;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
