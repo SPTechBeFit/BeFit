@@ -1,4 +1,5 @@
 import ImagemLogo from '../assets/images/logo/logoBefit.png'
+import PersistentDrawerLeft from './SideBar'
 
 
 function Header() {
@@ -13,26 +14,11 @@ function Header() {
                 <li><a href="#">Exercícios</a></li>
                 <li><a href="#">Sobre</a></li>
                 <li><a className='loginButton' href="#">Começar</a></li>
+                <PersistentDrawerLeft />
               </ul>
             </div>
           </div>
         </nav>
-        <div className="lateral-m">
-        <div className="navMenu">
-          <input type="checkbox" id="menu_lateral" className="input-menu" />
-          <label htmlFor="menu_lateral">
-            <div className="menu">
-              <span className="hamburguer"></span>
-            </div>
-          </label>
-          <div className="box-menu">
-            <a href="" className="li-checked">Home</a>
-            <a href="">Exercícios</a>
-            <a href="">Sobre</a>
-            <a href="">Começar</a>
-          </div>
-        </div>
-      </div >
       </div>
   </>);
 }
