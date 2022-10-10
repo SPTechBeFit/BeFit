@@ -1,4 +1,4 @@
-package sptech.befitapi.application.entity.strategy;
+package sptech.befitapi.application.strategy;
 
 import sptech.befitapi.resources.repository.entity.Usuario;
 

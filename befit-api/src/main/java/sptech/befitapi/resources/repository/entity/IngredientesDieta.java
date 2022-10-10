@@ -13,7 +13,7 @@ public class IngredientesDieta {
     private Integer id;
 
     @ManyToOne
-    private Dieta dietaId;
+    private Dieta dieta;
 
     @ManyToOne
     private Ingrediente ingrediente;

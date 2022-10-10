@@ -1,4 +1,4 @@
-package sptech.befitapi.application.entity;
+package sptech.befitapi.application.request;
 
 public class Login {
 
