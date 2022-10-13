@@ -2,7 +2,6 @@ package sptech.befitapi.resources.repository.entity;
 
 import lombok.Data;
 import sptech.befitapi.resources.repository.entity.types.NivelType;
-
 import javax.persistence.*;
 
 @Data
