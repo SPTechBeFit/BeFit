@@ -8,10 +8,7 @@ function Home(){
         <>
         <Header/>
         <ContainerHome/>
-
-
         </>
-
     );
 }
 

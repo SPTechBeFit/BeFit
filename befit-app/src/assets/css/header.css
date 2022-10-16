@@ -72,11 +72,51 @@
     width: 35%;
     /* margin: 0 auto; */
     display: flex;
-    /* height: 100%; */
+    height: 100%;
     margin: 0vh 10vw 0 25vw;
     position: absolute;
     padding: 0 10vw 0vh 25vw;
     justify-content: space-around;
   
   }
+
+
+  /* Menu para mobile e responsivo
+_________________________________ */
+@media only screen and (max-width: 900px) {
+  
+  .sideMenuButtonImg{
+  
+    display: block !important;
+    position: absolute;
+    margin: 5vh 0vw 0 15vw;
+    
+  }
+
+
+  nav ul li {
+
+    display: none !important;
+  }
+
+  .lateral-m {
+    display: block !important;
+  }
+
+  .logo {
+    margin-left: 35% !important;
+    position: fixed !important;
+    margin-right: 10% !important;
+
+  }
+
+
+
+}
+
+.sideMenuButtonImg{
+  height: 46px ;
+  display: none;
+  
+}
   

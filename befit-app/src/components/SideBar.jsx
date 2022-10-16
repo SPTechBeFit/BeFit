@@ -12,6 +12,7 @@ import InboxIcon from '@material-ui/icons/MoveToInbox';
 import MailIcon from '@material-ui/icons/Mail';
 import ImagemMenu from '../assets/images/logo/menuIcon.png'
 
+
 const useStyles = makeStyles({
   list: {
     width: 250,
@@ -23,7 +24,7 @@ const useStyles = makeStyles({
 
 export default function SwipeableTemporaryDrawer() {
   const classes = useStyles();
-  const [state, setState] = React.useState({right: false,});
+  const [state, setState] = React.useState({ right: false, });
 
   const toggleDrawer = (anchor, open) => (event) => {
     if (event && event.type === 'keydown' && (event.key === 'Tab' || event.key === 'Shift')) {
@@ -43,7 +44,7 @@ export default function SwipeableTemporaryDrawer() {
       onKeyDown={toggleDrawer(anchor, false)}
     >
       <List>
-        {['Inbox', 'Starred', 'Send email', 'Drafts'].map((text, index) => (
+        {['Comecar', 'Starred', 'Send email', 'Drafts'].map((text, index) => (
           <ListItem button key={text}>
             <ListItemIcon>{index % 2 === 0 ? <InboxIcon /> : <MailIcon />}</ListItemIcon>
             <ListItemText primary={text} />
@@ -58,7 +59,9 @@ export default function SwipeableTemporaryDrawer() {
     <div>
       {['right'].map((anchor) => (
         <React.Fragment key={anchor}>
-          <Button onClick={toggleDrawer(anchor, true)}><img src={ImagemMenu}/></Button>
+     
+            <Button onClick={toggleDrawer(anchor, true)}><img className='sideMenuButtonImg' src={ImagemMenu} /></Button>
+        
           <SwipeableDrawer
             anchor={anchor}
             open={state[anchor]}
