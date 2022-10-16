@@ -1,6 +1,7 @@
 import ImagemLogo from '../assets/images/logo/logoBefit.png'
 import PersistentDrawerLeft from './SideBar'
-
+import { BrowserRouter as Router, Switch, 
+  Route, Redirect,} from "react-router-dom";
 
 function Header() {
   return (<>

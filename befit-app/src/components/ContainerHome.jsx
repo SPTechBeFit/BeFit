@@ -37,6 +37,11 @@ function ContainerHomePage() {
                     <Button onClick= { teste } ><img className='dietaButton' src={BotaoDieta} /></Button>
 
                 </div>
+
+                <div className="container-home-texto">
+                    <h1>Venha ser mais saudável</h1>
+                    <button className='buttonComeceAgora'> Comece agora </button>
+                </div>
                 
                 <div className="footer-app">
                     <img src={FooterApp}  className='footerBanner' alt="Em breve: APP Befit" />
@@ -49,10 +54,7 @@ function ContainerHomePage() {
 
         </>
     );
-function teste(){
-    console.log('teste');
-}
-}
+
 
 
 
