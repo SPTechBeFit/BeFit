@@ -1,5 +1,5 @@
-import Header from '../components/Header.jsx'
-import ContainerHome from '../components/ContainerHome.jsx'
+import Header from '../../components/Header/Header.jsx'
+import ContainerHome from '../../components/ContainerHome.jsx'
 
 
 
