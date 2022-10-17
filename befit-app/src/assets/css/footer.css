@@ -1,0 +1,39 @@
+.container-footer {
+    display: flex;
+    height: 15vh;
+    background-color: black;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-content: space-around;
+    justify-content: center;
+    align-items: center;
+}
+
+.logo-footer{
+    font-size: 64px;
+    color: white;
+}
+
+ul {
+    padding: 0px px 0px 0px;
+    display: flex;
+    font-family: Overpass;
+    
+    color: black;
+    text-decoration: none;
+    font-size: 1.15em;
+    font-weight: bold;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: nowrap;
+
+}
+
+li{
+    display: flex;
+    padding: 2vw;
+    text-decoration: none;
+    color: white;
+
+}
