@@ -1,4 +1,4 @@
-
+import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom'
 
 function footer() {
     return (
@@ -9,10 +9,10 @@ function footer() {
                 </div>
                 <div className="options-footer">
                     <ul>
-                        <li><a href="#">Home</a></li>
-                        <li><a href="#">Exercícios</a></li>
-                        <li><a href="#">Sobre</a></li>
-                        <li><a href="#">Começar</a></li>
+                        <li> <Link link to ="/" ><a>Home</a></Link></li>
+                        <li> <Link link to ="/signin" ><a>Exercicios</a></Link></li>
+                        <li> <Link link to ="/sobre" ><a>Sobre</a></Link></li>
+                        <li> <Link link to ="/signin" ><a>Começar</a></Link></li>
                     </ul>
                 </div>
             </div>

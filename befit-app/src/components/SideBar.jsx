@@ -52,14 +52,13 @@ export default function SwipeableTemporaryDrawer() {
       <List>
         {[
           <>
-             <li> <Link to="/home" > Home</Link></li>
+             <li> <Link to="/" > Home</Link></li>
               <li> <Link link to="/signin"> <a>Exercícios</a></Link></li>
               <li> <Link to="/sobre"><a>Sobre</a></Link></li>
               <li> <Link link to="/signin"> Começar </Link></li>
           </>
         ].map((text, index) => (
           <ListItem button key={text}>
-          
             <ListItemText primary={text} />
           </ListItem>
         ))}
