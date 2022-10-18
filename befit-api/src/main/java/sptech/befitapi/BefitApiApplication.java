@@ -6,7 +6,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @EnableAutoConfiguration
 @SpringBootApplication
-public class BefitApiApplication {
+public class 	BefitApiApplication {
 
 	public static void main(String[] args) {
 		SpringApplication.run(BefitApiApplication.class, args);
