@@ -9,11 +9,11 @@ import sptech.befitapi.application.service.ImagensPexelService;
 @RestController
 @RequestMapping("imagem")
 @Slf4j
-public class FindImagePexelsController {
+public class ImagemPexelsController {
 
     private final ImagensPexelService imagensPexelService;
 
-    public FindImagePexelsController(ImagensPexelService imagensPexelService) {
+    public ImagemPexelsController(ImagensPexelService imagensPexelService) {
         this.imagensPexelService = imagensPexelService;
     }
 

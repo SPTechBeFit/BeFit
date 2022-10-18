@@ -38,19 +38,11 @@ public class IngredienteController {
         return (ingrediente.isPresent()) ? ResponseEntity.status(HttpStatus.OK).body(ingrediente) : ResponseEntity.status(HttpStatus.NOT_FOUND).build();
     }
 
-    @GetMapping("/csv")
-    public ResponseEntity gerarCSV() {
-        List<Ingrediente> lista = ingredienteService.getAll();
-        ListaObj<Ingrediente> listaObj = new ListaObj(50);
+    @PostMapping("/csv")
+    public ResponseEntity<String> gerarCSV() {
+        ingredienteService.gerarCsv();
 
-        for (Ingrediente ingredienteDaVez:
-             lista) {
-            listaObj.adiciona(ingredienteDaVez);
-        }
-
-         listaObj.gravaArquivoCsv(lista, "Dieta");
-
-    return ResponseEntity.status(200).build();
+    return ResponseEntity.status(200).body("CSV gerado com sucesso");
 
     }
 
