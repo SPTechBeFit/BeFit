@@ -1,6 +1,6 @@
 .container-footer {
     display: flex;
-    height: 15vh;
+    height: 25vh;
     background-color: black;
     flex-direction: column;
     flex-wrap: wrap;
@@ -10,6 +10,8 @@
 }
 
 .logo-footer{
+    font-weight: 600;
+    font-family: 'Overpass';
     font-size: 64px;
     color: white;
 }

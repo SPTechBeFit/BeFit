@@ -11,6 +11,7 @@ import ListItemText from '@material-ui/core/ListItemText';
 import InboxIcon from '@material-ui/icons/MoveToInbox';
 import MailIcon from '@material-ui/icons/Mail';
 import ImagemMenu from '../assets/images/logo/menuIcon.png'
+import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom'
 
 
 const useStyles = makeStyles({
@@ -43,10 +44,22 @@ export default function SwipeableTemporaryDrawer() {
       onClick={toggleDrawer(anchor, false)}
       onKeyDown={toggleDrawer(anchor, false)}
     >
+
+
+            
+
+
       <List>
-        {['Comecar', 'Starred', 'Send email', 'Drafts'].map((text, index) => (
+        {[
+          <>
+             <li> <Link to="/home" > Home</Link></li>
+              <li> <Link link to="/signin"> <a>Exercícios</a></Link></li>
+              <li> <Link to="/sobre"><a>Sobre</a></Link></li>
+              <li> <Link link to="/signin"> Começar </Link></li>
+          </>
+        ].map((text, index) => (
           <ListItem button key={text}>
-            <ListItemIcon>{index % 2 === 0 ? <InboxIcon /> : <MailIcon />}</ListItemIcon>
+          
             <ListItemText primary={text} />
           </ListItem>
         ))}

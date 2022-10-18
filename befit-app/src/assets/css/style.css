@@ -16,25 +16,19 @@
 
 /*mudar para nossas cores ^ */
 
-
-
-
 @font-face {
-  font-family: 'Overpass';
-  src: local('Overpass'), url(../fonts/Overpass-VariableFont_wght.ttf) format('truetype');
+  font-family: "Overpass";
+  src: local("Overpass"),
+    url(../fonts/Overpass-VariableFont_wght.ttf) format("truetype");
 }
 
 @font-face {
-  font-family: 'Rubik';
-  src: local('Rubik'), url(../fonts/Rubik-VariableFont_wght.ttf) format('truetype');
+  font-family: "Rubik";
+  src: local("Rubik"),
+    url(../fonts/Rubik-VariableFont_wght.ttf) format("truetype");
 }
-
-
-
-
 
 /* pagina home */
-
 
 .container-home {
   /* z-index: 1; */
@@ -54,7 +48,6 @@
 }
 
 .container-home-texto {
-
   display: flex;
   margin: 5vh 0px 5vh 0px;
   justify-content: center;
@@ -63,13 +56,17 @@
   font-weight: 600;
   flex-direction: column;
   align-items: center;
-
-
 }
 
 a {
-  color: #3B24AD;
+  color: #3b24ad;
+}
 
+.MuiList-padding {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
 }
 
 .banner3-home {
@@ -83,7 +80,6 @@ a {
   object-fit: cover;
   width: 100%;
   margin: 0vh 0px 10vh 0px;
-
 }
 
 .banner4-dietas-home {
@@ -95,7 +91,6 @@ a {
 .banner5-sobre-home {
   object-fit: cover;
   width: 100%;
-
 }
 
 .container-opcoes {
@@ -114,7 +109,6 @@ a {
 .dietaButton {
   height: 360px;
   object-fit: cover;
-
 }
 
 .footerBanner {
@@ -126,7 +120,7 @@ a {
 
 .buttonComeceAgora {
   margin-top: 3vh;
-  background-color: #3B24AD;
+  background-color: #3b24ad;
   border-radius: 9px;
   font-family: Overpass;
   border-width: 0px;
@@ -136,11 +130,9 @@ a {
   width: 123px;
 }
 
-
-
 /* pagina sobre */
 
-.container-sobre{
+.container-sobre {
   display: flex;
   flex-direction: column;
   align-content: center;
@@ -148,15 +140,15 @@ a {
   align-items: center;
 }
 
-.banner-sobre{
+.banner-sobre {
   object-fit: cover;
   width: 100%;
   height: 230px;
   margin-top: 6vh;
-
 }
 
-.texto-sobre{
+.texto-sobre {
+  font-family: "Rubik";
   margin: 15vh 10vw 15vh 10vw;
   display: flex;
   flex-direction: column;
@@ -165,7 +157,7 @@ a {
   font-size: 36px;
 }
 
-/*Responsive */ 
+/*Responsive */
 
 @media only screen and (max-width: 900px) {
   .banner1-home {
@@ -189,19 +181,13 @@ a {
     font-weight: 600;
   }
 
-
   .banner3-exercicio-home {
     object-fit: cover;
     width: 100%;
-
-
   }
 
   .banner4-dietas-home {
     object-fit: cover;
     width: 100%;
   }
-
-
-
 }
