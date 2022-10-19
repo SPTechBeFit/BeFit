@@ -86,10 +86,9 @@ _________________________________ */
 @media only screen and (max-width: 900px) {
   
   .sideMenuButtonImg{
-  
     display: block !important;
     position: absolute;
-    margin: 12vh 0vw 0 15vw;
+    margin: 5vh 0vw 0 15vw;
     
   }
 

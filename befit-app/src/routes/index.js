@@ -2,6 +2,8 @@ import React from "react";
 import { BrowserRouter as Router, Routes, Route, BrowserRouter } from 'react-router-dom'
 import Home from '../pages/Home/Home.jsx'
 import Sobre from '../../src/pages/Sobre/Sobre.jsx'
+import SobreDietas from '../../src/pages/Sobre/SobreDietas.jsx'
+import SobreExercicios from '../../src/pages/Sobre/sobreExercicios.jsx'
 import Signin from '../pages/Signin/index.jsx'
 import Signup from '../../src/pages/Singup/index.js'
 import { Fragment } from "react";
@@ -23,6 +25,9 @@ const RoutesApp = () => {
                     <Route exact path="/sobre" element={<Sobre />} />
                     <Route path="/signin" element={<Signin />} />
                     <Route exact path="/signup" element={<Signup />} />
+                    <Route exact path="/sobre/dietas" element={<SobreDietas />} />
+                    <Route exact path="/sobre/exercicios" element={<SobreExercicios />} />
+
                     {/* <Route path="/exercicios" element={<Private Item={Exercicios} />} /> */}
                 </Routes>
             </Fragment>

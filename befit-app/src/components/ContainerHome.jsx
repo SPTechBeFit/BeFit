@@ -6,6 +6,8 @@ import BotaoTreino from '../assets/images/buttons/treinosButton.jpg';
 import BotaoDieta from '../assets/images/buttons/dietasButton.jpg';
 import Button from '@material-ui/core/Button';
 import FooterApp from '../assets/images/banners/bannerApp.png';
+import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom'
+
 
 
 
@@ -21,8 +23,8 @@ function ContainerHomePage() {
                 </div>
 
                 <div className="banner3-home">
-                    <img src={Banner3Exercicio} className='banner3-exercicio-home' />
-                    <img src={Banner4Dietas} className='banner4-dietas-home' />
+                <Link link to="/sobre/exercicios"><img src={Banner3Exercicio} className='banner3-exercicio-home' /></Link>
+                <Link link to="/sobre/dietas"> <img src={Banner4Dietas} className='banner4-dietas-home' /></Link>
                 </div>
                 <div className="banner4-home">
                     <img src={Banner5Sobre} className='banner5-sobre-home' />
@@ -33,8 +35,8 @@ function ContainerHomePage() {
                 </div>
 
                 <div className="container-opcoes">
-                    <Button onClick= { teste } ><img className='exericioButton' src={BotaoTreino} /></Button>
-                    <Button onClick= { teste } ><img className='dietaButton' src={BotaoDieta} /></Button>
+                    <Link link to="/signin"><img className='exericioButton' src={BotaoTreino} /></Link>
+                    <Link link to="/signin"><img className='dietaButton' src={BotaoDieta} /></Link>
 
                 </div>
 
@@ -55,7 +57,11 @@ function ContainerHomePage() {
         </>
     );
 function teste(){
-    console.log('teste');
+    return(
+        <>
+       
+        </>
+    )
 }
 }
 

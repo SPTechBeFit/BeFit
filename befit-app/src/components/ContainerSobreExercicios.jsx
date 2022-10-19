@@ -2,16 +2,16 @@ import BannerSobre from '../assets/images/banners/bannerSobre.png'
 import FooterApp from '../assets/images/banners/bannerApp.png';
 
 
-function ContainerSobreExercicios() {
+function ContainerSobreDietas() {
     return (
         <>
             <div className="container-sobre">
                 <img src={BannerSobre} alt="Sobre nos" className='banner-sobre' />
                 <div className="texto-sobre">
                     <p>
-                        Temos como objetivo influenciar as pessoas,
-                        e ajuda las a alcançar suas metas de peso e nutrição de maneira fácil e intuitiva.
-                        Fornecendo informacoes de dieta e treino de acordo com sua necessidade.
+                        Um dos nossos objetivos é, além de sugerir dietas para nosso usuarios, sugerir também
+                        uma série de exercicios  em forma de treinos diários para serem seguidos, junto com as nossas dietas para um melhor resultado para 
+                        seus treinos e sua saúde
                     </p>
                     <br></br>
                     <br></br>
@@ -23,17 +23,14 @@ function ContainerSobreExercicios() {
                     <br></br>
                     <br></br>
                     <p>
-                        O BeFit é mais que um site de dietas.
+                        O BeFit é mais que um site de dietas ou exercicios.
                         Ele é um site de saúde que te ajuda a aprender sobre seus hábitos,
                         ver como você come, fazer escolhas de alimentação mais inteligentes,
                         encontrar motivação e apoio, e alcançar suas metas.
                     </p>
                     <br></br>
                     <br></br>   
-                    <p>
-                        O usuário também terá permissão para criar seus treinos
-                        e suas dietas e compartilhar com nossa comunidade para que outros usuários consigam utilizar.
-                    </p>
+        
                 </div>
 
                 <div className="footer-app">
@@ -46,4 +43,4 @@ function ContainerSobreExercicios() {
 }
 
 
-export default ContainerSobreExercicios;
+export default ContainerSobreDietas;

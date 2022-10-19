@@ -11,9 +11,9 @@ function Header() {
           <div className='options'>
             <ul>
               <li> <Link to="/" > <a className="activeButton">Home</a></Link></li>
-              <li> <Link link to="/signin"> <a>Exercícios</a></Link></li>
+              <li> <Link to="/signin"> <a>Exercícios</a></Link></li>
               <li> <Link to="/sobre"><a>Sobre</a></Link></li>
-              <li> <Link link to="/signin"> <a className='loginButton'>Começar</a> </Link></li>
+              <li> <Link to="/signin"> <a className='loginButton'>Começar</a> </Link></li>
             </ul>
             <PersistentDrawerLeft />
 
