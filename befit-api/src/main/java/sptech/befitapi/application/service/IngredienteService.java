@@ -2,6 +2,7 @@ package sptech.befitapi.application.service;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import sptech.befitapi.application.listaObj.ListaObj;
 import sptech.befitapi.resources.repository.IngredienteRepository;
 import sptech.befitapi.resources.repository.entity.Ingrediente;
 
@@ -20,6 +21,33 @@ public class IngredienteService {
 
     public List<Ingrediente> getAll() {
         return ingredienteRepository.findAll();
+    }
+
+    public void gerarCsv() {
+        List<Ingrediente> lista = ingredienteRepository.findAll();
+
+        int indMenor;
+        for (int i = 0; i < lista.size()-1; i++) {
+            indMenor = i;
+            for (int j = i + 1; j < lista.size(); j++) {
+                if (lista.get(j).getCaloria() < lista.get(indMenor).getCaloria()) {
+                    indMenor = j;
+                }
+            }
+            Ingrediente aux = lista.get(i);
+            lista.set(i, lista.get(indMenor));
+            lista.set(indMenor, aux);
+        }
+
+        ListaObj<Ingrediente> listaObj = new ListaObj(lista.size());
+
+        for (Ingrediente ingredienteDaVez:
+                lista) {
+            listaObj.adiciona(ingredienteDaVez);
+        }
+
+        listaObj.gravaArquivoCsv(lista, "Ingredientes");
+
     }
 
     public Optional<Ingrediente> get(int id) {

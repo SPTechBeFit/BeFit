@@ -4,6 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+import sptech.befitapi.application.listaObj.ListaObj;
 import sptech.befitapi.application.service.IngredienteService;
 import sptech.befitapi.resources.repository.entity.Ingrediente;
 
@@ -19,6 +20,7 @@ public class IngredienteController {
 
     @PostMapping
     public ResponseEntity<Ingrediente> cadastrar( @RequestBody Ingrediente ingrediente) {
+
         return ResponseEntity.status(HttpStatus.CREATED).body(ingredienteService.cadastrar(ingrediente));
     }
 
@@ -34,6 +36,14 @@ public class IngredienteController {
         Optional<Ingrediente> ingrediente = ingredienteService.get(id);
 
         return (ingrediente.isPresent()) ? ResponseEntity.status(HttpStatus.OK).body(ingrediente) : ResponseEntity.status(HttpStatus.NOT_FOUND).build();
+    }
+
+    @PostMapping("/csv")
+    public ResponseEntity<String> gerarCSV() {
+        ingredienteService.gerarCsv();
+
+    return ResponseEntity.status(200).body("CSV gerado com sucesso");
+
     }
 
 }
