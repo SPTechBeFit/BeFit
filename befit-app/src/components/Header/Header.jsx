@@ -7,7 +7,7 @@ function Header() {
     <div className="header">
       <nav className='navHeader'>
         <div className="container">
-          <Link to="/home"> <img src={ImagemLogo} className="logo" /> </Link>
+          <Link to="/"> <img src={ImagemLogo} className="logo" /> </Link>
           <div className='options'>
             <ul>
               <li> <Link to="/" > <a className="activeButton">Home</a></Link></li>
@@ -16,7 +16,6 @@ function Header() {
               <li> <Link to="/signin"> <a className='loginButton'>Começar</a> </Link></li>
             </ul>
             <PersistentDrawerLeft />
-
           </div>
         </div>
       </nav>

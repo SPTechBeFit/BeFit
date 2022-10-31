@@ -8,10 +8,6 @@ import Button from '@material-ui/core/Button';
 import FooterApp from '../assets/images/banners/bannerApp.png';
 import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom'
 
-
-
-
-
 function ContainerHomePage() {
     return (
         <>
@@ -23,8 +19,8 @@ function ContainerHomePage() {
                 </div>
 
                 <div className="banner3-home">
-                <Link link to="/sobre/exercicios"><img src={Banner3Exercicio} className='banner3-exercicio-home' /></Link>
-                <Link link to="/sobre/dietas"> <img src={Banner4Dietas} className='banner4-dietas-home' /></Link>
+                    <Link link to="/sobre/exercicios"><img src={Banner3Exercicio} className='banner3-exercicio-home' /></Link>
+                    <Link link to="/sobre/dietas"> <img src={Banner4Dietas} className='banner4-dietas-home' /></Link>
                 </div>
                 <div className="banner4-home">
                     <img src={Banner5Sobre} className='banner5-sobre-home' />
@@ -44,25 +40,23 @@ function ContainerHomePage() {
                     <h1>Venha ser mais saudável</h1>
                     <button className='buttonComeceAgora'> Comece agora </button>
                 </div>
-                
+
                 <div className="footer-app">
-                    <img src={FooterApp}  className='footerBanner' alt="Em breve: APP Befit" />
+                    <img src={FooterApp} className='footerBanner' alt="Em breve: APP Befit" />
                 </div>
-
-
             </div>
 
-        
+
 
         </>
     );
-function teste(){
-    return(
-        <>
-       
-        </>
-    )
-}
+    function teste() {
+        return (
+            <>
+
+            </>
+        )
+    }
 }
 
 

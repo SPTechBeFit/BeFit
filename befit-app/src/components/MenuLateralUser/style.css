@@ -1,0 +1,16 @@
+.containerUserMenu {
+    height: 5vh;
+    /* z-index: 999999; */
+    position: absolute;
+    background: #230F80;
+    display: flex;
+    width: 100%;
+    margin: 8vh 0px 5vh 0px;
+}
+
+.sideMenu {
+
+    margin: 16px 0px 0px 161px;
+
+    height: 24px;
+}

@@ -1,0 +1,53 @@
+#boxCover {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 150px 145px;
+    background-color: #8C8C8C;
+}
+
+
+.imagemCoverTreino {
+    height: auto;
+    width: auto;
+    max-width: 200px;
+    max-height: 200px;
+}
+
+.modal {
+    display: flex;
+
+}
+
+.identificacaoModal{
+    height: 5vh;
+    background-color: #230F80;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    font-size: 25px;
+    color: white;
+}
+
+.identificacaoModal h1{
+    font-family: Rubik;
+    font-weight: bold;
+    margin: 5px 0px 0px 115px;
+}
+
+.infoTreino h1{
+    font-family: Rubik;
+    display: flex;
+    justify-content: center;
+    font-size: 25px;
+
+}
+
+.infoTreino h2{
+    font-family: Rubik;
+    display: flex;
+    justify-content: center;
+    font-size: 25px;
+
+}

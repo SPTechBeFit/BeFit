@@ -1,0 +1,10 @@
+.bannerPesquisaTreino{
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    margin: 14vh 0px 0px 0px;
+}
+
+.containerBanner{
+    margin: 0px 0vw 5vh 0vw;
+}

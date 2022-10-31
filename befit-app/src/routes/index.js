@@ -8,6 +8,7 @@ import Signin from '../pages/Signin/index.jsx'
 import Signup from '../../src/pages/Singup/index.js'
 import { Fragment } from "react";
 import useAuth from "../hooks/useAuth";
+import UserExercicios from "../pages/TreinoUsuario/TreinoUsuario.jsx"
 
 const Private = ({ Item }) => {
     const { signed } = useAuth();
@@ -27,6 +28,7 @@ const RoutesApp = () => {
                     <Route exact path="/signup" element={<Signup />} />
                     <Route exact path="/sobre/dietas" element={<SobreDietas />} />
                     <Route exact path="/sobre/exercicios" element={<SobreExercicios />} />
+                    <Route exact path="/exercicios" element={<UserExercicios />} />
 
                     {/* <Route path="/exercicios" element={<Private Item={Exercicios} />} /> */}
                 </Routes>
