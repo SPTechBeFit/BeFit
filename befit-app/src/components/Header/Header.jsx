@@ -1,7 +1,7 @@
 import ImagemLogo from '../../assets/images/logo/logoBefit.png'
 import PersistentDrawerLeft from '../SideBar'
-import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom'
-
+import style from './style.css'
+import { BrowserRouter as Router, Routes, Route, Link, NavLink } from 'react-router-dom'
 function Header() {
   return (<>
     <div className="header">
@@ -10,10 +10,10 @@ function Header() {
           <Link to="/"> <img src={ImagemLogo} className="logo" /> </Link>
           <div className='options'>
             <ul>
-              <li> <Link to="/" > <a className="activeButton">Home</a></Link></li>
-              <li> <Link to="/signin"> <a>Exercícios</a></Link></li>
-              <li> <Link to="/sobre"><a>Sobre</a></Link></li>
-              <li> <Link to="/signin"> <a className='loginButton'>Começar</a> </Link></li>
+              <li> <NavLink to="/"  activeClassName="active" end> <a>Home</a></NavLink></li>
+              <li> <NavLink to="/signin" activeClassName="active"> <a>Exercícios</a></NavLink></li>
+              <li> <NavLink to="/sobre" activeClassName="active"><a>Sobre</a></NavLink></li>
+              <li> <NavLink to="/signin"> <a className='loginButton'>Começar</a> </NavLink></li>
             </ul>
             <PersistentDrawerLeft />
           </div>

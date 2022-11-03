@@ -4,10 +4,29 @@
     flex-wrap: wrap;
     justify-content: center;
     gap: 150px 145px;
-    background-color: #8C8C8C;
+   
 }
 
-
+/* width */
+::-webkit-scrollbar {
+    width: 10px;
+  }
+  
+  /* Track */
+  ::-webkit-scrollbar-track {
+    background: #434343;
+  }
+  
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: #230F80;
+    border-radius: 50px;
+  }
+  
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: rgb(34, 34, 34);
+  }
 .imagemCoverTreino {
     height: auto;
     width: auto;
@@ -17,6 +36,9 @@
 
 .modal {
     display: flex;
+    overflow-y: auto;
+    height: 43vh;
+    background-color: #8C8C8C;
 
 }
 

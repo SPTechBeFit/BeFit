@@ -2,6 +2,16 @@
     display: flex;
   
   }
+
+  .active{
+    color:#fcfcfc;
+    background-color: #000000;
+    border-radius: 10px;
+   }
+
+   .active a{
+    color:white ;
+   }
   
   .header {
     width: 100%;
@@ -69,21 +79,21 @@
   
   
   .options {
-    width: 35%;
+    width: 25%;
     /* margin: 0 auto; */
     display: flex;
-    gap: 1px;
     height: 100%;
     margin: 0vh 10vw 0 25vw;
     position: absolute;
-    /* padding: 0 10vw 0vh 25vw; */
-
+    padding: 0 10vw 0vh 25vw;
+    justify-content: space-around;
+  
   }
 
 
   /* Menu para mobile e responsivo
 _________________________________ */
-@media only screen and (max-width: 1210px) {
+@media only screen and (max-width: 1312px) {
   
   .sideMenuButtonImg{
     display: block !important;

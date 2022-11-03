@@ -1,5 +1,5 @@
 .bodyTreinoUser {
-    margin: 0px 10vw 0px 10vw;
+    margin: -14vh 10vw 0px 10vw;
 }
 
 
@@ -9,6 +9,7 @@
     /* flex-wrap: nowrap; */
     align-content: space-around;
     justify-content: center;
+    gap: 210px;
 
 }
 

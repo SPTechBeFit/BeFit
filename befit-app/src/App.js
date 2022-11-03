@@ -1,6 +1,5 @@
 import './assets/css/style.css';
 import './assets/css/reset.css';
-import './components/Header/style.css';
 import './assets/css/sobre.css';
 import './components/Footer/style.css';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'

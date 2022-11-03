@@ -1,5 +1,5 @@
 import React from 'react'
-import bannerTreino from '../../../../assets/images/banners/bannerExercicio.jpg'
+import bannerTreino from '../../../../assets/images/banners/bannerPesquisaTreino.jpg'
 import bannerStyle from "./bannerStyle.css"
 
 const BannerTreino = () => {

@@ -43,7 +43,6 @@
 
 .banner1-home {
   object-fit: cover;
-  width: 100%;
   height: 800px;
 }
 
@@ -159,7 +158,7 @@ a {
 
 /*Responsive */
 
-@media only screen and (max-width: 900px) {
+@media only screen and (max-width: 1312px) {
   .banner1-home {
     object-fit: cover;
     width: 100%;
