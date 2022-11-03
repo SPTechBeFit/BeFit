@@ -1,6 +1,6 @@
 .navbar {
     background-color: #230F80;
-    height: 161px;
+    height: 125px;
     display: flex;
     justify-content: start;
     align-items: center;
@@ -19,12 +19,12 @@
   
   .nav-menu {
     background-color: #c2c2c2;
-    width: 250px;
-    height: 100vh;
+    width: 15vw;
+    height: 100%;
     display: flex;
     justify-content: center;
     position: fixed;
-    margin: 161px 0px 0px 0px;
+    margin: 0px 0px 0px 0px;
     top: 0;
     left: -100%;
     transition: 850ms;
@@ -33,6 +33,7 @@
   .nav-menu.ativado {
     left: 0;
     transition: 350ms;
+    z-index: -1;
   }
   
   .nav-text {
@@ -62,7 +63,7 @@
     display: flex;
     width: 100%;
     flex-direction: column;
-    margin-bottom: 25vh;
+    margin-bottom: 0vh;
     align-items: stretch;
   }
   

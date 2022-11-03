@@ -19,8 +19,7 @@ function MenuUser() {
       <IconContext.Provider value={{ color: '#fff' }}>
         <div className='navbar'>
           <img src={ menuImage } onClick={showSidebar} alt="" id= "imagemMenu" />
-        </div>
-        <nav className={sidebar ? 'nav-menu ativado' : 'nav-menu'}>
+          <nav className={sidebar ? 'nav-menu ativado' : 'nav-menu'}>
           <ul className='nav-menu-items' onClick={showSidebar}>
             {SidebarData.map((item, index) => {
               return (
@@ -35,6 +34,8 @@ function MenuUser() {
             })}
           </ul>
         </nav>
+        </div>
+        
       </IconContext.Provider>
     </>
   );

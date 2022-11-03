@@ -4,7 +4,7 @@ import BannerTreino from './Components/BannerTreino/index.jsx';
 import React, { useEffect, useState } from "react"
 import ModalUser from '../../components/modalUser/index.jsx';
 import MenuUser from '../../components/MenuLateralUser/index.jsx'
-import style from './exercicios.css'
+import style from './style.css'
 
 function TreinoUsuario(props) {
 
@@ -13,9 +13,10 @@ function TreinoUsuario(props) {
             <Header />
             <MenuUser/>
             <div className="bodyTreinoUser">
-            <BannerTreino />
-            <ModalUser/>
+                <BannerTreino />
+                <ModalUser />
             </div>
+
         </>
     );
 

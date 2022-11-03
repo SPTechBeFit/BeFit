@@ -1,6 +1,5 @@
 .bodyTreinoUser {
-    margin: -14vh 10vw 0px 10vw;
-}
+    margin: 0vh 10vw 0px 15vw;}
 
 
 #boxCover {
@@ -10,6 +9,10 @@
     align-content: space-around;
     justify-content: center;
     gap: 210px;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 150px 145px;
 
 }
 

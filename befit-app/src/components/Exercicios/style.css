@@ -1,11 +1,4 @@
-#boxCover {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 150px 145px;
-   
-}
+
 
 /* width */
 ::-webkit-scrollbar {
@@ -27,6 +20,13 @@
   ::-webkit-scrollbar-thumb:hover {
     background: rgb(34, 34, 34);
   }
+
+
+
+  .boxTreino{
+    
+  }
+
 .imagemCoverTreino {
     height: auto;
     width: auto;
@@ -37,7 +37,7 @@
 .modal {
     display: flex;
     overflow-y: auto;
-    height: 43vh;
+    height: 53vh;
     background-color: #8C8C8C;
 
 }

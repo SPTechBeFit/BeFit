@@ -2,7 +2,7 @@
 import ExercicioCover from '../../components/Exercicios/index.jsx';
 import React, { useEffect, useState } from "react"
 import api from '../../services/api.js'
-import exercicios from "../../components/Exercicios/exercicios.css"
+
 
 
 function ModalUser(props) {
@@ -20,20 +20,21 @@ function ModalUser(props) {
     };
     return (
         <>
-        <div className="identificacaoModal"><h1>Pesquisar treinos</h1>
+            <div className="identificacaoModal"><h1>Pesquisar treinos</h1>
 
-        </div>
+            </div>
             <div className="modal">
-                <div id="boxCover">
-                    {lista.map((valor) => {
-                        return (
-                            <ExercicioCover key={valor.id}
-                            nome={valor.nome}
+                <div className="boxTreino">
+                    <div id="boxCover">
+                        {lista.map((valor) => {
+                            return (
+                                <ExercicioCover key={valor.id}
+                                    nome={valor.nome}
 
-                            />
-                        );
-                    })}
-                  
+                                />
+                            );
+                        })}
+                    </div>
                 </div>
             </div>
 
