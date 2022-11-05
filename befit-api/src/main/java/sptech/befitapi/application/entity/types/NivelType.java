@@ -1,4 +1,4 @@
-package sptech.befitapi.resources.repository.entity.types;
+package sptech.befitapi.application.entity.types;
 
 public enum NivelType {
     INICIANTE,

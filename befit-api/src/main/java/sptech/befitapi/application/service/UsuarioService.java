@@ -2,14 +2,14 @@ package sptech.befitapi.application.service;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import sptech.befitapi.application.entity.Usuario;
+import sptech.befitapi.application.entity.types.NivelType;
 import sptech.befitapi.application.request.*;
 import sptech.befitapi.application.strategy.XpStrategy;
 import sptech.befitapi.application.strategy.XpAvancadoStrategy;
 import sptech.befitapi.application.strategy.XpInicianteStrategy;
 import sptech.befitapi.application.strategy.XpIntermediarioStrategy;
 import sptech.befitapi.resources.repository.UsuarioRepository;
-import sptech.befitapi.resources.repository.entity.*;
-import sptech.befitapi.resources.repository.entity.types.NivelType;
 
 import java.util.List;
 

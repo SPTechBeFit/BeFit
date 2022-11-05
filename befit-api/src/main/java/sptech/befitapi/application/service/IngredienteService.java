@@ -4,7 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import sptech.befitapi.application.listaObj.ListaObj;
 import sptech.befitapi.resources.repository.IngredienteRepository;
-import sptech.befitapi.resources.repository.entity.Ingrediente;
+import sptech.befitapi.application.entity.Ingrediente;
 
 import java.util.List;
 import java.util.Optional;

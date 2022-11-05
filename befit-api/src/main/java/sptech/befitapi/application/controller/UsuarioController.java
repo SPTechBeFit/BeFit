@@ -6,7 +6,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import sptech.befitapi.application.request.Login;
 import sptech.befitapi.application.service.UsuarioService;
-import sptech.befitapi.resources.repository.entity.Usuario;
+import sptech.befitapi.application.entity.Usuario;
 
 import java.util.List;
 

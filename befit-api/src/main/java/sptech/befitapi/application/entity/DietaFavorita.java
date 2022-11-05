@@ -1,5 +1,4 @@
-package sptech.befitapi.resources.repository.entity;
-
+package sptech.befitapi.application.entity;
 
 import lombok.Data;
 
@@ -8,7 +7,7 @@ import java.time.LocalDate;
 
 @Data
 @Entity
-public class TreinoFavorito {
+public class DietaFavorita {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -18,12 +17,12 @@ public class TreinoFavorito {
     private Usuario usuario;
 
     @ManyToOne
-    private Treino treino;
+    private Dieta dieta;
 
     private LocalDate criadoEm;
 
     private Integer diasSequencia;
 
-    private LocalDate autalizadoEm;
+    private LocalDate atualizadoEm;
 
 }

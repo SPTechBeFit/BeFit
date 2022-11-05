@@ -1,7 +1,6 @@
 package sptech.befitapi.application.listaObj;
 
-import sptech.befitapi.resources.repository.entity.Dieta;
-import sptech.befitapi.resources.repository.entity.Ingrediente;
+import sptech.befitapi.application.entity.Ingrediente;
 
 import java.io.FileWriter;
 import java.io.IOException;

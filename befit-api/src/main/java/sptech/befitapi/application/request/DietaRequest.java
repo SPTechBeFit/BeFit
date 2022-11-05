@@ -1,8 +1,8 @@
 package sptech.befitapi.application.request;
 
 import lombok.Data;
-import sptech.befitapi.resources.repository.entity.Dieta;
-import sptech.befitapi.resources.repository.entity.IngredientesDieta;
+import sptech.befitapi.application.entity.Dieta;
+import sptech.befitapi.application.entity.IngredientesDieta;
 
 import java.util.List;
 

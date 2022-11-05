@@ -1,11 +1,11 @@
-package sptech.befitapi.resources.repository.entity;
+package sptech.befitapi.application.entity;
 
 import lombok.AccessLevel;
 import lombok.Data;
 import lombok.Getter;
-import sptech.befitapi.resources.repository.entity.types.FuncaoType;
-import sptech.befitapi.resources.repository.entity.types.NivelType;
-import sptech.befitapi.resources.repository.entity.types.ObjetivoType;
+import sptech.befitapi.application.entity.types.FuncaoType;
+import sptech.befitapi.application.entity.types.NivelType;
+import sptech.befitapi.application.entity.types.ObjetivoType;
 
 import javax.persistence.*;
 import java.time.LocalDate;

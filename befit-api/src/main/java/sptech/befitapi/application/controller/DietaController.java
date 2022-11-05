@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.*;
 import sptech.befitapi.application.request.DietaRequest;
 import sptech.befitapi.application.response.DietaCompleta;
 import sptech.befitapi.application.service.DietaService;
-import sptech.befitapi.resources.repository.entity.Dieta;
+import sptech.befitapi.application.entity.Dieta;
 
 import java.util.List;
 import java.util.Optional;

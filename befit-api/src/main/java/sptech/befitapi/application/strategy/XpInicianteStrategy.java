@@ -1,6 +1,6 @@
 package sptech.befitapi.application.strategy;
 
-import sptech.befitapi.resources.repository.entity.Usuario;
+import sptech.befitapi.application.entity.Usuario;
 
 public class XpInicianteStrategy implements XpStrategy {
 

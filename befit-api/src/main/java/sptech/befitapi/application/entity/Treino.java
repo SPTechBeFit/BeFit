@@ -1,12 +1,13 @@
-package sptech.befitapi.resources.repository.entity;
+package sptech.befitapi.application.entity;
 
 import lombok.Data;
-import sptech.befitapi.resources.repository.entity.types.NivelType;
+import sptech.befitapi.application.entity.types.NivelType;
+
 import javax.persistence.*;
 
 @Data
 @Entity
-public class Dieta {
+public class Treino {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

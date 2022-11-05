@@ -1,4 +1,4 @@
-package sptech.befitapi.resources.repository.entity;
+package sptech.befitapi.application.entity;
 
 import lombok.Data;
 
