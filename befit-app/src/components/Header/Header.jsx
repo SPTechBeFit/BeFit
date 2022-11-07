@@ -14,9 +14,12 @@ function Header() {
             <ul>
               <li> <NavLink to="/" activeClassName="active" end> <a>Home</a></NavLink></li>
               {/* <li> <NavLink to="/exerciciosHome" activeClassName="active"> <a>Exercícios</a></NavLink></li> */}
-              {teste() && <li> <NavLink to="/sobre" activeClassName="active"><a>Sobre</a></NavLink></li>}
-              {teste() && <li> <NavLink to="/signin"> <a className='loginButton'>Começar</a> </NavLink></li>}
-             
+              {headerChange() && <li> <NavLink to="/sobre" activeClassName="active"><a>Sobre</a></NavLink></li>}
+              {headerChange() && <li> <NavLink to="/signin"> <a className='loginButton'>Começar</a> </NavLink></li>}
+              {headerChangeUserPage() && <li>  <a className='user'>Ola teste!</a></li>}
+              {headerChangeUserPage() && <li> <a>Sair</a></li>}
+         
+
             </ul>
             <PersistentDrawerLeft />
           </div>
@@ -29,7 +32,7 @@ function Header() {
 export default Header;
 
 
-function teste() {
+function headerChange() {
   if (window.location.pathname === '/exercicios') {
     return false
   } else {
@@ -37,4 +40,14 @@ function teste() {
   }
 
 
+
+
+}
+
+function headerChangeUserPage() {
+  if (window.location.pathname === '/exercicios') {
+    return true
+  } else {
+    return false
+  }
 }

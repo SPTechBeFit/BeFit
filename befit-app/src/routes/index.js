@@ -9,6 +9,7 @@ import Signup from '../../src/pages/Singup/index.js'
 import { Fragment } from "react";
 import useAuth from "../hooks/useAuth";
 import UserExercicios from "../pages/TreinoUsuario/TreinoUsuario.jsx"
+import Treino from "../pages/Treino/index"
 
 const Private = ({ Item }) => {
     const { signed } = useAuth();
@@ -29,6 +30,7 @@ const RoutesApp = () => {
                     <Route exact path="/sobre/dietas" element={<SobreDietas />} />
                     <Route exact path="/exerciciosHome" element={<SobreExercicios />} />
                     <Route exact path="/exercicios" element={<UserExercicios />} />
+                    <Route exact path="/treino/" element={<Treino />} />
 
                     {/* <Route path="/exercicios" element={<Private Item={Exercicios} />} /> */}
                 </Routes>

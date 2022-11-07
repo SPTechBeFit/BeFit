@@ -29,6 +29,7 @@ function ModalUser(props) {
                         {lista.map((valor) => {
                             return (
                                 <ExercicioCover key={valor.id}
+                                    id={valor.id}
                                     nome={valor.nome}
 
                                 />
