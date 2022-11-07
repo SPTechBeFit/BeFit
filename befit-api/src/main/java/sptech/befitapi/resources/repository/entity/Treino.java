@@ -23,4 +23,23 @@ public class Treino {
     private Usuario criador;
 
     private Boolean ativo = true;
+
+    public Treino(Integer id, String nome, String descricao, NivelType nivel, Usuario criador, Boolean ativo) {
+        this.id = id;
+        this.nome = nome;
+        this.descricao = descricao;
+        this.nivel = nivel;
+        this.criador = criador;
+        this.ativo = ativo;
+    }
+
+    public Treino(String nome, String descricao, Usuario criador) {
+        this.nome = nome;
+        this.descricao = descricao;
+        this.criador = criador;
+    }
+
+    public Treino(Integer id) {
+        this.id = id;
+    }
 }

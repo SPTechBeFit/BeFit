@@ -2,7 +2,6 @@ package sptech.befitapi.application.service;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import sptech.befitapi.application.request.*;
 import sptech.befitapi.application.strategy.XpStrategy;
 import sptech.befitapi.application.strategy.XpAvancadoStrategy;
 import sptech.befitapi.application.strategy.XpInicianteStrategy;

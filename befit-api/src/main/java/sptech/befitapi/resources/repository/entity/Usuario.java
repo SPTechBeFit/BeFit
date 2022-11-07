@@ -45,4 +45,24 @@ public class Usuario {
     private Integer xp = 0;
 
     private Boolean logado = false;
+
+    public Usuario(Integer id, String nome, String email, String senha, String personId, ObjetivoType objetivo, Double altura, Double peso, LocalDate dataNascimento, FuncaoType funcao, NivelType nivel, Integer xp, Boolean logado) {
+        this.id = id;
+        this.nome = nome;
+        this.email = email;
+        this.senha = senha;
+        this.personId = personId;
+        this.objetivo = objetivo;
+        this.altura = altura;
+        this.peso = peso;
+        this.dataNascimento = dataNascimento;
+        this.funcao = funcao;
+        this.nivel = nivel;
+        this.xp = xp;
+        this.logado = logado;
+    }
+
+    public Usuario(Integer id) {
+        this.id = id;
+    }
 }
