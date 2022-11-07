@@ -30,8 +30,8 @@ public class UsuarioService {
             return usuario;
     }
 
-    public Usuario login(Login login) {
-            Usuario usuario = usuarioRepository.findUsuarioByEmailAndSenha(login.getEmail(), login.getSenha());
+    public Usuario login(String email, String senha) {
+            Usuario usuario = usuarioRepository.findUsuarioByEmailAndSenha(email, senha);
 
             if(usuario == null || usuario.getLogado()) {
                 return null;

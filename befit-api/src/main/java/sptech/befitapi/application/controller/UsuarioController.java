@@ -29,12 +29,12 @@ public class UsuarioController {
         return ResponseEntity.status(HttpStatus.CREATED).body(usuarioService.cadastrar(usuario));
     }
 
-    @PatchMapping("/login")
-    public ResponseEntity<Usuario> login(@RequestBody Login login) {
+    @PatchMapping("/login/{email}/{senha}")
+    public ResponseEntity<Usuario> login(@PathVariable String email, @PathVariable String senha) {
 
-        Usuario usuario = usuarioService.login(login);
+        Usuario usuario = usuarioService.login(email, senha);
 
-        return (usuario != null) ? ResponseEntity.status(HttpStatus.OK).body(usuario) : ResponseEntity.status(HttpStatus.BAD_REQUEST).build();
+        return (usuario != null) ? ResponseEntity.status(HttpStatus.OK).body(usuario) : ResponseEntity.status(HttpStatus.NOT_FOUND).build();
     }
 
     @PatchMapping("/logout/{personId}")
@@ -42,12 +42,12 @@ public class UsuarioController {
 
         Usuario usuario = usuarioService.logout(personId);
 
-        return (usuario != null) ? ResponseEntity.status(HttpStatus.OK).body(usuario) : ResponseEntity.status(HttpStatus.BAD_REQUEST).build();
+        return (usuario != null) ? ResponseEntity.status(HttpStatus.OK).body(usuario) : ResponseEntity.status(HttpStatus.NOT_FOUND).build();
     }
 
     @PatchMapping("/xp/{personId}")
     public ResponseEntity<Usuario> xp(@PathVariable String personId) {
         Usuario usuario = usuarioService.xp(personId);
-        return (usuario != null) ? ResponseEntity.status(HttpStatus.OK).body(usuario) : ResponseEntity.status(HttpStatus.UNAUTHORIZED).build();
+        return (usuario != null) ? ResponseEntity.status(HttpStatus.OK).body(usuario) : ResponseEntity.status(HttpStatus.NOT_FOUND).build();
     }
 }
