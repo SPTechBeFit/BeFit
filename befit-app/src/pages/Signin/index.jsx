@@ -4,6 +4,8 @@ import Button from "../../components/Button";
 import * as C from "./styles";
 import { Link, useNavigate } from "react-router-dom";
 import useAuth from "../../hooks/useAuth";
+import Header from "../../components/Header/Header"
+import Footer from "../../components/Footer/Footer"
 
 const Signin = () => {
   const { signin } = useAuth();
@@ -30,15 +32,19 @@ const Signin = () => {
   };
 
   return (
-    <C.Container>
-      <C.Label>SISTEMA DE LOGIN</C.Label>
+    <>
+    <Header/>
+    <C.Container>  
+      <C.Label>Entre com seu email e senha</C.Label>
       <C.Content>
+        EMAIL
         <Input
           type="email"
           placeholder="Digite seu E-mail"
           value={email}
           onChange={(e) => [setEmail(e.target.value), setError("")]}
         />
+        SENHA
         <Input
           type="password"
           placeholder="Digite sua Senha"
@@ -55,6 +61,8 @@ const Signin = () => {
         </C.LabelSignup>
       </C.Content>
     </C.Container>
+    <Footer/>
+    </>
   );
 };
 

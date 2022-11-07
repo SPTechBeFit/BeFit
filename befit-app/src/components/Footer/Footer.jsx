@@ -1,6 +1,7 @@
 import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom'
+import "./style.css"
 
-function footer() {
+function Footer() {
     return (
         <>
             <div className="container-footer">
@@ -10,7 +11,7 @@ function footer() {
                 <div className="options-footer">
                     <ul>
                         <li> <Link link to ="/" ><a>Home</a></Link></li>
-                        <li> <Link link to ="/signin" ><a>Exercicios</a></Link></li>
+                        {/* <li> <Link link to ="/signin" ><a>Exercicios</a></Link></li> */}
                         <li> <Link link to ="/sobre" ><a>Sobre</a></Link></li>
                         <li> <Link link to ="/signin" ><a>Começar</a></Link></li>
                     </ul>
@@ -21,4 +22,4 @@ function footer() {
     )
 }
 
-export default footer;
+export default Footer;

@@ -13,7 +13,7 @@ function Header() {
           <div className='options'>
             <ul>
               <li> <NavLink to="/" activeClassName="active" end> <a>Home</a></NavLink></li>
-              <li> <NavLink to="/signin" activeClassName="active"> <a>Exercícios</a></NavLink></li>
+              {/* <li> <NavLink to="/exerciciosHome" activeClassName="active"> <a>Exercícios</a></NavLink></li> */}
               {teste() && <li> <NavLink to="/sobre" activeClassName="active"><a>Sobre</a></NavLink></li>}
               {teste() && <li> <NavLink to="/signin"> <a className='loginButton'>Começar</a> </NavLink></li>}
              

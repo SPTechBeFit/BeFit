@@ -4,8 +4,11 @@ import Button from "../../components/Button";
 import * as C from "./styles";
 import { Link, useNavigate } from "react-router-dom";
 import useAuth from "../../hooks/useAuth";
+import Header from "../../components/Header/Header";
+import Footer from "../../components/Footer/Footer";
 
 const Signup = () => {
+  const [nome, setNome] = useState("");
   const [email, setEmail] = useState("");
   const [emailConf, setEmailConf] = useState("");
   const [senha, setSenha] = useState("");
@@ -35,21 +38,33 @@ const Signup = () => {
   };
 
   return (
+    <>
+    <Header/>
     <C.Container>
-      <C.Label>SISTEMA DE LOGIN</C.Label>
+      <C.Label>CADASTRO</C.Label>
       <C.Content>
+        NOME
+      <Input
+          type="text"
+          placeholder="Digite seu nome"
+          value={nome}
+          onChange={(e) => [setNome(e.target.value), setError("")]}
+        />
+        EMAIL
         <Input
           type="email"
           placeholder="Digite seu E-mail"
           value={email}
           onChange={(e) => [setEmail(e.target.value), setError("")]}
         />
+        CONFIRMA EMAIL
         <Input
           type="email"
           placeholder="Confirme seu E-mail"
           value={emailConf}
           onChange={(e) => [setEmailConf(e.target.value), setError("")]}
         />
+        SENHA
         <Input
           type="password"
           placeholder="Digite sua Senha"
@@ -66,6 +81,8 @@ const Signup = () => {
         </C.LabelSignin>
       </C.Content>
     </C.Container>
+    <Footer/>
+    </>
   );
 };
 
