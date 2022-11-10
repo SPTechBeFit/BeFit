@@ -1,5 +1,5 @@
-import BannerSobre from '../assets/images/banners/bannerSobre.png'
-import FooterApp from '../assets/images/banners/bannerApp.png';
+import BannerSobre from '../../assets/images/banners/bannerSobre.png'
+import FooterApp from '../../assets/images/banners/bannerApp.png';
 
 
 function ContainerSobreDietas() {
@@ -9,8 +9,8 @@ function ContainerSobreDietas() {
                 <img src={BannerSobre} alt="Sobre nos" className='banner-sobre' />
                 <div className="texto-sobre">
                     <p>
-                        Um dos nossos objetivos é, além de sugerir treinos para nosso usuarios, sugerir também
-                        dietas para serem seguidas, junto com os nossos treinos para um melhor resultado para 
+                        Um dos nossos objetivos é, além de sugerir dietas para nosso usuarios, sugerir também
+                        uma série de exercicios  em forma de treinos diários para serem seguidos, junto com as nossas dietas para um melhor resultado para 
                         seus treinos e sua saúde
                     </p>
                     <br></br>
@@ -23,7 +23,7 @@ function ContainerSobreDietas() {
                     <br></br>
                     <br></br>
                     <p>
-                        O BeFit é mais que um site de dietas.
+                        O BeFit é mais que um site de dietas ou exercicios.
                         Ele é um site de saúde que te ajuda a aprender sobre seus hábitos,
                         ver como você come, fazer escolhas de alimentação mais inteligentes,
                         encontrar motivação e apoio, e alcançar suas metas.

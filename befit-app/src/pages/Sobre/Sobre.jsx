@@ -1,5 +1,5 @@
 import Header from '../../components/Header/Header.jsx'
-import ContainerSobre from '../../components/ContainerSobre.jsx'
+import ContainerSobre from '../../components/Containers/ContainerSobre.jsx'
 import Footer from '../../components/Footer/Footer.jsx';
 
 

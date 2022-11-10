@@ -1,5 +1,5 @@
 import Header from '../../components/Header/Header.jsx'
-import ContainerHome from '../../components/ContainerHome.jsx'
+import ContainerHome from '../../components/Containers/ContainerHome.jsx'
 import Footer from "../../components/Footer/Footer"
 
 

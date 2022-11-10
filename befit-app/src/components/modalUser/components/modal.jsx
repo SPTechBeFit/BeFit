@@ -1,11 +1,10 @@
-
-import React, { useEffect, useState } from "react"
+import CardExercicio from '../../CardExercicio/index'
+import { useState, useEffect } from "react";
 import api from '../../services/api.js'
-import CardExercicio from '../CardExercicio/index'
 
 
 
-function ModalUser() {
+function ModalUser(props) {
     const [treinos, setTreinos] = useState([]);
 
 
@@ -25,11 +24,10 @@ function ModalUser() {
                 console.log(errorOcorrido)          // exibindo o erro que ocorreu na requisição
             });
     }
+
     return (
         <>
-            <div className="identificacaoModal"><h1>Pesquisar treinos</h1>
-
-            </div>
+            <div className="identificacaoModal"><h1>Pesquisar treinos</h1></div>
             <div className="modal">
                 {
                     treinos.map((treinos, index) => {
@@ -39,13 +37,12 @@ function ModalUser() {
                                 id={treinos.id} // passando id da música
                                 nome={treinos.nome}
                                 descricao={treinos.descricao}
+                                imagem={treinos.imagem}
                             />
                         );
                     })
                 }
             </div>
-
-
         </>
     )
 }

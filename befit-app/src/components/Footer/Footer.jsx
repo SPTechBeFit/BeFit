@@ -1,7 +1,10 @@
-import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom'
+import { BrowserRouter as Router, Routes, Route, Link, useNavigate} from 'react-router-dom'
 import "./style.css"
 
 function Footer() {
+
+    const navigate = useNavigate();
+
     return (
         <>
             <div className="container-footer">
@@ -10,10 +13,9 @@ function Footer() {
                 </div>
                 <div className="options-footer">
                     <ul>
-                        <li> <Link link to ="/" ><a>Home</a></Link></li>
-                        {/* <li> <Link link to ="/signin" ><a>Exercicios</a></Link></li> */}
-                        <li> <Link link to ="/sobre" ><a>Sobre</a></Link></li>
-                        <li> <Link link to ="/signin" ><a>Começar</a></Link></li>
+                        <li onClick={() => navigate("/")}>Home</li>
+                        <li onClick={() => navigate("/sobre")}>  Sobre</li>
+                        <li onClick={() => navigate("/signin")}>Começar</li>
                     </ul>
                 </div>
             </div>

@@ -5,17 +5,12 @@ import Sobre from '../../src/pages/Sobre/Sobre.jsx'
 import SobreDietas from '../../src/pages/Sobre/SobreDietas.jsx'
 import SobreExercicios from '../../src/pages/Sobre/sobreExercicios.jsx'
 import Signin from '../pages/Signin/index.jsx'
-import Signup from '../../src/pages/Singup/index.js'
+import Signup from '../../src/pages/Singup/index.jsx'
 import { Fragment } from "react";
 import useAuth from "../hooks/useAuth";
 import UserExercicios from "../pages/TreinoUsuario/TreinoUsuario.jsx"
-import Treino from "../pages/Treino/index"
 
-const Private = ({ Item }) => {
-    const { signed } = useAuth();
-  
-    return signed > 0 ? <Item /> : <Signin />;
-  };
+
 
 const RoutesApp = () => {
     return (
@@ -30,7 +25,7 @@ const RoutesApp = () => {
                     <Route exact path="/sobre/dietas" element={<SobreDietas />} />
                     <Route exact path="/exerciciosHome" element={<SobreExercicios />} />
                     <Route exact path="/exercicios" element={<UserExercicios />} />
-                    <Route exact path="/treino/" element={<Treino />} />
+                    
 
                     {/* <Route path="/exercicios" element={<Private Item={Exercicios} />} /> */}
                 </Routes>

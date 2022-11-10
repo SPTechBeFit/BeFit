@@ -43,7 +43,9 @@
 
 .banner1-home {
   object-fit: cover;
-  height: 615px;
+  height: 295px;
+  width: 60vw;
+  margin-top: 15vh;
 }
 
 .container-home-texto {
@@ -72,7 +74,24 @@ a {
   display: flex;
   flex-direction: column;
   flex-wrap: nowrap;
+  object-fit: cover;
+  height: 295px;
+  width: 60vw;
+  margin-top: 15vh;
   justify-content: space-between;
+  margin-bottom: 20vh;
+}
+
+.banner4-home {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  object-fit: cover;
+  height: 295px;
+  width: 60vw;
+  margin-top: 15vh;
+  justify-content: space-between;
+  margin-bottom: 20vh;
 }
 
 .banner3-exercicio-home {
@@ -168,11 +187,12 @@ a {
   .container-home {
     z-index: 1;
     margin: 0vh 0vw 0 0vw;
-    height: 100vh;
+    
   }
 
   .banner2-home-texto {
     display: flex;
+    object-fit: cover;
     /* margin: 5vh 0px 5vh 0px; */
     justify-content: center;
     font-size: 36px;
@@ -180,13 +200,29 @@ a {
     font-weight: 600;
   }
 
+
+  .banner3-home{
+    width: 100%;
+    object-fit: cover;
+  }
+  
   .banner3-exercicio-home {
     object-fit: cover;
     width: 100%;
   }
 
+.banner4-home{
+  object-fit: cover;
+  width: 100%;
+}
+
   .banner4-dietas-home {
     object-fit: cover;
     width: 100%;
   }
+
+  .container-footer {
+    position: fixed;
+  }
+
 }

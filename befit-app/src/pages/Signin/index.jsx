@@ -6,6 +6,7 @@ import { Link, useNavigate } from "react-router-dom";
 import useAuth from "../../hooks/useAuth";
 import Header from "../../components/Header/Header"
 import Footer from "../../components/Footer/Footer"
+import axios from "axios";
 
 const Signin = () => {
   const { signin } = useAuth();
@@ -16,6 +17,18 @@ const Signin = () => {
   const [error, setError] = useState("");
 
   const handleLogin = () => {
+
+
+    function consultaUsuario() {
+      axios.post('http://localhost:8080/usuarios', {
+
+        email: email,
+        senha: senha,
+      })
+  
+    }
+  
+
     if (!email | !senha) {
       setError("Preencha todos os campos");
       return;
@@ -28,7 +41,7 @@ const Signin = () => {
       return;
     }
 
-    navigate("/home");
+    navigate("/");
   };
 
   return (

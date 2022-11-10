@@ -1,11 +1,11 @@
-import Banner1 from '../assets/images/banners/Banner1.jpg';
-import Banner3Exercicio from '../assets/images/banners/banner3.jpg';
-import Banner4Dietas from '../assets/images/banners/banner4.jpg';
-import Banner5Sobre from '../assets/images/banners/banner5.jpg';
-import BotaoTreino from '../assets/images/buttons/treinosButton.jpg';
-import BotaoDieta from '../assets/images/buttons/dietasButton.jpg';
+import Banner1 from '../../assets/images/banners/Banner1.jpg';
+import Banner3Exercicio from '../../assets/images/banners/banner3.jpg';
+import Banner4Dietas from '../../assets/images/banners/banner4.jpg';
+import Banner5Sobre from '../../assets/images/banners/banner5.jpg';
+import BotaoTreino from '../../assets/images/buttons/treinosButton.jpg';
+import BotaoDieta from '../../assets/images/buttons/dietasButton.jpg';
 import Button from '@material-ui/core/Button';
-import FooterApp from '../assets/images/banners/bannerApp.png';
+import FooterApp from '../../assets/images/banners/bannerApp.png';
 import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom'
 
 function ContainerHomePage() {
