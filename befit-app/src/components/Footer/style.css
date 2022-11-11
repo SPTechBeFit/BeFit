@@ -1,6 +1,7 @@
 .container-footer {
     display: flex;
     height: 25vh;
+    width: 100vw;
     background-color: black;
     flex-direction: column;
     flex-wrap: wrap;

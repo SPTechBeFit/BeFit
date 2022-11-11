@@ -6,6 +6,12 @@ import React, { useState } from "react";
 import { BrowserRouter as Router, Routes, Route, Link, NavLink } from 'react-router-dom'
 import axios from 'axios';
 function Header(props) {
+
+  const pages = [{
+    title: 'pesquisar',
+    source: '/usuario/exercicios'
+  }]
+
   axios.get('http://localhost:8080/usuarios')
   const [nome, setNome] = useState("");
   return (<>
@@ -20,9 +26,9 @@ function Header(props) {
               {/* <li> <NavLink to="/exerciciosHome" activeClassName="active"> <a>Exercícios</a></NavLink></li> */}
               {headerChange() && <li> <NavLink to="/sobre" activeClassName="active"><a>Sobre</a></NavLink></li>}
               {headerChange() && <li> <NavLink to="/signin"> <a>Começar</a> </NavLink></li>}
-              {headerChangeUserPage() && <li>  <a className='user'>Ola {props.nome}!</a></li>}
+              {headerChangeUserPage() && <li>  <a className='user'>Olá {localStorage["users_name{}"]}!</a></li>}
               {headerChangeUserPage() && <li> <a>Sair</a></li>}
-         
+
 
             </ul>
             <PersistentDrawerLeft />
@@ -37,19 +43,15 @@ export default Header;
 
 
 function headerChange() {
-  if (window.location.pathname === '/exercicios') {
+  if (window.location.pathname === '/usuario/exercicios') {
     return false
   } else {
     return true
   }
-
-
-
-
 }
 
 function headerChangeUserPage() {
-  if (window.location.pathname === '/exercicios') {
+  if (window.location.pathname === '/usuario/exercicios') {
     return true
   } else {
     return false

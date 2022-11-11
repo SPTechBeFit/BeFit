@@ -5,8 +5,9 @@ import CardExercicio from '../CardExercicio/index'
 
 
 
-function ModalUser() {
+function ModalUser(props) {
     const [treinos, setTreinos] = useState([]);
+  
 
 
 
@@ -15,7 +16,6 @@ function ModalUser() {
     function listar() {
         console.log("Requisição está sendo feita: ");
         const treinos = api.get('http://localhost:8080/treinos')
-
         treinos                               // invocando o método "get" do axios utilizando a URL base instanciada em "api.js"
             .then(function (respostaObtida) {       // método get responde uma Promise que será resolvida, e quando obtiver uma resposta, cairá no "then" recebendo a resposta como parâmetro
                 console.log(respostaObtida.data);   // exibindo o atributo "data", que possui o vetor de dados do objeto de resposta que foi recebido
@@ -27,7 +27,7 @@ function ModalUser() {
     }
     return (
         <>
-            <div className="identificacaoModal"><h1>Pesquisar treinos</h1>
+            <div className="identificacaoModal"><h1>teste</h1>
 
             </div>
             <div className="modal">

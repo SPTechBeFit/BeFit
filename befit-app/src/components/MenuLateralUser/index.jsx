@@ -2,7 +2,7 @@
 import style from './style.css'
 import menuImage from '../../assets/images/logo/menuIconWhite.jpg'
 
-import React, {useState}  from 'react';
+import React, { useState } from 'react';
 import * as FaIcons from 'react-icons/fa';
 import * as AiIcons from 'react-icons/ai';
 import { Link, NavLink } from 'react-router-dom';
@@ -16,27 +16,19 @@ function MenuUser() {
 
   return (
     <>
-      <IconContext.Provider value={{ color: '#fff' }}>
-        <div className='navbar'>
-          <img src={ menuImage } onClick={showSidebar} alt="" id= "imagemMenu" />
-          <nav className={sidebar ? 'nav-menu ativado' : 'nav-menu'}>
-          <ul className='nav-menu-items' onClick={showSidebar}>
-            {SidebarData.map((item, index) => {
-              return (
-                //<li> <NavLink to="/"  activeClassName="active" end> <a>Home</a></NavLink></li>
-
-                <li key={index} className={item.cName} activeClassName={item.activeClassName}>
-                  <NavLink to={item.path}>
-                    <span>{item.title}</span>
-                  </NavLink>
-                </li>
-              );
-            })}
-          </ul>
-        </nav>
-        </div>
-        
-      </IconContext.Provider>
+      <nav className='nav-menu'>
+        <ul className='nav-menu-items'>
+          {SidebarData.map((item, index) => {
+            return (
+              <li key={index} className={item.cName} activeClassName={item.activeClassName}>
+                <NavLink to={item.path}>
+                  <a>{item.title}</a>
+                </NavLink>
+              </li>
+            );
+          })}
+        </ul>
+      </nav>
     </>
   );
 }

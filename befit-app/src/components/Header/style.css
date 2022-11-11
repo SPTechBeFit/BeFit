@@ -1,105 +1,106 @@
 .container {
-    display: flex;
-  
-  }
+  display: flex;
 
-  .active{
-    color:#fcfcfc;
-    background-color: #000000;
-    border-radius: 10px;
-   }
+}
 
-   .active a{
-    color:white ;
-   }
-  
-  .header {
-    width: 100%;
-    height: 82px;
-    position: fixed;
-    z-index: 100;
-    background: #c2c2c2;
-  
-  }
-  
-  nav {
-    align-items: center;
-    justify-content: space-between;
-    position: fixed;
-    z-index: 9999;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 80px;
-  }
-  
-  
-  .logo {
-    height: 72px;
-    margin-left: 5vw;
-  }
-  
-  nav ul {
-    display: flex;
-    align-items: center;
-  }
-  
-  nav ul li {
-    display: inline-block;
-    margin: 0;
-    padding: 0em .1em;
-    height: 25%;
-  }
-  
-  nav a {
-    font-family: Overpass;
-    display: block;
-    padding: 5px 50px 5px;
-  
-    color: black;
-    text-decoration: none;
-    font-size: 1.15em;
-    font-weight: bold;
-  }
-  
-  .activeButton {
-    color: white;
-    background: #000000;
-    border-radius: 4px;
-  
-  }
-  
-  .loginButton {
-    color: white;
-    background: #3B24AD;
-    border-radius: 4px;
-  
-  }
-  
-  
-  
-  .options {
-    width: 25%;
-    /* margin: 0 auto; */
-    display: flex;
-    height: 100%;
-    margin: 0vh 10vw 0 25vw;
-    position: absolute;
-    padding: 0 10vw 0vh 25vw;
-    justify-content: space-around;
-  
-  }
+.active {
+  color: #fcfcfc;
+  background-color: #000000;
+  border-radius: 10px;
+}
+
+.active a {
+  color: white;
+}
+
+.header {
+  width: 100%;
+  height: 82px;
+  position: fixed;
+  z-index: 100;
+  background: #c2c2c2;
+
+}
+
+nav {
+  align-items: center;
+  justify-content: space-between;
+  position: fixed;
+  z-index: 9999;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 80px;
+}
 
 
-  /* Menu para mobile e responsivo
+.logo {
+  height: 72px;
+  margin-left: 9vw;
+}
+
+nav ul {
+  display: flex;
+  align-items: center;
+}
+
+nav ul li {
+  display: inline-block;
+  margin: 0;
+  padding: 0em .1em;
+  height: 25%;
+}
+
+nav a {
+  font-family: Overpass;
+  display: block;
+  padding: 5px 50px 5px;
+
+  color: black;
+  text-decoration: none;
+  font-size: 1.15em;
+  font-weight: bold;
+}
+
+.activeButton {
+  color: white;
+  background: #000000;
+  border-radius: 4px;
+
+}
+
+.loginButton {
+  color: white;
+  background: #3B24AD;
+  border-radius: 4px;
+
+}
+
+
+
+.options {
+  width: 25%;
+  /* margin: 0 auto; */
+  display: flex;
+  height: 100%;
+  margin: -1vh 10vw 0 25vw;
+  position: absolute;
+  padding: 0 10vw 0vh 25vw;
+  justify-content: space-around;
+
+
+}
+
+
+/* Menu para mobile e responsivo
 _________________________________ */
 @media only screen and (max-width: 1312px) {
-  
-  .sideMenuButtonImg{
+
+  .sideMenuButtonImg {
     display: block !important;
     position: absolute;
-    margin: 5vh 0vw 0 15vw;
-    
+    margin: 7vh 0vw 0 40vw;
+
   }
 
 
@@ -123,9 +124,41 @@ _________________________________ */
 
 }
 
-.sideMenuButtonImg{
-  height: 46px ;
-  display: none;
-  
+
+@media only screen and (max-width: 800px) {
+
+  .sideMenuButtonImg {
+    display: block !important;
+    position: absolute;
+    margin: 7vh 0vw 0 15vw;
+
+  }
+
+
+
+  nav ul li {
+
+    display: none !important;
+  }
+
+  .lateral-m {
+    display: block !important;
+  }
+
+  .logo {
+    margin-left: 5% !important;
+    position: fixed !important;
+    margin-right: 10% !important;
+
+  }
+
+
+
 }
-  
+
+
+.sideMenuButtonImg {
+  height: 46px;
+  display: none;
+
+}

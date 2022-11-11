@@ -28,16 +28,16 @@ const Signup = () => {
       return;
     }
 
-    const res = signup(email, senha);
+    const res = signup(email, senha, nome);
 
     if (res) {
       setError(res);
       return;
     }
-
+    console.log(res)
     alert("Usuário cadatrado com sucesso!");
-    navigate("/signin");
-    adicionarUsuario()
+    //navigate("/signin");
+   adicionarUsuario()
   };
 
 
@@ -89,7 +89,7 @@ const Signup = () => {
           <C.LabelSignin>
             Já tem uma conta?
             <C.Strong>
-              <Link to="/">&nbsp;Entre</Link>
+              <Link to="/signin">&nbsp;Entre</Link>
             </C.Strong>
           </C.LabelSignin>
         </C.Content>

@@ -41,7 +41,7 @@ const Signin = () => {
       return;
     }
 
-    navigate("/");
+    navigate("/usuario/exercicios");
   };
 
   return (

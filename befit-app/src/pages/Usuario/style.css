@@ -1,5 +1,5 @@
-.bodyTreinoUser {
-    margin: 0vh 10vw 0px 15vw;}
+.bodyUser {
+    margin: 0vh 10vw 0px 10vw;}
 
 
 #boxCover {
@@ -20,3 +20,22 @@
     height: 140px;
     margin-top: 30px;
 }
+
+.bannerUser{
+    width: 100%;
+
+    object-fit: cover;
+    margin: 8vh 0px 0px 0px;
+}
+
+.containerBanner{
+    margin: 0px 0vw -1vh 0vw;
+}
+
+
+@media only screen and (max-width: 1312px) {
+
+    .bodyUser {
+        margin: 0vh 0vw 0px 0vw;}
+  
+  }

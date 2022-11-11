@@ -6,25 +6,25 @@ import * as IoIcons from 'react-icons/io';
 export const SidebarData = [
   {
     title: 'Treinos',
-    path: '/exercicios',
+    path: '/usuario/exercicios',
     cName: 'nav-text',
     activeClassName: 'active'
   },
   {
     title: 'Meus Treinos',
-    path: '/meusTreinos',
+    path: '/usuario/meustreinos',
     cName: 'nav-text',
     activeClassName: 'active'
   },
   {
     title: 'Criar Treinos',
-    path: '/criar/treinos',
+    path: '/usuario/criar/treinos',
     cName: 'nav-text',
     activeClassName: 'active'
   },
   {
     title: 'Dietas',
-    path: '/criar/dietas',
+    path: '/usuario/criar/dietas',
     cName: 'nav-text',
     activeClassName: 'active'
   }
