@@ -1,7 +1,8 @@
-.bannerPesquisaTreino{
+.bannerUser{
     width: 100%;
     object-fit: cover;
     margin: 8vh 0px 0px 0px;
+    height: 28vh!important;
 }
 
 .containerBanner{

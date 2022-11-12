@@ -24,7 +24,7 @@ export const SidebarData = [
   },
   {
     title: 'Dietas',
-    path: '/usuario/criar/dietas',
+    path: '/usuario/dietas',
     cName: 'nav-text',
     activeClassName: 'active'
   }

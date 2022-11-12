@@ -1,5 +1,5 @@
-import BannerSobre from '../../assets/images/banners/bannerSobre.png'
-import FooterApp from '../../assets/images/banners/bannerApp.png';
+import BannerSobre from '../../assets/images/banners/bannerSobre.jpg'
+import FooterApp from '../../assets/images/banners/bannerApp.jpg';
 
 
 function ContainerSobreDietas() {

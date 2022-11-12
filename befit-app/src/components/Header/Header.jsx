@@ -7,14 +7,62 @@ import { BrowserRouter as Router, Routes, Route, Link, NavLink } from 'react-rou
 import axios from 'axios';
 function Header(props) {
 
-  const pages = [{
-    title: 'pesquisar',
-    source: '/usuario/exercicios'
-  }]
+  const pageAtual = (window.location.pathname);
+  
+  function headerChange() {
+    switch (pageAtual) {
+      case '/usuario/exercicios':
+       return false
+
+
+      case '/usuario/meustreinos':
+       return false
+
+
+      case '/usuario/criar/treinos':
+       return false
+
+
+      case '/usuario/dietas':
+       return false
+
+
+      default:
+        return true
+
+    }
+
+  }
+
+  function headerChangeUserPage() {
+    switch (pageAtual) {
+      case '/usuario/exercicios':
+       return true
+
+
+      case '/usuario/meustreinos':
+       return true
+
+
+      case '/usuario/criar/treinos':
+       return true
+
+
+      case '/usuario/dietas':
+       return true
+
+
+      default:
+        return false
+
+    }
+  }
 
   axios.get('http://localhost:8080/usuarios')
   const [nome, setNome] = useState("");
   return (<>
+
+
 
     <div className="header">
       <nav className='navHeader'>
@@ -26,10 +74,8 @@ function Header(props) {
               {/* <li> <NavLink to="/exerciciosHome" activeClassName="active"> <a>Exercícios</a></NavLink></li> */}
               {headerChange() && <li> <NavLink to="/sobre" activeClassName="active"><a>Sobre</a></NavLink></li>}
               {headerChange() && <li> <NavLink to="/signin"> <a>Começar</a> </NavLink></li>}
-              {headerChangeUserPage() && <li>  <a className='user'>Olá {localStorage["users_name{}"]}!</a></li>}
+              {headerChangeUserPage() && <li>  <a className='user'>Olá {localStorage[""]}!</a></li>}
               {headerChangeUserPage() && <li> <a>Sair</a></li>}
-
-
             </ul>
             <PersistentDrawerLeft />
           </div>
@@ -42,18 +88,8 @@ function Header(props) {
 export default Header;
 
 
-function headerChange() {
-  if (window.location.pathname === '/usuario/exercicios') {
-    return false
-  } else {
-    return true
-  }
-}
 
-function headerChangeUserPage() {
-  if (window.location.pathname === '/usuario/exercicios') {
-    return true
-  } else {
-    return false
-  }
-}
+
+
+
+

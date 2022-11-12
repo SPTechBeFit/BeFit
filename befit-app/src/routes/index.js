@@ -27,8 +27,8 @@ const RoutesApp = () => {
                     <Route exact path="/exerciciosHome" element={<SobreExercicios />} />
                     <Route exact path="/usuario/exercicios" element={<UserExercicios />} />
                     <Route exact path="/usuario/meustreinos" element={<UserExercicios />} />
-                    
-
+                    <Route exact path="/usuario/criar/treinos" element={<UserExercicios />} />
+                    <Route exact path="/usuario/dietas" element={<UserExercicios />} />
                     {/* <Route path="/exercicios" element={<Private Item={Exercicios} />} /> */}
                 </Routes>
             </Fragment>

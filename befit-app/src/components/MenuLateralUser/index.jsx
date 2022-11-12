@@ -1,19 +1,13 @@
 
 import style from './style.css'
-import menuImage from '../../assets/images/logo/menuIconWhite.jpg'
 
+import { BrowserRouter as Router, Routes, Route, BrowserRouter } from 'react-router-dom'
 import React, { useState } from 'react';
-import * as FaIcons from 'react-icons/fa';
-import * as AiIcons from 'react-icons/ai';
 import { Link, NavLink } from 'react-router-dom';
 import { SidebarData } from './SidebarData';
-import { IconContext } from 'react-icons';
+
 
 function MenuUser() {
-  const [sidebar, setSidebar] = useState(false);
-
-  const showSidebar = () => setSidebar(!sidebar);
-
   return (
     <>
       <nav className='nav-menu'>

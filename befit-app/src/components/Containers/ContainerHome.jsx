@@ -5,7 +5,7 @@ import Banner5Sobre from '../../assets/images/banners/banner5.jpg';
 import BotaoTreino from '../../assets/images/buttons/treinosButton.jpg';
 import BotaoDieta from '../../assets/images/buttons/dietasButton.jpg';
 import Button from '@material-ui/core/Button';
-import FooterApp from '../../assets/images/banners/bannerApp.png';
+import FooterApp from '../../assets/images/banners/bannerApp.jpg';
 import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom'
 
 function ContainerHomePage() {
