@@ -4,10 +4,63 @@ import api from '../../services/api.js'
 import CardExercicio from '../CardExercicio/index'
 
 
-
 function ModalUser(props) {
+
+    const titulos = [
+        {
+            id: 1,
+            title: 'Pesquisar treinos',
+
+        },
+        {
+
+            id: 2,
+            title: 'Meus Treinos',
+
+        },
+        {
+
+            id: 3,
+            title: 'Criar Treinos',
+
+        },
+        {
+            id: 4,
+            title: 'Dietas',
+
+        }
+    ]
+
+    const pageAtual = (window.location.pathname);
+
+
+    const nomeFiltrado = titulos.filter(titulos => {
+        switch (pageAtual) {
+            case '/usuario/exercicios':
+                return titulos.title === 'Pesquisar treinos';
+
+
+            case '/usuario/meustreinos':
+                return titulos.title === 'Meus Treinos';
+
+
+            case '/usuario/criar/treinos':
+                return titulos.title === 'Criar Treinos';
+
+
+            case '/usuario/dietas':
+                return titulos.title === 'Dietas';
+
+
+            default:
+                console.log('teste');
+
+        }
+    });
+
+
+
     const [treinos, setTreinos] = useState([]);
-  
 
 
 
@@ -27,18 +80,23 @@ function ModalUser(props) {
     }
     return (
         <>
-            <div className="identificacaoModal"><h1>teste</h1>
+            <div className="identificacaoModal">{nomeFiltrado.map((item) =>
+                <h1>{item.title} </h1>
+            )}
 
             </div>
             <div className="modal">
+
                 {
                     treinos.map((treinos, index) => {
                         return (
+
                             <CardExercicio
                                 key={treinos.id}
                                 id={treinos.id} // passando id da música
                                 nome={treinos.nome}
                                 descricao={treinos.descricao}
+                                imagem={treinos.imagem}
                             />
                         );
                     })
@@ -49,5 +107,6 @@ function ModalUser(props) {
         </>
     )
 }
+
 
 export default ModalUser

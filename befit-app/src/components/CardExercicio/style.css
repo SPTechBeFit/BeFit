@@ -3,6 +3,25 @@
   width: 10px;
 }
 
+button {
+  outline: white solid 0.5px;
+  padding: 6px 8px;
+  border-radius: 3px;
+  color: rgba(0, 0, 0, 0.4);
+  font-weight: bold;
+  border: none;
+  margin: 0;
+  background: rgba(0, 0, 0, .30);
+  font-family: helvetica, arial, sans-serif;
+  font-size: 19pt;
+}
+
+button:hover {
+  background-color: rgba(6, 18, 72, 0.491);
+
+  transition: ease-in 0.2s;
+}
+
 /* Track */
 ::-webkit-scrollbar-track {
   background: #434343;
@@ -21,27 +40,33 @@
 
 .imagemCoverTreino {
   background-image: url(../../assets/images/exerciciosCover/exercioCardio.jpg);
-  height: auto;
-  width: auto;
-  max-width: 200px;
-  max-height: 200px;
+  display: flex;
+  /* height: auto; */
+  /* width: auto; */
+  /* max-width: 126px; */
+  width: 130px;
+
+  /* max-height: 126px; */
+  flex-direction: column;
 }
 
-.image{
-      /* height: auto; */
-      height: 15vh;
-      /* width: 0vw; */
-      background-size: cover;
+.image {
+  /* height: auto; */
+  height: 15vh;
+  /* width: 0vw; */
+  background-size: cover;
 }
+
 .modal {
   display: flex;
   overflow-y: auto;
-  height: 53vh;
+  height: 51vh;
   background-color: #8C8C8C;
   gap: 30px;
   flex-direction: row;
   justify-content: center;
   flex-wrap: wrap;
+  padding: 15px 0px 0px 0px;
 
 }
 
@@ -75,4 +100,43 @@
   justify-content: center;
   font-size: 25px;
 
+}
+
+
+.boxTreino {
+  height: -moz-fit-content;
+  height: fit-content;
+  width: fit-content;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  align-items: center;
+  /* height: 253px; */
+  max-width: 250px;
+  /* width: 333px; */
+  max-height: 326px;
+  gap: 30px;
+  align-content: center;
+  padding: 10px 7px 10px 7px;
+}
+
+
+.infoTreino {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 30px;
+  color: white;
+}
+
+.likeButton {
+  margin: 0px 0px 0px -92px;
+  height: 64px;
+  position: absolute;
 }
