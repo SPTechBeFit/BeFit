@@ -4,29 +4,34 @@ import api from '../../services/api.js'
 import CardExercicio from '../CardExercicio/index'
 
 
+
 function ModalUser(props) {
 
     const titulos = [
         {
             id: 1,
             title: 'Pesquisar treinos',
+            teste: '/catalogo/5bb7a32c-20ff-42d2-b684-33bf61f6eb13'
 
         },
         {
 
             id: 2,
             title: 'Meus Treinos',
+            teste: '/favoritos/5bb7a32c-20ff-42d2-b684-33bf61f6eb13'
 
         },
         {
 
             id: 3,
             title: 'Criar Treinos',
+            teste: '/favoritos/5bb7a32c-20ff-42d2-b684-33bf61f6eb13'
 
         },
         {
             id: 4,
             title: 'Dietas',
+            teste: '/favoritos/5bb7a32c-20ff-42d2-b684-33bf61f6eb13'
 
         }
     ]
@@ -34,22 +39,23 @@ function ModalUser(props) {
     const pageAtual = (window.location.pathname);
 
 
+
     const nomeFiltrado = titulos.filter(titulos => {
         switch (pageAtual) {
             case '/usuario/exercicios':
-                return titulos.title === 'Pesquisar treinos';
+                return titulos.title === 'Pesquisar treinos' && titulos.teste === '/catalogo/5bb7a32c-20ff-42d2-b684-33bf61f6eb13';
 
 
             case '/usuario/meustreinos':
-                return titulos.title === 'Meus Treinos';
+                return titulos.title === 'Meus Treinos' && titulos.teste === '/favoritos/5bb7a32c-20ff-42d2-b684-33bf61f6eb13';
 
 
             case '/usuario/criar/treinos':
-                return titulos.title === 'Criar Treinos';
+                return titulos.title === 'Criar Treinos' && titulos.teste === '/favoritos/5bb7a32c-20ff-42d2-b684-33bf61f6eb13';
 
 
             case '/usuario/dietas':
-                return titulos.title === 'Dietas';
+                return titulos.title === 'Dietas' && titulos.teste === '/favoritos/5bb7a32c-20ff-42d2-b684-33bf61f6eb13';
 
 
             default:
@@ -61,27 +67,29 @@ function ModalUser(props) {
 
 
     const [treinos, setTreinos] = useState([]);
-
-
-
-    useEffect(() => { listar() }, [])
-
-    function listar() {
+    useEffect(() => { listar(); }, [])
+    function listar(props) {
         console.log("Requisição está sendo feita: ");
-        const treinos = api.get('http://localhost:8080/treinos')
-        treinos                               // invocando o método "get" do axios utilizando a URL base instanciada em "api.js"
-            .then(function (respostaObtida) {       // método get responde uma Promise que será resolvida, e quando obtiver uma resposta, cairá no "then" recebendo a resposta como parâmetro
-                console.log(respostaObtida.data);   // exibindo o atributo "data", que possui o vetor de dados do objeto de resposta que foi recebido
-                setTreinos(respostaObtida.data);    // utilizando o setter para alterar o valor do estado (useState) de "musicas"        
-            })
-            .catch((errorOcorrido) => {             // caso a requisição falhe, o "catch" pegará o erro, recebendo como parâmetro de uma função
-                console.log(errorOcorrido)          // exibindo o erro que ocorreu na requisição
-            });
+        nomeFiltrado.map((item) => {
+            const treinos = api.get(`${item.teste}`)
+            treinos
+                .then(function (respostaObtida) {
+                    console.log(respostaObtida.data);
+                    setTreinos(respostaObtida.data);
+
+                })
+
+                .catch((errorOcorrido) => {
+                    console.log(errorOcorrido)
+                });
+
+        })
+
     }
     return (
         <>
             <div className="identificacaoModal">{nomeFiltrado.map((item) =>
-                <h1>{item.title} </h1>
+                <h1>{item.title}</h1>
             )}
 
             </div>
@@ -93,10 +101,11 @@ function ModalUser(props) {
 
                             <CardExercicio
                                 key={treinos.id}
-                                id={treinos.id} // passando id da música
+                                id={treinos.id}
                                 nome={treinos.nome}
                                 descricao={treinos.descricao}
                                 imagem={treinos.imagem}
+                                favoritado={treinos.favoritado}
                             />
                         );
                     })
@@ -106,6 +115,8 @@ function ModalUser(props) {
 
         </>
     )
+
+
 }
 
 

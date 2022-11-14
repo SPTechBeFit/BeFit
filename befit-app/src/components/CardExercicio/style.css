@@ -138,5 +138,5 @@ button:hover {
 .likeButton {
   margin: 0px 0px 0px -92px;
   height: 64px;
-  position: absolute;
+  position: sticky;
 }

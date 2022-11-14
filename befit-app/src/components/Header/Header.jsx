@@ -60,10 +60,8 @@ function Header(props) {
 
   axios.get('http://localhost:8080/usuarios')
   const [nome, setNome] = useState("");
+  
   return (<>
-
-
-
     <div className="header">
       <nav className='navHeader'>
         <div className="container">
@@ -74,7 +72,7 @@ function Header(props) {
               {/* <li> <NavLink to="/exerciciosHome" activeClassName="active"> <a>Exercícios</a></NavLink></li> */}
               {headerChange() && <li> <NavLink to="/sobre" activeClassName="active"><a>Sobre</a></NavLink></li>}
               {headerChange() && <li> <NavLink to="/signin"> <a>Começar</a> </NavLink></li>}
-              {headerChangeUserPage() && <li>  <a className='user'>Olá {localStorage[""]}!</a></li>}
+              {headerChangeUserPage() && <li>  <a className='user'>Olá  !</a></li>}
               {headerChangeUserPage() && <li> <a>Sair</a></li>}
             </ul>
             <PersistentDrawerLeft />
