@@ -1,7 +1,7 @@
 import imagemTeste from '../../assets/images/exerciciosCover/exercioCardio.jpg'
 import style from './style.css'
-import { useState } from 'react';
-import { BrowserRouter as Router, Routes, Route, Link, NavLink, useNavigate } from 'react-router-dom'
+import { useState, useEffect } from "react"
+import { BrowserRouter as Router, Routes, Route, Link, NavLink, useNavigate, useParams } from 'react-router-dom'
 import likeButton from '../../assets/images/Icons/favoritoIcon.png'
 import likeButtonSelecionado from '../../assets/images/Icons/favoritoIconSelecionado.png'
 import api from '../../services/api'
@@ -10,7 +10,7 @@ function CardExercicio(props) {
     const imagem = {
         backgroundImage: `url(${props.imagem ? props.imagem : imagemTeste})`
     }
-    
+
     const [nome, setNome] = useState(props.nome);
     const [descricao, setDescricao] = useState(props.descricao);
     const [criador, setAno] = useState(props.ano);
@@ -55,13 +55,13 @@ function CardExercicio(props) {
 
         }
 
-
-
         //colocar codigo para api.put para mudar a propriedade de treino favorito
     }
+
+
     return (
         <>
-            <button onClick={() => navegar(`/treino/${props.id}`)} className="boxTreino">
+            <button onClick={() => navegar(`/treino/`)} className="boxTreino">
                 <div className="imagemCoverTreino">
                     <div style={imagem} className="image"></div>
                 </div>

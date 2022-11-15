@@ -8,23 +8,23 @@ import axios from 'axios';
 function Header(props) {
 
   const pageAtual = (window.location.pathname);
-  
+
   function headerChange() {
     switch (pageAtual) {
       case '/usuario/exercicios':
-       return false
+        return false
 
 
       case '/usuario/meustreinos':
-       return false
+        return false
 
 
       case '/usuario/criar/treinos':
-       return false
+        return false
 
 
       case '/usuario/dietas':
-       return false
+        return false
 
 
       default:
@@ -37,19 +37,19 @@ function Header(props) {
   function headerChangeUserPage() {
     switch (pageAtual) {
       case '/usuario/exercicios':
-       return true
+        return true
 
 
       case '/usuario/meustreinos':
-       return true
+        return true
 
 
       case '/usuario/criar/treinos':
-       return true
+        return true
 
 
       case '/usuario/dietas':
-       return true
+        return true
 
 
       default:
@@ -58,21 +58,21 @@ function Header(props) {
     }
   }
 
-  axios.get('http://localhost:8080/usuarios')
-  const [nome, setNome] = useState("");
-  
+
+
   return (<>
+
     <div className="header">
       <nav className='navHeader'>
         <div className="container">
           <Link to="/"> <img src={ImagemLogo} className="logo" /> </Link>
           <div className='options'>
             <ul>
-              <li> <NavLink to="/" activeClassName="active" end> <a>Home</a></NavLink></li>
+              <li> <NavLink to="/" activeclassName="active" end> <a>Home</a></NavLink></li>
               {/* <li> <NavLink to="/exerciciosHome" activeClassName="active"> <a>Exercícios</a></NavLink></li> */}
-              {headerChange() && <li> <NavLink to="/sobre" activeClassName="active"><a>Sobre</a></NavLink></li>}
+              {headerChange() && <li> <NavLink to="/sobre" activeclassName="active"><a>Sobre</a></NavLink></li>}
               {headerChange() && <li> <NavLink to="/signin"> <a>Começar</a> </NavLink></li>}
-              {headerChangeUserPage() && <li>  <a className='user'>Olá  !</a></li>}
+              {headerChangeUserPage() && <li>  <a className='user'>Olá {props.nome} !</a></li>}
               {headerChangeUserPage() && <li> <a>Sair</a></li>}
             </ul>
             <PersistentDrawerLeft />

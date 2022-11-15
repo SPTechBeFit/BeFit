@@ -19,14 +19,7 @@ const Signin = () => {
   const handleLogin = () => {
 
 
-    function consultaUsuario() {
-      axios.post('http://localhost:8080/usuarios', {
-
-        email: email,
-        senha: senha,
-      })
   
-    }
   
 
     if (!email | !senha) {

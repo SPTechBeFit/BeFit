@@ -10,16 +10,22 @@ import { Fragment } from "react";
 import useAuth from "../hooks/useAuth";
 import UserExercicios from "../pages/Usuario/TreinoUsuario/TreinoUsuario.jsx"
 import UserTreinos from "../pages/Usuario/MeusTreinos/MeusTreinos.jsx"
+import PagExercicios from "../pages/Usuario/PagExercicios/index.jsx"
 
+import axios from "axios";
+import { useState, useEffect } from "react"
+import { useParams } from "react-router-dom";
 
 
 const RoutesApp = () => {
+
+
     return (
 
         <BrowserRouter>
             <Fragment>
                 <Routes>
-                    <Route exact path="/" element={<Home/>} />
+                    <Route exact path="/" element={<Home />} />
                     <Route exact path="/sobre" element={<Sobre />} />
                     <Route exact path="/signin" element={<Signin />} />
                     <Route exact path="/signup" element={<Signup />} />
@@ -29,6 +35,8 @@ const RoutesApp = () => {
                     <Route exact path="/usuario/meustreinos" element={<UserExercicios />} />
                     <Route exact path="/usuario/criar/treinos" element={<UserExercicios />} />
                     <Route exact path="/usuario/dietas" element={<UserExercicios />} />
+                    <Route exact path="/treino/" element={<PagExercicios/>} />
+
                     {/* <Route path="/exercicios" element={<Private Item={Exercicios} />} /> */}
                 </Routes>
             </Fragment>
