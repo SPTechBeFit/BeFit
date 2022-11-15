@@ -82,7 +82,7 @@ function ModalUser(props) {
                 .catch((errorOcorrido) => {
                     console.log(errorOcorrido)
                 });
-
+                
         })
 
     }

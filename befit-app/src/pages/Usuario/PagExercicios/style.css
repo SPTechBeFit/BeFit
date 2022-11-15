@@ -1,0 +1,33 @@
+.imagemExercicio {
+    height: 50vh;
+    width: 100%;
+}
+
+
+.containerModal {
+    height: 50vh;
+    background-color: rgb(69, 69, 69);
+    width: 100%;
+}
+
+.infoExercicio {
+    color: white;
+    width: 100%;
+}
+
+.exercicio {
+    display: flex;
+    height: 15vh;
+    outline: white solid 0.5px;
+    padding: 6px 8px;
+    border-radius: 3px;
+    color: rgba(0, 0, 0, 0.4);
+    font-weight: bold;
+    border: none;
+    margin: 0;
+    background: rgba(0, 0, 0, .30);
+    font-family: helvetica, arial, sans-serif;
+    font-size: 19pt;
+    align-items: center;
+    flex-direction: row;
+}
