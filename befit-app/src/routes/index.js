@@ -11,6 +11,7 @@ import useAuth from "../hooks/useAuth";
 import UserExercicios from "../pages/Usuario/TreinoUsuario/TreinoUsuario.jsx"
 import UserTreinos from "../pages/Usuario/MeusTreinos/MeusTreinos.jsx"
 import PagExercicios from "../pages/Usuario/PagExercicios/index.jsx"
+import NotFound from "../pages/NotFound/index.jsx"
 
 import axios from "axios";
 import { useState, useEffect } from "react"
@@ -25,17 +26,18 @@ const RoutesApp = () => {
         <BrowserRouter>
             <Fragment>
                 <Routes>
-                    <Route exact path="/" element={<Home />} />
-                    <Route exact path="/sobre" element={<Sobre />} />
-                    <Route exact path="/signin" element={<Signin />} />
-                    <Route exact path="/signup" element={<Signup />} />
-                    <Route exact path="/sobre/dietas" element={<SobreDietas />} />
-                    <Route exact path="/exerciciosHome" element={<SobreExercicios />} />
-                    <Route exact path="/usuario/exercicios" element={<UserExercicios />} />
-                    <Route exact path="/usuario/meustreinos" element={<UserExercicios />} />
-                    <Route exact path="/usuario/criar/treinos" element={<UserExercicios />} />
-                    <Route exact path="/usuario/dietas" element={<UserExercicios />} />
-                    <Route exact path="/treino/" element={<PagExercicios/>} />
+                    <Route path="*" element={<NotFound />} />
+                    <Route path="/" element={<Home />} />
+                    <Route path="/sobre" element={<Sobre />} />
+                    <Route path="/signin" element={<Signin />} />
+                    <Route path="/signup" element={<Signup />} />
+                    <Route path="/sobre/dietas" element={<SobreDietas />} />
+                    <Route path="/exerciciosHome" element={<SobreExercicios />} />
+                    <Route path="/usuario/exercicios" element={<UserExercicios />} />
+                    <Route path="/usuario/meustreinos" element={<UserExercicios />} />
+                    <Route path="/usuario/criar/treinos" element={<UserExercicios />} />
+                    <Route path="/usuario/dietas" element={<UserExercicios />} />
+                    <Route path="/treino/" element={<PagExercicios />} />
 
                     {/* <Route path="/exercicios" element={<Private Item={Exercicios} />} /> */}
                 </Routes>
