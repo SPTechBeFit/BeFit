@@ -1,0 +1,32 @@
+.teste{
+    display: flex;
+    background-color: red;
+    height: 50vh;
+    width: 70vw;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.listaExercicios{
+    height: 100%!important;
+    width: 50%!important;
+    background-color: blue!important;
+}
+.btn{
+    background-color: rgb(0, 255, 13);
+    height: 100%;
+    width: 50%;
+}
+.imagemExercicio{
+    display: block!important;
+    height: 0px!important;
+    width: 0px !important   ;
+}
+
+.containerModal {
+    display: flex;  
+    overflow-y: auto!important;
+    background-color: rgb(69, 69, 69);
+    width: 50%!important;
+    flex-direction: column;
+}

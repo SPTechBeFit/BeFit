@@ -1,24 +1,22 @@
 
-import ListaExercicios from './Components/lista'
+import ListaExercicios from './Components/listaExercicios'
 import axios from "axios";
-import { useState, useEffect } from "react"
-import style from './style.css'
-import api from '../../../services/api';
-import { FunctionsTwoTone } from '@material-ui/icons';
+import { useState, useEffect, react } from "react"
+import listaStyle from './exerciciosStyle.css'
+import Header from '../../../components/Header/Header'
 
 
 function PagExercicios(props) {
     useEffect(() => { listar(); }, [])
     const [exercicios, setExercicios] = useState([]);
-    const [exercicioSelecionado, setExercicioSelecionado] = useState(false)
     function listar(props) {
-                                                                //transformar id em variavel
-        let exercicios = axios.get('http://localhost:8080/treinos/3')
+        //transformar id em variavel
+        let exercicios = axios.get('http://localhost:8080/treinos/4')
         exercicios
             .then(function (respostaObtida) {
                 console.log(respostaObtida.data);
                 setExercicios(respostaObtida.data);
-                console.log('Fazendo requisição da lista de exercicios')
+                console.log('Fazendo requisição da lista de exercicios testando')
 
             })
 
@@ -27,49 +25,45 @@ function PagExercicios(props) {
             });
     }
 
-    function selecionarTreino() {
-        setExercicioSelecionado(!exercicioSelecionado);
-        console.log('botao clicado')
-        console.log(exercicioSelecionado)
-        style.background = 'blue';
-
-
-    }
-
-
-
 
     return (
         <>
-            <div className="imagemExercicio">
-                {
-                  
-                }
-            </div>
-            <div className="containerModal">
+            <Header />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <div className="corpo-lista">
+                <div className="imagemExercicio-lista">
+                    {
 
-                {
-                    exercicios.map((exercicios, index) => {
-                        return (
-                            <button onClick={selecionarTreino} >
+                    }
+                </div>
+                <div className="containerModal-lista">
+
+                    {
+                        exercicios.map((exercicios, index) => {
+                            return (
+                                <button>
                                     <ListaExercicios
-                                    selecionado={exercicios.selecionado}
-                                    key={exercicios.id}
-                                    id={exercicios.id}
-                                    nome={exercicios.nome}
-                                    desricao={exercicios.desricao}
-                                    imagem={exercicios.imagem}
-                                    quantidade={exercicios.quantidade}
-                                    tempo={exercicios.tempo}
-                                    repeticao={exercicios.repeticao}
-                                />
-                            </button>
-                        );
+                                        selecionado={exercicios.selecionado}
+                                        id={exercicios.id}
+                                        nome={exercicios.nome}
+                                        descricao={exercicios.descricao}
+                                        imagem={exercicios.imagem}
+                                        quantidade={exercicios.quantidade}
+                                        tempo={exercicios.tempo}
+                                        repeticao={exercicios.repeticao}
+                                    />
+                                </button>
+                            );
 
-                    })
+                        })
 
-                }
-                <h1>teste</h1>
+                    }
+                    <h1>teste</h1>
+                </div>
             </div>
         </>
     )

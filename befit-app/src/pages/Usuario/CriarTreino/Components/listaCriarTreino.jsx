@@ -1,12 +1,14 @@
 
-import ListaCriacaoExercicio from '../../../pages/Usuario/CriarTreino/Components/listaCriacaoExercicios'
+import ListaCriacaoExercicio from './listaCriacaoExercicios'
 import axios from "axios";
-import { useState, useEffect } from "react"
+import { useState, useEffect, react } from "react"
+import listaStyle from './listaStyle.css'
 
-function PagExerciciosCriar(props) {
+
+
+function PagExercicios(props) {
     useEffect(() => { listar(); }, [])
     const [exercicios, setExercicios] = useState([]);
-    const [exercicioSelecionado, setExercicioSelecionado] = useState(false)
     function listar(props) {
         //transformar id em variavel
         let exercicios = axios.get('http://localhost:8080/treinos/4')
@@ -23,44 +25,36 @@ function PagExerciciosCriar(props) {
             });
     }
 
-    function selecionarTreino() {
-        setExercicioSelecionado(!exercicioSelecionado);
-        console.log('botao clicado')
-        console.log(exercicioSelecionado)
-
-
-    }
-
-
-
 
     return (
         <>
-       
+            <div className="containerModal">
+
                 {
                     exercicios.map((exercicios, index) => {
                         return (
-                            <div onClick={selecionarTreino} >
+                            <button>
                                 <ListaCriacaoExercicio
-                                    key={index}
+                                    key={exercicios.id}
                                     selecionado={exercicios.selecionado}
+                                    id={exercicios.id}
                                     nome={exercicios.nome}
-                                    desricao={exercicios.desricao}
+                                    descricao={exercicios.descricao}
                                     imagem={exercicios.imagem}
                                     quantidade={exercicios.quantidade}
-                                    tempo={exercicios.tempo}
                                     repeticao={exercicios.repeticao}
                                 />
-                            </div>
+                            </button>
                         );
 
                     })
 
                 }
                 <h1>teste</h1>
-       
+            </div>
+
         </>
     )
 }
 
-export default PagExerciciosCriar
+export default PagExercicios

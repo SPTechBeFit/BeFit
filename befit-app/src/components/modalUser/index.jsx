@@ -8,6 +8,7 @@ import CriarTreino from './components/CriarTreino'
 
 function ModalUser(props) {
 
+
     const titulos = [
         {
             id: 1,
@@ -95,9 +96,7 @@ function ModalUser(props) {
         if (listaVazia) {
             return treinos.map((treinos, index) => {
                 return (
-                    <CardExercicio
-                        key={treinos.id}
-                        id={treinos.id}
+                    <CardExercicio key={treinos.id}
                         nome={treinos.nome}
                         descricao={treinos.descricao}
                         imagem={treinos.imagem}
@@ -131,6 +130,9 @@ return (
 
 
 }
+
+
+
 
 
 export default ModalUser

@@ -1,0 +1,12 @@
+.infoExercicio{
+    background: blue;
+    color: white;
+    font-weight: lighter;
+}
+
+.exercicio-lista{
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: flex-start;
+    gap: 40px;
+}
