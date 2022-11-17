@@ -15,10 +15,12 @@ function ListaExercicios(props) {
                 </div>
                 <div className="infoExercicio">
                     <h1>{props.nome}</h1>
+                    <div className="descricao">
                     <h2>{props.descricao}</h2>
-                    <h2>{props.quantidade}</h2>
-                    <h2>{props.tempo}</h2>
-                    <h2>{props.repeticao}</h2>
+                    </div>
+                   
+                    <h2>Quantidade:{props.quantidade}</h2>
+                    <h2>Repetições:{props.repeticao}</h2>
                 </div>
             </div>
 

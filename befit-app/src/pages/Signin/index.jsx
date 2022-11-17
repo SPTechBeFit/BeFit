@@ -3,39 +3,29 @@ import Input from "../../components/Input";
 import Button from "../../components/Button";
 import * as C from "./styles";
 import { Link, useNavigate } from "react-router-dom";
-import useAuth from "../../hooks/useAuth";
+// import useAuth from "../../hooks/useAuth";
 import Header from "../../components/Header/Header"
 import Footer from "../../components/Footer/Footer"
-import axios from "axios";
+import api from "../../services/api"
 
 const Signin = () => {
-  const { signin } = useAuth();
+  // const { signin } = useAuth();
   const navigate = useNavigate();
 
   const [email, setEmail] = useState("");
   const [senha, setSenha] = useState("");
   const [error, setError] = useState("");
 
-  const handleLogin = () => {
+  const login = {
+      email, 
+      senha,
+  }
 
+  function Entrar(){
+    api.post("localhost:8080/usuarios/login", login)  
+  }
 
   
-  
-
-    if (!email | !senha) {
-      setError("Preencha todos os campos");
-      return;
-    }
-
-    const res = signin(email, senha);
-
-    if (res) {
-      setError(res);
-      return;
-    }
-
-    navigate("/usuario/exercicios");
-  };
 
   return (
     <>
@@ -58,7 +48,7 @@ const Signin = () => {
           onChange={(e) => [setSenha(e.target.value), setError("")]}
         />
         <C.labelError>{error}</C.labelError>
-        <Button Text="Entrar" onClick={handleLogin} />
+        <Button Text="Entrar"  />
         <C.LabelSignup>
           Não tem uma conta?
           <C.Strong>
