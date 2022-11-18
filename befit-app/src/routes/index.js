@@ -12,13 +12,18 @@ import UserExercicios from "../pages/Usuario/TreinoUsuario/TreinoUsuario.jsx"
 import UserTreinos from "../pages/Usuario/MeusTreinos/MeusTreinos.jsx"
 import PagExercicios from "../pages/Usuario/PagExercicios/index.jsx"
 import NotFound from "../pages/NotFound/index.jsx"
-
+import RequireAuth from '../components/requireAuth.jsx'
 import axios from "axios";
-import { useState, useEffect } from "react"
-import { useParams } from "react-router-dom";
+
 
 
 const RoutesApp = () => {
+
+    const Private = ({ Item }) => {
+        const { signed } = useAuth();
+
+        return signed > 0 ? <Item /> : <Signin />;
+    };
 
 
     return (
@@ -33,17 +38,20 @@ const RoutesApp = () => {
                     <Route path="/signup" element={<Signup />} />
                     <Route path="/sobre/dietas" element={<SobreDietas />} />
                     <Route path="/exerciciosHome" element={<SobreExercicios />} />
-                    <Route path="/usuario/exercicios" element={<UserExercicios />} />
-                    <Route path="/usuario/meustreinos" element={<UserExercicios />} />
-                    <Route path="/usuario/criar/treinos" element={<UserExercicios />} />
-                    <Route path="/usuario/dietas" element={<UserExercicios />} />
-                    <Route path="/treino/*" element={<PagExercicios />} />
+
+
+                    <Route path="/usuario/exercicios" element={<RequireAuth><UserExercicios /></RequireAuth >} />
+                    <Route path="/usuario/meustreinos" element={<RequireAuth><UserTreinos /></RequireAuth >} />
+                    <Route path="/usuario/criar/treinos" element={<RequireAuth><UserExercicios /></RequireAuth >} />
+                    <Route path="/usuario/dietas" element={<RequireAuth><UserExercicios /></RequireAuth >} />
+                    <Route path="/treino/*" element={<RequireAuth><PagExercicios /></RequireAuth >} />
+
 
                     {/* <Route path="/exercicios" element={<Private Item={Exercicios} />} /> */}
                 </Routes>
-            </Fragment>
+            </Fragment >
 
-        </BrowserRouter>
+        </BrowserRouter >
     )
 }
 export default RoutesApp;

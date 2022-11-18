@@ -7,24 +7,20 @@ import CriarTreino from './components/CriarTreino'
 
 
 function ModalUser(props) {
-    const [personId, setPersonId] = useState(() => {
-        const saved = localStorage.getItem("personId");
-        const initialValue = JSON.parse(saved);
-        return initialValue || "";
-      });
+
 
     const titulos = [
         {
             id: 1,
             title: 'Pesquisar treinos',
-            item: '/catalogo/5bb7a32c-20ff-42d2-b684-33bf61f6eb13'
+            item: `/catalogo/${sessionStorage.getItem("personId")}`
 
         },
         {
 
             id: 2,
             title: 'Meus Treinos',
-            item: '/favoritos/5bb7a32c-20ff-42d2-b684-33bf61f6eb13'
+            item: `/favoritos/${sessionStorage.getItem("personId")}`
 
         },
         {
@@ -45,15 +41,14 @@ function ModalUser(props) {
     const pageAtual = (window.location.pathname);
 
 
-
     const nomeFiltrado = titulos.filter(titulos => {
         switch (pageAtual) {
             case '/usuario/exercicios':
-                return titulos.title === 'Pesquisar treinos' && titulos.item === `/catalogo/${personId}`;
+                return titulos.title === 'Pesquisar treinos' && titulos.item === `/catalogo/${sessionStorage.getItem("personId")}`;
 
 
             case '/usuario/meustreinos':
-                return titulos.title === 'Meus Treinos' && titulos.item === `/favoritos/${personId}`;
+                return titulos.title === 'Meus Treinos' && titulos.item === `/favoritos/${sessionStorage.getItem("personId")}`;
 
 
             case '/usuario/criar/treinos':

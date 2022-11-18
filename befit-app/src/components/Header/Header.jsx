@@ -3,12 +3,14 @@ import PersistentDrawerLeft from '../SideBar'
 import style from './style.css'
 import React, { useState } from "react";
 
-import { BrowserRouter as Router, Routes, Route, Link, NavLink } from 'react-router-dom'
+import { BrowserRouter as Router, Routes, Route, useNavigate, Link, NavLink } from 'react-router-dom'
 import axios from 'axios';
+import { Component } from 'react';
 function Header(props) {
 
-  const pageAtual = (window.location.pathname);
 
+  const pageAtual = (window.location.pathname);
+  const navigate = useNavigate();
   function headerChange() {
     switch (pageAtual) {
       case '/usuario/exercicios':
@@ -60,6 +62,30 @@ function Header(props) {
 
 
 
+  const handleLogOut = () => {
+    axios.patch(`http://localhost:8080/usuarios/logout/${sessionStorage.getItem("personId")}`)
+      .then((res) => {
+        console.log(res)
+        var autenticado = sessionStorage.setItem("autenticado", false)
+       
+        console.log('usuario autenticado? ', `${sessionStorage.getItem("autenticado")}`)
+        if (!autenticado) {
+          sessionStorage.clear()
+          navigate('/')
+          alert('usuario deslogado')
+        }
+      })
+      .catch(err => {
+        console.log(err)
+        console.log('erro no .logout')
+      })
+
+
+
+
+
+  }
+
   return (<>
 
     <div className="header">
@@ -72,8 +98,8 @@ function Header(props) {
               {/* <li> <NavLink to="/exerciciosHome" activeClassName="active"> <a>Exercícios</a></NavLink></li> */}
               {headerChange() && <li> <NavLink to="/sobre" activeclassName="active"><a>Sobre</a></NavLink></li>}
               {headerChange() && <li> <NavLink to="/signin"> <a>Começar</a> </NavLink></li>}
-              {headerChangeUserPage() && <li>  <a className='user'>Olá {props.nome} !</a></li>}
-              {headerChangeUserPage() && <li> <a>Sair</a></li>}
+              {headerChangeUserPage() && <li>  <a className='user'>Olá {sessionStorage.getItem("nome")}!</a></li>}
+              {headerChangeUserPage() && <li> <button onClick={handleLogOut}>Sair</button></li>}
             </ul>
             <PersistentDrawerLeft />
           </div>

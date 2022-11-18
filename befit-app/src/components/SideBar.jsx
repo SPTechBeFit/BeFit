@@ -40,7 +40,7 @@ export default function SwipeableTemporaryDrawer() {
       className={clsx(classes.list, {
         [classes.fullList]: anchor === 'top' || anchor === 'bottom',
       })}
-      role="presentation"
+      role="presentation" 
       onClick={toggleDrawer(anchor, false)}
       onKeyDown={toggleDrawer(anchor, false)}
     >

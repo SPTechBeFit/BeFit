@@ -20,6 +20,8 @@
 .nav-menu {
   background-color: #c2c2c2;
   /* width: 15vw; */
+  
+  z-index: 1;
   height: 6vh;
   display: flex;
   justify-content: center;
