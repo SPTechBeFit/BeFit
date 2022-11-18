@@ -5,6 +5,7 @@ import React, { useState } from "react";
 
 import { BrowserRouter as Router, Routes, Route, Link, NavLink } from 'react-router-dom'
 import axios from 'axios';
+import { keys } from '@material-ui/core/styles/createBreakpoints';
 function Header(props) {
 
   const pageAtual = (window.location.pathname);
@@ -72,7 +73,7 @@ function Header(props) {
               {/* <li> <NavLink to="/exerciciosHome" activeClassName="active"> <a>Exercícios</a></NavLink></li> */}
               {headerChange() && <li> <NavLink to="/sobre" activeclassName="active"><a>Sobre</a></NavLink></li>}
               {headerChange() && <li> <NavLink to="/signin"> <a>Começar</a> </NavLink></li>}
-              {headerChangeUserPage() && <li>  <a className='user'>Olá {props.nome} !</a></li>}
+              {headerChangeUserPage() && <li>  <a className='user'>Olá {sessionStorage.getItem("nome")} !</a></li>}
               {headerChangeUserPage() && <li> <a>Sair</a></li>}
             </ul>
             <PersistentDrawerLeft />
