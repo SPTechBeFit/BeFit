@@ -37,7 +37,7 @@ const RoutesApp = () => {
                     <Route path="/usuario/meustreinos" element={<UserExercicios />} />
                     <Route path="/usuario/criar/treinos" element={<UserExercicios />} />
                     <Route path="/usuario/dietas" element={<UserExercicios />} />
-                    <Route path="/treino/" element={<PagExercicios />} />
+                    <Route path="/treino/*" element={<PagExercicios />} />
 
                     {/* <Route path="/exercicios" element={<Private Item={Exercicios} />} /> */}
                 </Routes>

@@ -17,6 +17,12 @@ function CardExercicio(props) {
     const [selecionado, setSelecionado] = useState(props.favoritado);
 
 
+    const [personId, setPersonId] = useState(() => {
+        const saved = localStorage.getItem("personId");
+        const initialValue = JSON.parse(saved);
+        return initialValue || "";
+      });
+
 
     const navegar = useNavigate();
 
@@ -33,7 +39,7 @@ function CardExercicio(props) {
     const saveClickProperty = () => {
         setSelecionado(!selecionado);
         if (selecionado) {
-            api.delete(`/desfavoritar/5bb7a32c-20ff-42d2-b684-33bf61f6eb13/${props.id}`)
+            api.delete(`/desfavoritar/${personId}/${props.id}`)
                 .then(function (respostaObtida) {       // método get responde uma Promise que será resolvida, e quando obtiver uma resposta, cairá no "then" recebendo a resposta como parâmetro
                     console.log(respostaObtida.data);   // exibindo o atributo "data", que possui o vetor de dados do objeto de resposta que foi recebido
                     // utilizando o setter para alterar o valor do estado (useState) de "musicas"        
@@ -42,7 +48,7 @@ function CardExercicio(props) {
                     console.log(errorOcorrido)          // exibindo o erro que ocorreu na requisição
                 });
         } else {
-            const desfavoritar = api.post(`/favoritar/5bb7a32c-20ff-42d2-b684-33bf61f6eb13/${props.id}`)
+            const desfavoritar = api.post(`/favoritar/${personId}/${props.id}`)
 
                 .then(function (respostaObtida) {       // método get responde uma Promise que será resolvida, e quando obtiver uma resposta, cairá no "then" recebendo a resposta como parâmetro
                     console.log(respostaObtida.data);   // exibindo o atributo "data", que possui o vetor de dados do objeto de resposta que foi recebido
@@ -61,8 +67,8 @@ function CardExercicio(props) {
     return (
         <>
             <button
-            onClick={() => navegar(`/treino/`) } className="boxTreino">
-                <div className="imagemCoverTreino" id= {props.id}>
+            onClick={() => navegar(`/treino/${props.nome}/${props.id}`) } className="boxTreino">
+                <div className="imagemCoverTreino">
                     <div style={imagem} className="image"></div>
                 </div>
                 <div className="infoTreino">

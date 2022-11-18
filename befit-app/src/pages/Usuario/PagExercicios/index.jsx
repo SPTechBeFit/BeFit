@@ -3,7 +3,7 @@ import ListaExercicios from './Components/listaExercicios'
 import axios from "axios";
 import { useState, useEffect, react } from "react"
 import listaStyle from './exerciciosStyle.css'
-import Header from '../../../components/Header/Header'
+
 
 
 function PagExercicios(props) {
@@ -11,7 +11,7 @@ function PagExercicios(props) {
     const [exercicios, setExercicios] = useState([]);
     function listar(props) {
         //transformar id em variavel
-        let exercicios = axios.get('http://localhost:8080/treinos/4')
+        let exercicios = axios.get('http://localhost:8080/treinos/1')
         exercicios
             .then(function (respostaObtida) {
                 console.log(respostaObtida.data);
@@ -28,7 +28,7 @@ function PagExercicios(props) {
 
     return (
         <>
-            <Header />
+       
             <br />
             <br />
             <br />

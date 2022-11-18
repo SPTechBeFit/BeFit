@@ -9,12 +9,12 @@ function PagExerciciosCriar(props) {
     const [exercicioSelecionado, setExercicioSelecionado] = useState(false)
     function listar(props) {
         //transformar id em variavel
-        let exercicios = axios.get('http://localhost:8080/treinos/4')
+        let exercicios = axios.get('http://localhost:8080/treinos/1')
         exercicios
             .then(function (respostaObtida) {
                 console.log(respostaObtida.data);
                 setExercicios(respostaObtida.data);
-                console.log('Fazendo requisição da lista de exercicios')
+                console.log('Fazendo requisição da lista de exercicios para criacao')
 
             })
 
@@ -42,7 +42,7 @@ function PagExerciciosCriar(props) {
                         return (
                             <div onClick={selecionarTreino} >
                                 <ListaCriacaoExercicio
-                                    key={index}
+                                    
                                     selecionado={exercicios.selecionado}
                                     nome={exercicios.nome}
                                     desricao={exercicios.desricao}

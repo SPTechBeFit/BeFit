@@ -7,7 +7,11 @@ import CriarTreino from './components/CriarTreino'
 
 
 function ModalUser(props) {
-
+    const [personId, setPersonId] = useState(() => {
+        const saved = localStorage.getItem("personId");
+        const initialValue = JSON.parse(saved);
+        return initialValue || "";
+      });
 
     const titulos = [
         {
@@ -33,7 +37,7 @@ function ModalUser(props) {
         {
             id: 4,
             title: 'Dietas',
-            item: '/favoritos/5bb7a32c-20ff-42d2-b684-33bf61f6eb13'
+            item: ''
 
         }
     ]
@@ -45,19 +49,19 @@ function ModalUser(props) {
     const nomeFiltrado = titulos.filter(titulos => {
         switch (pageAtual) {
             case '/usuario/exercicios':
-                return titulos.title === 'Pesquisar treinos' && titulos.item === '/catalogo/5bb7a32c-20ff-42d2-b684-33bf61f6eb13';
+                return titulos.title === 'Pesquisar treinos' && titulos.item === `/catalogo/${personId}`;
 
 
             case '/usuario/meustreinos':
-                return titulos.title === 'Meus Treinos' && titulos.item === '/favoritos/5bb7a32c-20ff-42d2-b684-33bf61f6eb13';
+                return titulos.title === 'Meus Treinos' && titulos.item === `/favoritos/${personId}`;
 
 
             case '/usuario/criar/treinos':
-                return titulos.title === 'Criar Treinos' && titulos.item === '/favoritos/5bb7a32c-20ff-42d2-b684-33bf61f6eb13';
+                return titulos.title === 'Criar Treinos' && titulos.item === '';
 
 
             case '/usuario/dietas':
-                return titulos.title === 'Dietas' && titulos.item === '/favoritos/5bb7a32c-20ff-42d2-b684-33bf61f6eb13';
+                return titulos.title === 'Dietas' && titulos.item === '';
 
 
             default:
@@ -70,14 +74,17 @@ function ModalUser(props) {
     
     useEffect(() => { listar(); }, [])
     function listar(props) {
-        console.log("Requisição está sendo feita: ");
+        console.log("Requisição dos treinos está sendo feita: ");
+        //console.log(personId)
         nomeFiltrado.map((item) => {
             const treinos = api.get(`${item.item}`)
+            
             treinos
                 .then(function (respostaObtida) {
                     console.log(respostaObtida.data);
                     setTreinos(respostaObtida.data);
                     setListaVazia(true);
+                    console.log(`${item.item}`)
 
 
                 })
@@ -97,6 +104,7 @@ function ModalUser(props) {
             return treinos.map((treinos, index) => {
                 return (
                     <CardExercicio key={treinos.id}
+                        id={treinos.id}
                         nome={treinos.nome}
                         descricao={treinos.descricao}
                         imagem={treinos.imagem}
@@ -105,7 +113,7 @@ function ModalUser(props) {
                 );
             })
         }else{
-            return <CriarTreino/>
+          //  return <CriarTreino/>
         }
 
     }

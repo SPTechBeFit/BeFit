@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Input from "../../components/Input";
 import Button from "../../components/Button";
 import * as C from "./styles";
@@ -16,10 +16,13 @@ const Signup = () => {
   const [error, setError] = useState("");
   const navigate = useNavigate();
 
-  const { signup } = useAuth();
+  
+
 
   const handleSignup = () => {
-   
+
+
+
     if (!email | !emailConf | !senha) {
       setError("Preencha todos os campos");
       return;
@@ -27,29 +30,15 @@ const Signup = () => {
       setError("Os e-mails não são iguais");
       return;
     }
-
-    const res = signup(email, senha, nome);
-
-    if (res) {
-      setError(res);
-      return;
-    }
-    console.log(res)
     alert("Usuário cadatrado com sucesso!");
     //navigate("/signin");
-   adicionarUsuario()
+
+    axios.post('http://localhost:8080/usuarios',
+      { nome: nome, email: email, senha: senha }).then((res) => { console.log(res) });
+
+
+
   };
-
-
-  function adicionarUsuario() {
-    axios.post('http://localhost:8080/usuarios', {
-      nome: nome,
-      email: email,
-      senha: senha,
-    })
-
-  }
-
   return (
     <>
       <Header />
