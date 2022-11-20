@@ -9,11 +9,11 @@ import Signup from '../../src/pages/Singup/index.jsx'
 import { Fragment } from "react";
 import useAuth from "../hooks/useAuth";
 import UserExercicios from "../pages/Usuario/TreinoUsuario/TreinoUsuario.jsx"
-import UserTreinos from "../pages/Usuario/MeusTreinos/MeusTreinos.jsx"
+//src\pages\Usuario\CriarTreino\Components\PagCriarTreino.jsx
+import CriarTreinos from "../pages/Usuario/CriarTreino/Components/PagCriarTreino"
 import PagExercicios from "../pages/Usuario/PagExercicios/index.jsx"
 import NotFound from "../pages/NotFound/index.jsx"
 import RequireAuth from '../components/requireAuth.jsx'
-import axios from "axios";
 
 
 
@@ -41,8 +41,8 @@ const RoutesApp = () => {
 
 
                     <Route path="/usuario/exercicios" element={<RequireAuth><UserExercicios /></RequireAuth >} />
-                    <Route path="/usuario/meustreinos" element={<RequireAuth><UserTreinos /></RequireAuth >} />
-                    <Route path="/usuario/criar/treinos" element={<RequireAuth><UserExercicios /></RequireAuth >} />
+                    <Route path="/usuario/meustreinos" element={<RequireAuth><UserExercicios /></RequireAuth >} />
+                    <Route path="/usuario/criar/treinos" element={<RequireAuth><CriarTreinos /></RequireAuth >} />
                     <Route path="/usuario/dietas" element={<RequireAuth><UserExercicios /></RequireAuth >} />
                     <Route path="/treino/*" element={<RequireAuth><PagExercicios /></RequireAuth >} />
 

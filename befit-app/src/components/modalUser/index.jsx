@@ -1,40 +1,33 @@
 
+import axios from "axios"
 import React, { useEffect, useState } from "react"
 import api from '../../services/api.js'
 import CardExercicio from '../CardExercicio/index'
-import CriarTreino from './components/CriarTreino'
+import PagExerciciosCriar from './components/CriarTreino'
 
 
 
 function ModalUser(props) {
-
-
     const titulos = [
         {
             id: 1,
             title: 'Pesquisar treinos',
             item: `/catalogo/${sessionStorage.getItem("personId")}`
-
         },
         {
-
             id: 2,
             title: 'Meus Treinos',
             item: `/favoritos/${sessionStorage.getItem("personId")}`
-
         },
         {
-
             id: 3,
             title: 'Criar Treinos',
-            item: ''
-
+            item: '/exercicios'
         },
         {
             id: 4,
             title: 'Dietas',
             item: ''
-
         }
     ]
 
@@ -45,49 +38,39 @@ function ModalUser(props) {
         switch (pageAtual) {
             case '/usuario/exercicios':
                 return titulos.title === 'Pesquisar treinos' && titulos.item === `/catalogo/${sessionStorage.getItem("personId")}`;
-
-
             case '/usuario/meustreinos':
                 return titulos.title === 'Meus Treinos' && titulos.item === `/favoritos/${sessionStorage.getItem("personId")}`;
-
-
             case '/usuario/criar/treinos':
-                return titulos.title === 'Criar Treinos' && titulos.item === '';
-
-
+                return titulos.title === 'Criar Treinos' && titulos.item === '/exercicios';
             case '/usuario/dietas':
                 return titulos.title === 'Dietas' && titulos.item === '';
-
-
             default:
                 console.log('Mudando titulos');
 
         }
     });
     const [treinos, setTreinos] = useState([]);
-    const [ listaVazia, setListaVazia] = useState(false)
-    
+    const [listaCarregada, setListaCarregada] = useState(false)
+
     useEffect(() => { listar(); }, [])
     function listar(props) {
         console.log("Requisição dos treinos está sendo feita: ");
-        //console.log(personId)
+        console.log(sessionStorage.getItem("personId"))
         nomeFiltrado.map((item) => {
             const treinos = api.get(`${item.item}`)
-            
+
             treinos
                 .then(function (respostaObtida) {
                     console.log(respostaObtida.data);
                     setTreinos(respostaObtida.data);
-                    setListaVazia(true);
+                    setListaCarregada(true);
                     console.log(`${item.item}`)
-
-
                 })
-
                 .catch((errorOcorrido) => {
                     console.log("Lista nao carregada")
                     console.log(errorOcorrido)
-                    setListaVazia(false)
+                    setListaCarregada(false)
+                    console.log(treinos)
                 });
         })
 
@@ -95,7 +78,8 @@ function ModalUser(props) {
 
 
     function checarLista() {
-        if (listaVazia) {
+        console.log('lista carregada? ', listaCarregada)
+        if (listaCarregada) {
             return treinos.map((treinos, index) => {
                 return (
                     <CardExercicio key={treinos.id}
@@ -107,29 +91,31 @@ function ModalUser(props) {
                     />
                 );
             })
-        }else{
-          //  return <CriarTreino/>
         }
+        // else {
+        //     return (
+        //         <PagExerciciosCriar />
+        //     )
 
+        // }
     }
 
+    return (
+        <>
+            <div className="identificacaoModal">{nomeFiltrado.map((item) =>
+                <h1>{item.title}</h1>
+            )}
 
-return (
-    <>
-        <div className="identificacaoModal">{nomeFiltrado.map((item) =>
-            <h1>{item.title}</h1>
-        )}
-
-        </div>
-        <div className="modal">
-            {
-               checarLista()
-            }
-        </div>
+            </div>
+            <div className="modal">
+                {
+                    checarLista()
+                }
+            </div>
 
 
-    </>
-)
+        </>
+    )
 
 
 }

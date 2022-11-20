@@ -39,7 +39,7 @@ function CardExercicio(props) {
     const saveClickProperty = () => {
         setSelecionado(!selecionado);
         if (selecionado) {
-            api.delete(`/desfavoritar/${personId}/${props.id}`)
+            api.delete(`/desfavoritar/${sessionStorage.getItem("personId")}/${props.id}`)
                 .then(function (respostaObtida) {       // método get responde uma Promise que será resolvida, e quando obtiver uma resposta, cairá no "then" recebendo a resposta como parâmetro
                     console.log(respostaObtida.data);   // exibindo o atributo "data", que possui o vetor de dados do objeto de resposta que foi recebido
                     // utilizando o setter para alterar o valor do estado (useState) de "musicas"        
@@ -48,7 +48,7 @@ function CardExercicio(props) {
                     console.log(errorOcorrido)          // exibindo o erro que ocorreu na requisição
                 });
         } else {
-            const desfavoritar = api.post(`/favoritar/${personId}/${props.id}`)
+            const desfavoritar = api.post(`/favoritar/${sessionStorage.getItem("personId")}/${props.id}`)
 
                 .then(function (respostaObtida) {       // método get responde uma Promise que será resolvida, e quando obtiver uma resposta, cairá no "then" recebendo a resposta como parâmetro
                     console.log(respostaObtida.data);   // exibindo o atributo "data", que possui o vetor de dados do objeto de resposta que foi recebido

@@ -1,9 +1,6 @@
 import React from "react"
-import imagemTeste from '../../../../assets/images/exerciciosCover/exercioCardio.jpg'
-import { useState, useEffect } from "react"
-import StyleButtonLista from './styleButtonLista.css'
-import axios from "axios"
-
+import imagemTeste from '../../../assets/images/exerciciosCover/exercioCardio.jpg'
+import { useState } from "react"
 
 function ListaExercicios(props) {
     const [isActive, setIsActive] = useState(false);
@@ -25,8 +22,8 @@ function ListaExercicios(props) {
     };
 
     return (
-        <>
-            <div className="infoExercicio" key={props.key}>
+        <><div className="teste" key={props.key}>
+            <div className="infoExercicio">
                 <h1>{props.nome}</h1>
 
             </div>
@@ -37,14 +34,9 @@ function ListaExercicios(props) {
                     backgroundColor: isActive ? 'blue' : '',
                     color: isActive ? 'white' : '',
                 }}>
-
                 <div className="imagemCoverTreino-lista">
                     <div style={imagem} className="image-lista"></div>
 
-                </div>
-                <div className="series-lista">
-                    <h2>Quantidade:{props.quantidade}<b> </b></h2>
-                    <h2>Repetições:{props.repeticao}<b> </b> </h2>
                 </div>
                 <div className="descricao-listas">
                     <h2>{props.descricao}</h2>
@@ -52,7 +44,7 @@ function ListaExercicios(props) {
 
 
             </div>
-
+</div>
 
         </>
     )

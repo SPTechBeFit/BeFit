@@ -1,32 +1,48 @@
-.teste{
+.bodyCriacao {
+    margin: 0px 20vw 0px 20vw;
+
+}
+
+.MainContainer { 
     display: flex;
-    background-color: red;
-    height: 50vh;
-    width: 70vw;
-    flex-direction: row;
-    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
 }
 
-.listaExercicios{
-    height: 100%!important;
-    width: 50%!important;
-    background-color: blue!important;
-}
-.btn{
-    background-color: rgb(0, 255, 13);
-    height: 100%;
-    width: 50%;
-}
-.imagemExercicio{
-    display: block!important;
-    height: 0px!important;
-    width: 0px !important   ;
+.btn { 
+    margin-top: 15px !important;
 }
 
-.containerModal {
-    display: flex;  
-    overflow-y: auto!important;
-    background-color: rgb(69, 69, 69);
-    width: 50%!important;
+.btn-ok {
+    width: 170px;
+    line-height: 12px;
+    background-color: rgb(0, 98, 255);
+    margin-top: 10px;
+    font-size: 20px;
+    color: white;
+}
+
+.fechaModalBotao {
+    width: 120px;
+}
+
+.inputs-form {
+    display: flex;
+    margin-top: 20px;
     flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.ReactModal__Content {
+    margin-right: auto;
+    margin-left: auto;
+    width: 300px !important;
+    height: 250px !important;
+}
+
+#tempo {
+    width: 50px;
 }

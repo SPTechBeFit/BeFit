@@ -3,6 +3,18 @@
 
 }
 
+.teste {
+  cursor: pointer;
+  width: 400px;
+  min-width: 90%;
+  max-width: 90%;
+}
+
+.teste:hover {
+  background-color: #8C8C8C;
+  cursor: pointer;
+}
+
 .imagemExercicio-lista {
   height: 40vh;
   background-color: #8C8C8C;
@@ -33,15 +45,11 @@
 button {
 
   outline: white solid 0.5px;
-
   border-radius: 3px;
-
   color: rgba(0, 0, 0, 0.4);
   font-weight: bold;
   border: none;
-
   background: rgba(0, 0, 0, .30);
-
   width: 100%;
 
 }

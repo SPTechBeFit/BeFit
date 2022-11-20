@@ -32,6 +32,8 @@ function SignIn() {
           sessionStorage.setItem("nome", res.data.nome);
           sessionStorage.setItem("email", res.data.email);
           sessionStorage.setItem("autenticado", res.data.logado);
+          sessionStorage.setItem("id", res.data.id);
+
           // loadPage("/usuario/exercicios")
           navigate("/usuario/exercicios")
           // navigate("/sobre")
@@ -48,7 +50,6 @@ function SignIn() {
   }
   return (
     <>
-      <Header />
       <Form>
         <C.Container>
           <C.Label>SISTEMA DE LOGIN</C.Label>

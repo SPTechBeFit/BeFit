@@ -67,7 +67,7 @@ function Header(props) {
       .then((res) => {
         console.log(res)
         var autenticado = sessionStorage.setItem("autenticado", false)
-       
+
         console.log('usuario autenticado? ', `${sessionStorage.getItem("autenticado")}`)
         if (!autenticado) {
           sessionStorage.clear()
@@ -79,11 +79,6 @@ function Header(props) {
         console.log(err)
         console.log('erro no .logout')
       })
-
-
-
-
-
   }
 
   return (<>
@@ -94,7 +89,7 @@ function Header(props) {
           <Link to="/"> <img src={ImagemLogo} className="logo" /> </Link>
           <div className='options'>
             <ul>
-              <li> <NavLink to="/" activeclassName="active" end> <a>Home</a></NavLink></li>
+              {headerChange() && <li> <NavLink to="/" activeclassName="active" end> <a>Home</a></NavLink></li>}
               {/* <li> <NavLink to="/exerciciosHome" activeClassName="active"> <a>Exercícios</a></NavLink></li> */}
               {headerChange() && <li> <NavLink to="/sobre" activeclassName="active"><a>Sobre</a></NavLink></li>}
               {headerChange() && <li> <NavLink to="/signin"> <a>Começar</a> </NavLink></li>}
