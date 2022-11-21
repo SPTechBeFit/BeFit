@@ -14,6 +14,7 @@ import CriarTreinos from "../pages/Usuario/CriarTreino/Components/PagCriarTreino
 import PagExercicios from "../pages/Usuario/PagExercicios/index.jsx"
 import NotFound from "../pages/NotFound/index.jsx"
 import RequireAuth from '../components/requireAuth.jsx'
+import HotSite from "../pages/HotSite/index.jsx";
 
 
 
@@ -38,6 +39,7 @@ const RoutesApp = () => {
                     <Route path="/signup" element={<Signup />} />
                     <Route path="/sobre/dietas" element={<SobreDietas />} />
                     <Route path="/exerciciosHome" element={<SobreExercicios />} />
+                    <Route path="/hotsite" element={<HotSite/>}/>
 
 
                     <Route path="/usuario/exercicios" element={<RequireAuth><UserExercicios /></RequireAuth >} />

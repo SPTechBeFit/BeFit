@@ -60,6 +60,18 @@ function Header(props) {
     }
   }
 
+  function headerHotSite(){
+    switch(pageAtual){
+      case '/hotsite':
+        return false
+
+      default:
+        return true  
+    }
+
+    
+  }
+
 
 
   const handleLogOut = () => {
@@ -89,12 +101,12 @@ function Header(props) {
           <Link to="/"> <img src={ImagemLogo} className="logo" /> </Link>
           <div className='options'>
             <ul>
-              {headerChange() && <li> <NavLink to="/" activeclassName="active" end> <a>Home</a></NavLink></li>}
+              {headerChange() && headerHotSite() && <li> <NavLink to="/" activeclassName="active" end> <a>Home</a></NavLink></li>}
               {/* <li> <NavLink to="/exerciciosHome" activeClassName="active"> <a>Exercícios</a></NavLink></li> */}
-              {headerChange() && <li> <NavLink to="/sobre" activeclassName="active"><a>Sobre</a></NavLink></li>}
+              {headerChange() && headerHotSite() && <li> <NavLink to="/sobre" activeclassName="active"><a>Sobre</a></NavLink></li>}
               {headerChange() && <li> <NavLink to="/signin"> <a>Começar</a> </NavLink></li>}
-              {headerChangeUserPage() && <li>  <a className='user'>Olá {sessionStorage.getItem("nome")}!</a></li>}
-              {headerChangeUserPage() && <li> <button onClick={handleLogOut}>Sair</button></li>}
+              {headerChangeUserPage() && headerHotSite() && <li>  <a className='user'>Olá {sessionStorage.getItem("nome")}!</a></li>}
+              {headerChangeUserPage() && headerHotSite() && <li> <button onClick={handleLogOut}>Sair</button></li>}
             </ul>
             <PersistentDrawerLeft />
           </div>

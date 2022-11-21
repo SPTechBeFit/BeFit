@@ -8,12 +8,15 @@ import Input from "../../components/Input/";
 import Button from "../../components/Button/";
 import { Link } from "react-router-dom";
 import Header from "../../components/Header/Header"
+import Footer from "../../components/Footer/Footer"
+import validator from "validator";
 
 function SignIn() {
-  let loadPage = useNavigate();
+
   const [email, setEmail] = useState("");
   const [senha, setSenha] = useState("");
-  const [error, setError] = useState("");
+  const [errorEmail, setErrorEmail] = useState("");
+  const [errorSenha, setErrorSenha] = useState("");
 
   const { register: registerLogin, handleSubmit: handleSubmitLogin } = useForm();
 
@@ -21,6 +24,24 @@ function SignIn() {
   const navigate = useNavigate();
 
   const handleLogin = () => {
+
+    if(validator.isEmpty(email)){
+      setErrorEmail("Email é obrigatorio")
+      return;
+    }
+
+    if(validator.isEmail(email)){
+      setErrorEmail("")
+    } else {
+      setErrorEmail("Email invalido")
+      return;
+    }
+
+    if(validator.isEmpty(senha)){
+      setErrorSenha("Senha é obrigatorio")
+    } else{
+      setErrorSenha("")
+    }
 
     axios({
       method: "patch",
@@ -36,23 +57,23 @@ function SignIn() {
 
           // loadPage("/usuario/exercicios")
           navigate("/usuario/exercicios")
-          // navigate("/sobre")
         }
       })
       .catch(function (error) {
         if (error.response.status === 404) {
-          setError("login invalido")
+          setErrorSenha("login invalido")
           
         }
         console.error(error.response)
       })
+
 
   }
   return (
     <>
       <Form>
         <C.Container>
-          <C.Label>SISTEMA DE LOGIN</C.Label>
+          <C.Label>Entre com seu email e senha</C.Label>
           <C.Content>
             <Input
               className="input_email"
@@ -61,6 +82,7 @@ function SignIn() {
               value={email}
               onChange={(e)=> { setEmail(e.target.value) }}
               />
+              <C.labelError>{errorEmail}</C.labelError>
             <Input
               className="input_senha"
               type="password"
@@ -70,7 +92,7 @@ function SignIn() {
 
 
             />
-            <C.labelError>{error}</C.labelError>
+            <C.labelError>{errorSenha}</C.labelError>
             <Button onClick={()=> {handleLogin()}} Text="Login"/>
             <C.LabelSignup>
               Não tem uma conta?
@@ -81,6 +103,7 @@ function SignIn() {
           </C.Content>
         </C.Container>
       </Form>
+      <Footer/>
     </>
   )
 

@@ -214,10 +214,11 @@ export const Form = styled.form`
   display: flex;
   align-self: center;
   display: flex;
-  width: 400px;
+  width: 100%;
   height: 50%;
   align-items: center;
   flex-direction: column;
+  justify-content: center;
 `;
 
 // export const ButtonLogin = styled.button`
