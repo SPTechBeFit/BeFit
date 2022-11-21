@@ -10,7 +10,7 @@ Modal.setAppElement("#root")
 let listaDeExercicios = []
 let vaiAparecer = true;
 
-function PagExercicios(props) {
+function PagCriacaoExercicios(props) {
 
     const [tituloTreino, setTituloTreino] = useState("");
     const [descTreino, setDescTreino] = useState("");
@@ -88,18 +88,18 @@ function PagExercicios(props) {
 
     function enviarTreino() {
 
-        const criadorId = sessionStorage.getItem("id")
+        const criadorId = sessionStorage.getItem("personId")
 
         const body = {
             "nome": tituloTreino,
             "descricao": descTreino,
-            "criadorId": criadorId,
+            "personId": criadorId,
             "series": listaDeExercicios
         }
 
 
         axios.post('http://localhost:8080/treinos', body).then((res) => {
-            alert('treino com sucesso')
+            alert('treino cadastrado com sucesso')
 
         }
         ).catch(error => {
@@ -199,4 +199,4 @@ function PagExercicios(props) {
     )
 }
 
-export default PagExercicios
+export default PagCriacaoExercicios

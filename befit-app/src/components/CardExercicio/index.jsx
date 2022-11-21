@@ -5,6 +5,7 @@ import { BrowserRouter as Router, Routes, Route, Link, NavLink, useNavigate, use
 import likeButton from '../../assets/images/Icons/favoritoIcon.png'
 import likeButtonSelecionado from '../../assets/images/Icons/favoritoIconSelecionado.png'
 import api from '../../services/api'
+import PagExercicios from '../../pages/Usuario/PagExercicios'
 
 function CardExercicio(props) {
     const imagem = {
@@ -21,7 +22,7 @@ function CardExercicio(props) {
         const saved = localStorage.getItem("personId");
         const initialValue = JSON.parse(saved);
         return initialValue || "";
-      });
+    });
 
 
     const navegar = useNavigate();
@@ -63,11 +64,18 @@ function CardExercicio(props) {
 
     }
 
+    const routeChange = () => {
+        let path = (`/treino/${props.nome}/${props.id}`);
+        sessionStorage.setItem("idTreino", props.id);
+        navegar(path);
+        
+    }
+    //navegar(`/treino/${props.nome}/${props.id}`)
 
     return (
         <>
             <button
-            onClick={() => navegar(`/treino/${props.nome}/${props.id}`) } className="boxTreino">
+                onClick={() => {routeChange()}} className="boxTreino">
                 <div className="imagemCoverTreino">
                     <div style={imagem} className="image"></div>
                 </div>

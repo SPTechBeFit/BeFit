@@ -3,28 +3,30 @@ import ListaExercicios from './Components/listaExercicios'
 import axios from "axios";
 import { useState, useEffect, react } from "react"
 import listaStyle from './exerciciosStyle.css'
+import api from '../../../services/api'
 
 
 
 function PagExercicios(props) {
+    
     useEffect(() => { listar(); }, [])
     const [exercicios, setExercicios] = useState([]);
-    function listar(props) {
+    function listar() {
+        let exercicios = axios.get('http://localhost:8080/treinos/' + sessionStorage.getItem("idTreino", props.id))
         //transformar id em variavel
-        let exercicios = axios.get('http://localhost:8080/treinos/1')
         exercicios
             .then(function (respostaObtida) {
                 console.log(respostaObtida.data);
                 setExercicios(respostaObtida.data);
                 console.log('Fazendo requisição da lista de exercicios testando')
-
             })
-
             .catch((errorOcorrido) => {
                 console.log(errorOcorrido)
             });
     }
 
+
+    
 
     return (
         <>
@@ -36,9 +38,7 @@ function PagExercicios(props) {
             <br />
             <div className="corpo-lista">
                 <div className="imagemExercicio-lista">
-                    {
-
-                    }
+                  
                 </div>
                 <div className="containerModal-lista">
 
@@ -62,7 +62,6 @@ function PagExercicios(props) {
                         })
 
                     }
-                    <h1>teste</h1>
                 </div>
             </div>
         </>

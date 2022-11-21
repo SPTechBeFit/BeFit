@@ -3,11 +3,12 @@ import axios from "axios"
 import React, { useEffect, useState } from "react"
 import api from '../../services/api.js'
 import CardExercicio from '../CardExercicio/index'
-import PagExerciciosCriar from './components/CriarTreino'
+
 
 
 
 function ModalUser(props) {
+    
     const titulos = [
         {
             id: 1,
@@ -92,12 +93,7 @@ function ModalUser(props) {
                 );
             })
         }
-        // else {
-        //     return (
-        //         <PagExerciciosCriar />
-        //     )
 
-        // }
     }
 
     return (
