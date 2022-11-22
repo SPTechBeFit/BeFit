@@ -4,6 +4,8 @@ import axios from "axios";
 import { useState, useEffect, react } from "react"
 import listaStyle from './exerciciosStyle.css'
 import api from '../../../services/api'
+import BannerTreino from '../BannerTreino';
+import Header from '../../../components/Header/Header';
 
 
 
@@ -36,50 +38,47 @@ function PagExercicios(props) {
 
     return (
         <>
+            < Header/>
+                <br />
+                <div className="corpo-lista">
+                    <BannerTreino />
+                    <div className="imagemExercicio-lista">
+                        {exercicioClicado && <><div className="imagemCoverTreino-lista">
+                            <div style={imagemExercicio} className="image-lista-painel" ></div>
 
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <div className="corpo-lista">
-                <div className="imagemExercicio-lista">
-                    {exercicioClicado && <><div className="imagemCoverTreino-lista">
-                        <div style={imagemExercicio} className="image-lista-painel" ></div>
-
-                    </div>
-
-                        <div class='descricao-do-exercicio'>
-                            <p>{exercicioClicado.descricao}</p>
                         </div>
-                    </>
-                    }
+
+                            <div class='descricao-do-exercicio'>
+                                <p>{exercicioClicado.descricao}</p>
+                            </div>
+                        </>
+                        }
+                    </div>
+                    <div className="containerModal-lista">
+
+                        {
+                            exercicios.map((exercicios, index) => {
+                                return (
+                                    <ListaExercicios
+                                        selecionado={exercicios.selecionado}
+                                        id={exercicios.id}
+                                        nome={exercicios.nome}
+                                        //descricao={exercicios.descricao}
+                                        imagem={exercicios.imagem}
+                                        //quantidade={exercicios.quantidade}
+                                        //tempo={exercicios.tempo}
+                                        //repeticao={exercicios.repeticao}
+                                        onClick={() => { handleExercicioClicado(exercicios) }}
+                                    />
+                                );
+
+                            })
+
+                        }
+                    </div>
                 </div>
-                <div className="containerModal-lista">
-
-                    {
-                        exercicios.map((exercicios, index) => {
-                            return (
-                                <ListaExercicios
-                                    selecionado={exercicios.selecionado}
-                                    id={exercicios.id}
-                                    nome={exercicios.nome}
-                                    //descricao={exercicios.descricao}
-                                    imagem={exercicios.imagem}
-                                    //quantidade={exercicios.quantidade}
-                                    //tempo={exercicios.tempo}
-                                    //repeticao={exercicios.repeticao}
-                                    onClick={() => { handleExercicioClicado(exercicios) }}
-                                />
-                            );
-
-                        })
-
-                    }
-                </div>
-            </div>
-        </>
-    )
+            </>
+            )
 }
 
-export default PagExercicios
+            export default PagExercicios
