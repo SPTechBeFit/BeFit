@@ -44,7 +44,7 @@ function ModalUser(props) {
             case '/usuario/criar/treinos':
                 return titulos.title === 'Criar Treinos' && titulos.item === '/exercicios';
             case '/usuario/dietas':
-                return titulos.title === 'Dietas' && titulos.item === '';
+                return titulos.title === 'Dietas' && titulos.item ===  `/catalogo/${sessionStorage.getItem("personId")}`;
             default:
                 console.log('Mudando titulos');
 
