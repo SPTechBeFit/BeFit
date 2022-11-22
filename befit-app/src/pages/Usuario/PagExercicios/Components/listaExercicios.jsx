@@ -21,7 +21,6 @@ function ListaExercicios(props) {
 
             </div>
             <div className="exercicio-lista"
-
                 onClick={props.onClick}
                 style={{
                     backgroundColor: isActive ? 'blue' : '',
@@ -33,8 +32,8 @@ function ListaExercicios(props) {
 
                 </div>
                 <div className="series-lista">
-                    <h2>Quantidade:{props.quantidade}<b> </b></h2>
-                    <h2>Repetições:{props.repeticao}<b> </b> </h2>
+                    <h2>Quantidade: {props.quantidade}<b> </b></h2>
+                    <h2>Repetições: {props.repeticao}<b> </b> </h2>
                 </div>
                 <div className="descricao-listas">
                     <h2>{props.descricao}</h2>

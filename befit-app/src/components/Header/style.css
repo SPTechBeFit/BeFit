@@ -3,6 +3,25 @@
 
 }
 
+.btn-sair{
+  display: flex;
+  background-color: black;
+  color: white;
+  height: 30px;
+  font-size: 17px;
+  align-items: center;  
+}
+
+.btn-voltar-pag{
+  display: flex;
+
+  color: rgb(0, 0, 0);
+  height: 30px;
+  font-size: 17px;
+  align-items: center;  
+}
+
+
 .active {
   color: #fcfcfc;
   background-color: #000000;

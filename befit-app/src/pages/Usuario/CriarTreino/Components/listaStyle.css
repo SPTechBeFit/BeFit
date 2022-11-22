@@ -4,6 +4,16 @@
     font-family: Overpass;
     background-color: #D9D9D9;
     top: 300px;
+    height: 100vh;
+    overflow-y: hidden;
+}
+
+
+.modalCriar{
+ 
+    background-color: #8C8C8C;
+    padding: 15px 60px 50px 60px;
+
 }
 
 .MainContainer { 
@@ -64,8 +74,16 @@
 .inputs-form {
     margin-top: 20px;
     text-align: right;
+    gap: 30px;
     display: flex;
     flex-direction: column;
+    align-items: center;
+}
+
+.inputs-form h1{
+    font-weight: bolder;
+    font-family: Overpass;
+
 }
 
 .inputs-modal { 
@@ -76,19 +94,46 @@
 }
 
 .input-wrapper { 
-    margin-top: 15px;
+   
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .ReactModalPortal { 
     top: 30px;
 }
 
+.ReactModal__Overlay{
+    position: fixed;
+    inset: 0px;
+  
+}
+
 .ReactModal__Content {
-    margin-top: 8%;
-    margin-right: auto;
-    margin-left: auto;
-    width: 300px !important;
-    height: 250px !important;
+    position: absolute;
+    inset: 40px;
+    border: 1px solid rgb(204, 204, 204);
+    background: rgb(255, 255, 255);
+    overflow: auto;
+    border-radius: 2px;
+    outline: none;
+    padding: 15px 30px 20px 30px;
+    margin: 24% 25px -2px 57vw!important;
+    height: 395px !important;
+    width: 540px !important;
+}
+
+
+.contentBox{
+    display: flex;
+    background-color: white;
+    flex-direction: column;
+    align-items: center;
+    width: 30vw;
+    margin: 0px 19vw 0px 21vw;
+    height: 45vh;
+    padding: 80px 0px 14px 0px;
 }
 
 .title-modal { 
@@ -105,7 +150,7 @@
 
 
 .form-infos{
-    margin-top: 100px;
+    margin-top: 25px;
     font-size: 30px;
     height: 50vh;
     display: flex;
@@ -120,18 +165,21 @@
     display: flex;
     gap: 14px;
     flex-direction: column;
-    justify-content: center;
+ 
 }
 
 
 .ipt_nomeTreino{
     width: 100%;
+    font-size: 24px;
     height: 30px;
 }
 
 .descTreino{
-    width: 100%;
-    height: 30px;   
+    width: 301px;
+    height: 118px;  
+    font-size: 26px;
+    resize: none;
 }
 
 .listaExercicios{
@@ -139,12 +187,15 @@
     flex-flow: row wrap;
     justify-content: flex-start;
     gap: 40px;
+    /* width: 60%; */
     flex-direction: row;
 }
 
 
 .descricao-listas{
-    width: 60%;
+    
+    width: 45%;
+
     font-size: 18px;
     padding: 30px;
 }
@@ -154,5 +205,42 @@
     color: white!important;
     font-weight: lighter!important;
     font-size: 30px!important;
+    padding: 0px 0px 0px 30px;
 
 }
+
+
+.infoCriacao{
+    height: 5vh;
+    background-color: blue;
+    display: flex;
+    color: white;
+    font-size: 28px;
+    
+    padding: 4px 35vw 0px 3vw;
+    /* margin-top: 11px; */
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: row;
+    flex-wrap: nowrap;
+}
+
+.infoCriacao h1{
+    display: flex;
+    width: 80%;
+    font-weight: bolder;
+    font-family: Overpass;
+    flex-direction: row;
+    align-items: stretch;
+    justify-content: center;
+}
+.infoCriacao h2{
+    display: flex;
+    width: 40%;
+    font-weight: lighter;
+    font-family: Overpass;
+    flex-direction: row;
+    align-items: stretch;
+    justify-content: center;
+}
+

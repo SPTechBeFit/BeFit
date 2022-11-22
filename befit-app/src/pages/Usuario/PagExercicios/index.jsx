@@ -65,9 +65,9 @@ function PagExercicios(props) {
                                         nome={exercicios.nome}
                                         //descricao={exercicios.descricao}
                                         imagem={exercicios.imagem}
-                                        //quantidade={exercicios.quantidade}
-                                        //tempo={exercicios.tempo}
-                                        //repeticao={exercicios.repeticao}
+                                        quantidade={exercicios.quantidade}
+                                        tempo={exercicios.tempo}
+                                        repeticao={exercicios.repeticao}
                                         onClick={() => { handleExercicioClicado(exercicios) }}
                                     />
                                 );

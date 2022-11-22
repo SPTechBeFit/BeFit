@@ -11,7 +11,8 @@ import ListItemText from '@material-ui/core/ListItemText';
 import InboxIcon from '@material-ui/icons/MoveToInbox';
 import MailIcon from '@material-ui/icons/Mail';
 import ImagemMenu from '../assets/images/logo/menuIcon.png'
-import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom'
+import { BrowserRouter as Router, Routes, Route, Link, useNavigate } from 'react-router-dom'
+import axios from 'axios';
 
 
 const useStyles = makeStyles({
@@ -23,9 +24,83 @@ const useStyles = makeStyles({
   },
 });
 
+
+
 export default function SwipeableTemporaryDrawer() {
+  const pageAtual = (window.location.pathname);
+  const navigate = useNavigate();
+  function headerChange() {
+
+    switch (pageAtual) {
+      case '/usuario/exercicios':
+        return false
+
+
+      case '/usuario/meustreinos':
+        return false
+
+
+      case '/usuario/criar/treinos':
+        return false
+
+
+      case '/usuario/dietas':
+        return false
+
+
+      default:
+        return true
+
+    }
+
+  }
+
+  function headerChangeUserPage() {
+    switch (pageAtual) {
+      case '/usuario/exercicios':
+        return true
+
+
+      case '/usuario/meustreinos':
+        return true
+
+
+      case '/usuario/criar/treinos':
+        return true
+
+
+      case '/usuario/dietas':
+        return true
+
+      case '/treino/*':
+        return true
+
+      default:
+        return false
+
+    }
+  }
+
   const classes = useStyles();
   const [state, setState] = React.useState({ right: false, });
+  const handleLogOut = () => {
+    axios.patch(`http://localhost:8080/usuarios/logout/${sessionStorage.getItem("personId")}`)
+      .then((res) => {
+        console.log(res)
+        var autenticado = sessionStorage.setItem("autenticado", false)
+
+        console.log('usuario autenticado? ', `${sessionStorage.getItem("autenticado")}`)
+        if (!autenticado) {
+          sessionStorage.clear()
+          navigate('/')
+          alert('usuario deslogado')
+        }
+      })
+      .catch(err => {
+        console.log(err)
+        console.log('erro no .logout')
+      })
+  }
 
   const toggleDrawer = (anchor, open) => (event) => {
     if (event && event.type === 'keydown' && (event.key === 'Tab' || event.key === 'Shift')) {
@@ -40,22 +115,25 @@ export default function SwipeableTemporaryDrawer() {
       className={clsx(classes.list, {
         [classes.fullList]: anchor === 'top' || anchor === 'bottom',
       })}
-      role="presentation" 
+      role="presentation"
       onClick={toggleDrawer(anchor, false)}
       onKeyDown={toggleDrawer(anchor, false)}
     >
 
 
-            
+
 
 
       <List>
         {[
           <>
-             <li> <Link to="/" > Home</Link></li>
-              <li> <Link link to="/signin"> <a>Exercícios</a></Link></li>
-              <li> <Link to="/sobre"><a>Sobre</a></Link></li>
-              <li> <Link link to="/signin"> Começar </Link></li>
+            {headerChange() && <li> <Link to="/" > <a>Home</a></Link></li>}
+            {/* <li> <Link to="/exerciciosHome" activeClassName="active"> <a>Exercícios</a></Link></li> */}
+            {headerChange() && <li> <Link to="/sobre" ><a>Sobre</a></Link></li>}
+            {headerChange() && <li> <Link to="/signin"> <a>Começar</a> </Link></li>}
+            {headerChangeUserPage() && <li>  <a className='user'>Olá {sessionStorage.getItem("nome")}!</a></li>}
+            {headerChangeUserPage() && <li> <Link onClick={() => navigate(-1)}>Voltar</Link></li>}
+            {headerChangeUserPage() && <li> <Link onClick={handleLogOut}>Sair</Link></li>}
           </>
         ].map((text, index) => (
           <ListItem button key={text}>
@@ -71,9 +149,9 @@ export default function SwipeableTemporaryDrawer() {
     <div>
       {['right'].map((anchor) => (
         <React.Fragment key={anchor}>
-     
-            <Button onClick={toggleDrawer(anchor, true)}><img className='sideMenuButtonImg' src={ImagemMenu} /></Button>
-        
+
+          <Button onClick={toggleDrawer(anchor, true)}><img className='sideMenuButtonImg' src={ImagemMenu} /></Button>
+
           <SwipeableDrawer
             anchor={anchor}
             open={state[anchor]}

@@ -13,6 +13,7 @@ function Header(props) {
   const pageAtual = (window.location.pathname);
   const navigate = useNavigate();
   function headerChange() {
+     
     switch (pageAtual) {
       case '/usuario/exercicios':
         return false
@@ -54,6 +55,8 @@ function Header(props) {
       case '/usuario/dietas':
         return true
 
+        case '/treino/*':
+          return true
 
       default:
         return false
@@ -107,7 +110,8 @@ function Header(props) {
               {headerChange() && headerHotSite() && <li> <NavLink to="/sobre" activeclassName="active"><a>Sobre</a></NavLink></li>}
               {headerChange() && <li> <NavLink to="/signin"> <a>Começar</a> </NavLink></li>}
               {headerChangeUserPage() && headerHotSite() && <li>  <a className='user'>Olá {sessionStorage.getItem("nome")}!</a></li>}
-              {headerChangeUserPage() && headerHotSite() && <li> <button onClick={handleLogOut}>Sair</button></li>}
+              {headerChangeUserPage() && headerHotSite() && <li> <button className='btn-voltar-pag'onClick={() => navigate(-1)}>Voltar</button></li>}
+              {headerChangeUserPage() && headerHotSite() && <li> <button className='btn-sair'onClick={handleLogOut}>Sair</button></li>}
             </ul>
             <PersistentDrawerLeft />
           </div>

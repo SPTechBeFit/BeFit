@@ -81,7 +81,7 @@ function CardExercicio(props) {
                 </div>
                 <div className="infoTreino">
                     <h1>{props.nome}</h1>
-                    <h2>{props.descricao}</h2>
+                    <h2 rows="5" cols="2" id="descricao" >{props.descricao}</h2>
                 </div>
 
             </button>

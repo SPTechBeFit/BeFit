@@ -7,6 +7,8 @@
 .exercicio-lista{
     display: flex;
     flex-flow: row wrap;
-    justify-content: flex-start;
-    gap: 40px;
+    /* gap: 40px; */
+    background-color: #8c8c8c;
+    justify-content: space-evenly;
+    padding: 20px 0px 0px 0px;
 }
