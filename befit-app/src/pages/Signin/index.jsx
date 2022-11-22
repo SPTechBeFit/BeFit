@@ -6,6 +6,7 @@ import * as C from "./styles";
 import { Form } from "./styles";
 import Input from "../../components/Input/";
 import Button from "../../components/Button/";
+import ButtonSignUp from "../../components/ButtonSignUp/";
 import { Link } from "react-router-dom";
 import Header from "../../components/Header/Header"
 import Footer from "../../components/Footer/Footer"
@@ -25,21 +26,21 @@ function SignIn() {
 
   const handleLogin = () => {
 
-    if(validator.isEmpty(email)){
+    if (validator.isEmpty(email)) {
       setErrorEmail("Email é obrigatorio")
       return;
     }
 
-    if(validator.isEmail(email)){
+    if (validator.isEmail(email)) {
       setErrorEmail("")
     } else {
       setErrorEmail("Email invalido")
       return;
     }
 
-    if(validator.isEmpty(senha)){
+    if (validator.isEmpty(senha)) {
       setErrorSenha("Senha é obrigatorio")
-    } else{
+    } else {
       setErrorSenha("")
     }
 
@@ -62,7 +63,7 @@ function SignIn() {
       .catch(function (error) {
         if (error.response.status === 404) {
           setErrorSenha("login invalido")
-          
+
         }
         console.error(error.response)
       })
@@ -71,39 +72,40 @@ function SignIn() {
   }
   return (
     <>
+    <Header/>
       <Form>
         <C.Container>
-          <C.Label>Entre com seu email e senha</C.Label>
+
           <C.Content>
+
+            <C.Label>Entre com seu email e senha</C.Label>
+            <C.inputText>EMAIL</C.inputText>
             <Input
               className="input_email"
               type="text"
               placeholder="Digite seu E-mail"
               value={email}
-              onChange={(e)=> { setEmail(e.target.value) }}
-              />
-              <C.labelError>{errorEmail}</C.labelError>
+              onChange={(e) => { setEmail(e.target.value) }}
+            />
+            <C.labelError>{errorEmail}</C.labelError>
+
+            <C.inputText>SENHA</C.inputText>
             <Input
               className="input_senha"
               type="password"
               placeholder="Digite sua Senha"
               value={senha}
-              onChange={(e)=> { setSenha(e.target.value) }}
-
+              onChange={(e) => { setSenha(e.target.value) }}
 
             />
             <C.labelError>{errorSenha}</C.labelError>
-            <Button onClick={()=> {handleLogin()}} Text="Login"/>
-            <C.LabelSignup>
-              Não tem uma conta?
-              <C.Strong>
-                <Link to="/signup">&nbsp;Registre-se</Link>
-              </C.Strong>
-            </C.LabelSignup>
+            <Button onClick={() => handleLogin() } Text="ENTRAR" />
+            <ButtonSignUp Text="PRIMEIRO ACESSO" onClick={ () => navigate('/signup')}  />
+
           </C.Content>
         </C.Container>
       </Form>
-      <Footer/>
+      <Footer />
     </>
   )
 
@@ -112,43 +114,3 @@ function SignIn() {
 
 export default SignIn;
 
-
-{/* <BodyLogin>
-        <ContainerMainLogin>
-          <LeftContainerMainLogin>
-          </LeftContainerMainLogin>
-          <RightContainerMainLogin>
-            <BoxCenterLoginContainer>
-              <TitleLogin>Bem vindo de volta</TitleLogin>
-              <SubtitleLogin>Faça seu Login</SubtitleLogin>
-            </BoxCenterLoginContainer>
-            <Form onSubmit={handleSubmitLogin(loginUsuario)}>
-              <InputGroup>
-                <BoxAgroupLogin>
-                  <Label>Email</Label>
-                </BoxAgroupLogin>
-                <Input
-                  className="input_email"
-                  type="text"
-                  name="email"
-                  {...registerLogin("email")}
-                ></Input>
-              </InputGroup>
-
-              <InputGroup>
-                <BoxAgroupLogin>
-                  <Label>Senha</Label>
-                </BoxAgroupLogin>
-
-                <Input
-                  className="input_senha"
-                  type="password"
-                  name="senha"
-                  {...registerLogin("senha")}
-                ></Input>
-              </InputGroup>
-              <ButtonLogin type="submit">Login</ButtonLogin>
-            </Form>
-          </RightContainerMainLogin>
-        </ContainerMainLogin>
-        </BodyLogin> */}

@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import Input from "../../components/Input";
-import Button from "../../components/Button";
+import ButtonBack from "../../components/ButtonSignUp/buttonBack";
+import ButtonNext from "../../components/ButtonSignUp/button"
 import * as C from "./styles";
 import { Link, useNavigate } from "react-router-dom";
 import useAuth from "../../hooks/useAuth";
@@ -24,6 +25,11 @@ const Signup = () => {
 
 
   const handleSignup = () => {
+
+    if(validator.isEmpty(nome)){
+      setErrorNome("Nome não pode ser vazio")
+      return;
+    }
 
     if(!validator.isAlpha(nome)){
       setErrorNome("Nome não pode conter numeros")
@@ -65,9 +71,10 @@ const Signup = () => {
     <>
       <Header />
       <C.Container>
-        <C.Label>CADASTRO</C.Label>
+     
         <C.Content>
-          NOME
+        <C.Label>CADASTRO</C.Label>
+        <C.inputText>NOME</C.inputText>
           <Input
             type="text"
             placeholder="Digite seu nome"
@@ -75,7 +82,7 @@ const Signup = () => {
             onChange={(e) => [setNome(e.target.value), setErrorNome("")]}
           />
           <C.labelError>{errorNome}</C.labelError>
-          EMAIL
+          <C.inputText>SEU EMAIL</C.inputText>
           <Input
             type="email"
             placeholder="Digite seu E-mail"
@@ -83,7 +90,7 @@ const Signup = () => {
             onChange={(e) => [setEmail(e.target.value), setErrorEmail("")]}
           />
           <C.labelError>{errorEmail}</C.labelError>
-          CONFIRMA EMAIL
+          <C.inputText>CONFIRMAR EMAIL</C.inputText>
           <Input
             type="email"
             placeholder="Confirme seu E-mail"
@@ -91,7 +98,7 @@ const Signup = () => {
             onChange={(e) => [setEmailConf(e.target.value), setErrorConfEmail("")]}
           />
           <C.labelError>{errorConfEmail}</C.labelError>
-          SENHA
+          <C.inputText>SENHA</C.inputText>
           <Input
             type="password"
             placeholder="Digite sua Senha"
@@ -99,13 +106,10 @@ const Signup = () => {
             onChange={(e) => [setSenha(e.target.value), setErrorSenha("")]}
           />
           <C.labelError>{errorSenha}</C.labelError>
-          <Button Text="Inscrever-se" onClick={handleSignup} />
-          <C.LabelSignin>
-            Já tem uma conta?
-            <C.Strong>
-              <Link to="/signin">&nbsp;Entre</Link>
-            </C.Strong>
-          </C.LabelSignin>
+          <C.ContainerForButtons>
+          <ButtonBack Text="VOLTAR" onClick={  () => navigate(-1)}  />
+          <ButtonNext Text="CADASTRAR" onClick={handleSignup} />
+          </C.ContainerForButtons>
         </C.Content>
       </C.Container>
       <Footer />

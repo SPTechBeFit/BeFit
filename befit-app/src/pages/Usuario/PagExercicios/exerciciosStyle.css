@@ -6,8 +6,8 @@
 .teste {
   cursor: pointer;
   width: 400px;
-  min-width: 90%;
-  max-width: 90%;
+  min-width: 100%;
+  max-width: 100%;
 }
 
 .teste:hover {
@@ -15,9 +15,38 @@
   cursor: pointer;
 }
 
+.titulo-do-exercicio { 
+  display: block;
+  position: absolute;
+  top: 14%;
+  text-transform: uppercase;
+  font-weight: 550;
+  font-size: 40px;
+}
+
+
 .imagemExercicio-lista {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
   height: 40vh;
   background-color: #8C8C8C;
+}
+
+.descricao-do-exercicio { 
+  text-align: left;
+  margin-left: 20px;
+  width: 40%;
+  font-size: 26px;
+}
+
+.image-lista-painel { 
+  background-size: cover;
+  height: 300px;
+  width: 60%;
+  min-width: 500px;
+  margin-left: 20px;
 }
 
 .containerModal-lista {
@@ -50,13 +79,12 @@ button {
   font-weight: bold;
   border: none;
   background: rgba(0, 0, 0, .30);
-  width: 100%;
+  
 
 }
 
 button:hover {
   background-color: rgba(6, 18, 72, 0.491);
-
   transition: ease-in 0.2s;
 }
 
@@ -73,10 +101,11 @@ button:hover {
   flex-direction: column;
 }
 
+
 .image-lista {
   /* height: auto; */
   height: 15vh;
-  /* width: 0vw; */
+  /* width: vw; */
   background-size: cover;
 }
 

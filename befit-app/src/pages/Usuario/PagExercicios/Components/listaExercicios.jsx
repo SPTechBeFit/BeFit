@@ -14,16 +14,6 @@ function ListaExercicios(props) {
         backgroundImage: `url(${props.imagem ? props.imagem : imagemTeste})`
     }
 
-    const handleClick = () => {
-        // 👇️ toggle
-        setIsActive(current => !current);
-        console.log(isActive)
-
-
-        // 👇️ or set to true
-        // setIsActive(true);
-    };
-
     return (
         <>
             <div className="infoExercicio" key={props.key}>
@@ -32,7 +22,7 @@ function ListaExercicios(props) {
             </div>
             <div className="exercicio-lista"
 
-                onClick={handleClick}
+                onClick={props.onClick}
                 style={{
                     backgroundColor: isActive ? 'blue' : '',
                     color: isActive ? 'white' : '',

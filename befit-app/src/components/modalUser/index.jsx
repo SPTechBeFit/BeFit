@@ -103,7 +103,7 @@ function ModalUser(props) {
             )}
 
             </div>
-            <div className="modal">
+            <div className="modal-user">
                 {
                     checarLista()
                 }

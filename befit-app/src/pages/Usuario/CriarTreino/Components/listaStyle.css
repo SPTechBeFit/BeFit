@@ -1,6 +1,9 @@
 .bodyCriacao {
-    margin: 0px 20vw 0px 20vw;
-
+    display: relative;
+    padding: 0vh 10vw 0px 10vw;;
+    font-family: Overpass;
+    background-color: #D9D9D9;
+    top: 300px;
 }
 
 .MainContainer { 
@@ -10,39 +13,146 @@
     text-align: center;
 }
 
-.btn { 
+#btn-enviar { 
     margin-top: 15px !important;
-}
-
-.btn-ok {
     width: 170px;
-    line-height: 12px;
+    line-height: s12px;
     background-color: rgb(0, 98, 255);
     margin-top: 10px;
     font-size: 20px;
     color: white;
-}
+    height: 40px;
+  }
+  
+  .btn-ok {
+    width: 100%;
+    line-height: 12px;
+    background-color: rgb(0, 98, 255);
+    margin-top: 60px;
+    font-size: 20px;
+    color: white;
+  }
+
+  .btn-ok:hover { 
+    cursor: pointer;
+  }
+
+  .btn-cancelar { 
+    margin-top: 4px;
+    text-align: center;
+    color: rgb(0, 197, 197);
+  }
+
+  .btn-cancelar:hover { 
+    color: blue;
+    cursor: pointer;
+    text-decoration: underline;
+  }
+
+  .input-time { 
+    display: inline;
+    margin-left: 20px;
+    height: 23px;
+    width: 120px;
+  }
+
 
 .fechaModalBotao {
     width: 120px;
 }
 
 .inputs-form {
-    display: flex;
     margin-top: 20px;
+    text-align: right;
+    display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
+}
+
+.inputs-modal { 
+    border-radius: 5px;
+    margin-left: 20px;
+    min-width: 180px;
+    
+}
+
+.input-wrapper { 
+    margin-top: 15px;
+}
+
+.ReactModalPortal { 
+    top: 30px;
 }
 
 .ReactModal__Content {
+    margin-top: 8%;
     margin-right: auto;
     margin-left: auto;
     width: 300px !important;
     height: 250px !important;
 }
 
+.title-modal { 
+    text-transform: uppercase;
+    font-weight: 550;
+    font-size: large;
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: center;
+}
+
 #tempo {
     width: 50px;
+}
+
+
+.form-infos{
+    margin-top: 100px;
+    font-size: 30px;
+    height: 50vh;
+    display: flex;
+    width: 100%;
+    gap: 75px;
+    flex-direction: column;
+    align-items: flex-start;
+    align-content: flex-start;
+}
+
+.infoTreinoCriacao{
+    display: flex;
+    gap: 14px;
+    flex-direction: column;
+    justify-content: center;
+}
+
+
+.ipt_nomeTreino{
+    width: 100%;
+    height: 30px;
+}
+
+.descTreino{
+    width: 100%;
+    height: 30px;   
+}
+
+.listaExercicios{
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: flex-start;
+    gap: 40px;
+    flex-direction: row;
+}
+
+
+.descricao-listas{
+    width: 60%;
+    font-size: 18px;
+    padding: 30px;
+}
+
+.infoExercicio{
+    background: blue!important;
+    color: white!important;
+    font-weight: lighter!important;
+    font-size: 30px!important;
+
 }

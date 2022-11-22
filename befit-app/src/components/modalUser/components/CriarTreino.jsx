@@ -48,7 +48,7 @@ function PagExerciciosCriar(props) {
                         );
                     })
                 }
-                <h1>teste</h1>
+               
         </>
     )
 }

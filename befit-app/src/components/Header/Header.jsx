@@ -2,12 +2,13 @@ import ImagemLogo from '../../assets/images/logo/logoBefit.png'
 import PersistentDrawerLeft from '../SideBar'
 import style from './style.css'
 import React, { useState } from "react";
-
 import { BrowserRouter as Router, Routes, Route, useNavigate, Link, NavLink } from 'react-router-dom'
 import axios from 'axios';
 import { Component } from 'react';
 function Header(props) {
 
+
+  
 
   const pageAtual = (window.location.pathname);
   const navigate = useNavigate();
