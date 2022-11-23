@@ -56,8 +56,7 @@ function PagCriacaoExercicios(props) {
 
     function listar(props) {
         //transformar id em variavel
-        let exercicios = axios.get('http://localhost:8080/exercicios')
-        exercicios
+        axios.get('http://localhost:8080/exercicios')
             .then(function (respostaObtida) {
                 console.log(respostaObtida.data);
                 setExercicios(respostaObtida.data);
@@ -88,19 +87,24 @@ function PagCriacaoExercicios(props) {
         if(validator.isEmpty(tituloTreino)){
             setErrorTitulo("Titulo não pode ser vazio")
             return;
-          }
+        }
 
-          if(!validator.isAlpha(tituloTreino)){
-            setErrorTitulo("Titulo não pode conter numeros")
+        if(tituloTreino.length > 20){
+            setErrorTitulo("O nome do treino não pode ter mais de 20 caracteres")
             return;
-          }
+        }
           
           
         if (validator.isEmpty(descTreino)) {
             setErrorDesc("Descricão não pode ser vazia")
-            return;
-            
+            return;   
         }
+
+        if(descTreino.length > 25){
+            setErrorDesc("Descrição não pode ter mais de 25 caracteres")
+            return;
+        }
+
         setTituloTreinoModal(tituloTreino)
         console.log(tituloTreino)
 
@@ -129,20 +133,27 @@ function PagCriacaoExercicios(props) {
         if(validator.isEmpty(repeticoesTreino)){
             setErrorRepeticoes("não pode ser vazio")
             return;
-          }
+        }
 
-        if(validator.isEmpty(repeticoesTreino)){
-            setErrorRepeticoes("não pode ser vazio")
+        if(repeticoesTreino.length > 3){
+            setErrorRepeticoes("Não pode ser maior que 3 caracteres")
             return;
-          }
-          if(validator.isEmpty(quantidadeTreino)){
+        }
+
+        if(validator.isEmpty(quantidadeTreino)){
             setErrorQuantidade("não pode ser vazio")
             return;
-          }
-          if(validator.isEmpty(tempoTreino)){
+        }
+
+        if(validator.isEmpty(tempoTreino)){
             setErrorTempo("não pode ser vazio")
             return;
-          }
+        }
+
+        if(tempoTreino.length > 2){
+            setErrorTempo("Não pode ser maior que 2 caracteres")
+            return;
+        }
 
         let series = {
             "exercicioId": idTreino,
@@ -271,7 +282,7 @@ function PagCriacaoExercicios(props) {
                                 <div className='input-wrapper'>
                                 <h1>Insira as repetições</h1>
                                     <label htmlFor='repeticoes'> </label>
-                                    <Input placeholder='ex: 15' type="number" className='inputs-modal' id="repeticoes" onChange={(e) => { setRepeticoesTreino(e.target.value) }}></Input>
+                                    <Input placeholder='ex: 15' min="1" max="5" type="number" className='inputs-modal' id="repeticoes" onChange={(e) => { setRepeticoesTreino(e.target.value) }}></Input>
                                      <C.labelError>{errorRepeticoes}</C.labelError> 
                                 </div>
 

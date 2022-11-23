@@ -7,7 +7,7 @@ import likeButtonSelecionado from '../../assets/images/Icons/favoritoIconSelecio
 import api from '../../services/api'
 import PagExercicios from '../../pages/Usuario/PagExercicios'
 
-function CardExercicio(props) {
+function CardDieta(props) {
     const imagem = {
         backgroundImage: `url(${props.imagem ? props.imagem : imagemTeste})`
     }
@@ -100,7 +100,7 @@ function CardExercicio(props) {
 
 
 
-export default CardExercicio;
+export default CardDieta;
 
 
 
