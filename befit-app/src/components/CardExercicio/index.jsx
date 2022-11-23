@@ -6,6 +6,7 @@ import likeButton from '../../assets/images/Icons/favoritoIcon.png'
 import likeButtonSelecionado from '../../assets/images/Icons/favoritoIconSelecionado.png'
 import api from '../../services/api'
 import PagExercicios from '../../pages/Usuario/PagExercicios'
+import axios from 'axios'
 
 function CardExercicio(props) {
     const imagem = {
@@ -40,12 +41,12 @@ function CardExercicio(props) {
     const saveClickProperty = () => {
         setSelecionado(!selecionado);
         if (selecionado) {
-            window.location.reload(false);
             api.delete(`treinos/desfavoritar/${sessionStorage.getItem("personId")}/${props.id}`)
-                .then(function (respostaObtida) {       // método get responde uma Promise que será resolvida, e quando obtiver uma resposta, cairá no "then" recebendo a resposta como parâmetro
+                .then(function (respostaObtida) {  
+                        window.location.reload(false);     // método get responde uma Promise que será resolvida, e quando obtiver uma resposta, cairá no "then" recebendo a resposta como parâmetro
                     console.log(respostaObtida.data);
-                    
-                   
+
+
                     // exibindo o atributo "data", que possui o vetor de dados do objeto de resposta que foi recebido
                     // utilizando o setter para alterar o valor do estado (useState) de "musicas"        
                 })
@@ -53,10 +54,10 @@ function CardExercicio(props) {
                     console.log(errorOcorrido)          // exibindo o erro que ocorreu na requisição
                 });
         } else {
-            api.post(`treinos/favoritar/${sessionStorage.getItem("personId")}/${props.id}`)
-
-                .then(function (respostaObtida) { 
-                    window.location.reload(false);      // método get responde uma Promise que será resolvida, e quando obtiver uma resposta, cairá no "then" recebendo a resposta como parâmetro
+            const favoritar = api.post(`treinos/favoritar/${sessionStorage.getItem("personId")}/${props.id}`)
+            favoritar
+                .then(function (respostaObtida) {
+                    window.location.reload(false);
                     console.log(respostaObtida.data);   // exibindo o atributo "data", que possui o vetor de dados do objeto de resposta que foi recebido
                     // utilizando o setter para alterar o valor do estado (useState) de "musicas"        
                 })
@@ -73,14 +74,14 @@ function CardExercicio(props) {
         let path = (`/treino/${props.nome}/${props.id}`);
         sessionStorage.setItem("idTreino", props.id);
         navegar(path);
-        
+
     }
     //navegar(`/treino/${props.nome}/${props.id}`)
 
     return (
         <>
             <button
-                onClick={() => {routeChange()}} className="boxTreino">
+                onClick={() => { routeChange() }} className="boxTreino">
                 <div className="imagemCoverTreino">
                     <div style={imagem} className="image"></div>
                 </div>

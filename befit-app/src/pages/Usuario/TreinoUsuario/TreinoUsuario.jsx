@@ -58,7 +58,6 @@ function TreinoUsuario(props) {
                 return titulos.title === 'Criar Treinos' && titulos.item === '/exercicios';
             case '/usuario/dietas':
                 return titulos.title === 'Dietas' && titulos.item === `/dietas/catalogo/${sessionStorage.getItem("personId")}`;
-
                 case '/usuario/minhasdietas':
                     return titulos.title === 'Minhas Dietas' && titulos.item === `/dietas/favoritos/${sessionStorage.getItem("personId")}`; 
             default:
@@ -73,7 +72,6 @@ function TreinoUsuario(props) {
         console.log(sessionStorage.getItem("personId"))
 
         nomeFiltrado.map((item) => {
-
             api.get(`${item.item}`)
                 .then(function (respostaObtida) {
                     console.log(respostaObtida.data);
@@ -104,7 +102,7 @@ function TreinoUsuario(props) {
                 <MenuUser />
                 <ModalUser>
                     {
-                        pageAtual === "/usuario/exercicios"
+                        pageAtual === "/usuario/exercicios" || pageAtual === "/usuario/meustreinos"
                             ? treinos.map((treinos, i) => {
                                 return (
                                     <CardExercicio key={treinos.id}
