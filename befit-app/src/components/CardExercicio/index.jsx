@@ -40,18 +40,23 @@ function CardExercicio(props) {
     const saveClickProperty = () => {
         setSelecionado(!selecionado);
         if (selecionado) {
-            api.delete(`/treinos/desfavoritar/${sessionStorage.getItem("personId")}/${props.id}`)
+            window.location.reload(false);
+            api.delete(`treinos/desfavoritar/${sessionStorage.getItem("personId")}/${props.id}`)
                 .then(function (respostaObtida) {       // método get responde uma Promise que será resolvida, e quando obtiver uma resposta, cairá no "then" recebendo a resposta como parâmetro
-                    console.log(respostaObtida.data);   // exibindo o atributo "data", que possui o vetor de dados do objeto de resposta que foi recebido
+                    console.log(respostaObtida.data);
+                    
+                   
+                    // exibindo o atributo "data", que possui o vetor de dados do objeto de resposta que foi recebido
                     // utilizando o setter para alterar o valor do estado (useState) de "musicas"        
                 })
                 .catch((errorOcorrido) => {             // caso a requisição falhe, o "catch" pegará o erro, recebendo como parâmetro de uma função
                     console.log(errorOcorrido)          // exibindo o erro que ocorreu na requisição
                 });
         } else {
-            const favoritar = api.post(`/treinos/favoritar/${sessionStorage.getItem("personId")}/${props.id}`)
+            api.post(`treinos/favoritar/${sessionStorage.getItem("personId")}/${props.id}`)
 
-                .then(function (respostaObtida) {       // método get responde uma Promise que será resolvida, e quando obtiver uma resposta, cairá no "then" recebendo a resposta como parâmetro
+                .then(function (respostaObtida) { 
+                    window.location.reload(false);      // método get responde uma Promise que será resolvida, e quando obtiver uma resposta, cairá no "then" recebendo a resposta como parâmetro
                     console.log(respostaObtida.data);   // exibindo o atributo "data", que possui o vetor de dados do objeto de resposta que foi recebido
                     // utilizando o setter para alterar o valor do estado (useState) de "musicas"        
                 })

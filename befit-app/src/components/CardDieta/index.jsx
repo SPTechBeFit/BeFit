@@ -25,6 +25,7 @@ function CardDieta(props) {
     });
 
 
+    
     const navegar = useNavigate();
 
     const imagensButton = [
@@ -40,7 +41,7 @@ function CardDieta(props) {
     const saveClickProperty = () => {
         setSelecionado(!selecionado);
         if (selecionado) {
-            api.delete(`/treinos/desfavoritar/${sessionStorage.getItem("personId")}/${props.id}`)
+            api.delete(`/dietas/desfavoritar/${sessionStorage.getItem("personId")}/${props.id}`)
                 .then(function (respostaObtida) {       // método get responde uma Promise que será resolvida, e quando obtiver uma resposta, cairá no "then" recebendo a resposta como parâmetro
                     console.log(respostaObtida.data);   // exibindo o atributo "data", que possui o vetor de dados do objeto de resposta que foi recebido
                     // utilizando o setter para alterar o valor do estado (useState) de "musicas"        
@@ -49,7 +50,7 @@ function CardDieta(props) {
                     console.log(errorOcorrido)          // exibindo o erro que ocorreu na requisição
                 });
         } else {
-            const favoritar = api.post(`/treinos/favoritar/${sessionStorage.getItem("personId")}/${props.id}`)
+            const favoritar = api.post(`/dietas/favoritar/${sessionStorage.getItem("personId")}/${props.id}`)
 
                 .then(function (respostaObtida) {       // método get responde uma Promise que será resolvida, e quando obtiver uma resposta, cairá no "then" recebendo a resposta como parâmetro
                     console.log(respostaObtida.data);   // exibindo o atributo "data", que possui o vetor de dados do objeto de resposta que foi recebido
@@ -65,8 +66,8 @@ function CardDieta(props) {
     }
 
     const routeChange = () => {
-        let path = (`/treino/${props.nome}/${props.id}`);
-        sessionStorage.setItem("idTreino", props.id);
+        let path = (`/dietas/${props.nome}/${props.id}`);
+        sessionStorage.setItem("idDieta", props.id);
         navegar(path);
         
     }

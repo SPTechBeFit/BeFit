@@ -32,6 +32,12 @@ function BannerTreino(props) {
       number: 4,
       title: 'Dietas',
       image: 'bannerDieta',
+    },
+    {
+      id: 5,
+      number: 5,
+      title: 'Minhas Dietas',
+      image: 'bannerDieta'
     }
   ]
   const pageAtual = (window.location.pathname);
@@ -53,6 +59,10 @@ function BannerTreino(props) {
 
       case '/usuario/dietas':
         return imagens.title === 'Dietas';
+
+        
+      case '/usuario/minhasdietas':
+        return imagens.title === 'Minhas Dietas';
 
 
       default:
