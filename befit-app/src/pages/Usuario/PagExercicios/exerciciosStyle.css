@@ -3,19 +3,52 @@
 
 }
 
-.teste {
-  cursor: pointer;
-  width: 400px;
-  min-width: 100%;
-  max-width: 100%;
+.modalVazioTexto {
+  margin: 8vh 0px 8vh 0px;
+  display: flex;
+  font-size: 28px;
+  font-family: overpass;
 }
 
-.teste:hover {
-  background-color: #8C8C8C;
+.modalVazio {
+  cursor: pointer;
+  margin: 100px 100px 100px 100px;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  /* height: 50%; */
+  width: 50%;
+  /* border-color: blue; */
+
+  /* border: 22px; */
+  /* border-style: dashed; */
+  /* border-spacing: 10px; */
+  background-color: white;
+
+}
+
+.modalVazio:hover {
+  transition: ease-out 0.4s;
+  color: white;
+  background-color: #54547b;
   cursor: pointer;
 }
 
-.titulo-do-exercicio { 
+.buttons {
+  width: 70%;
+  height: 20%;
+}
+
+.btn-redirect-item {
+  width: 100%;
+  background-color: blue;
+  color: white;
+  height: 100%;
+
+}
+
+.titulo-do-exercicio {
   display: block;
   position: absolute;
   top: 14%;
@@ -34,14 +67,14 @@
   background-color: #8C8C8C;
 }
 
-.descricao-do-exercicio { 
+.descricao-do-exercicio {
   text-align: left;
   margin-left: 20px;
   width: 40%;
   font-size: 26px;
 }
 
-.image-lista-painel { 
+.image-lista-painel {
   background-size: cover;
   height: 300px;
   width: 60%;
@@ -54,13 +87,13 @@
 .containerModal-lista {
   font-family: overpass;
   display: flex;
-    flex-direction: column;
-    width: 100%;
-    height: 50vh;
-    overflow-y: auto;
+  flex-direction: column;
+  width: 100%;
+  height: 50vh;
+  overflow-y: auto;
 }
 
-.series-lista{
+.series-lista {
   display: flex;
   flex-direction: row;
   gap: 50px;
@@ -70,7 +103,7 @@
   padding: 58px 0px 20px 0px;
 }
 
-.btn-salvar{
+.btn-salvar {
   margin: 25px 70px 0px 0px;
   color: white;
   background-color: blue;
@@ -80,7 +113,7 @@
   justify-content: space-around;
 }
 
-.btn-salvar:hover{
+.btn-salvar:hover {
   background-color: #0c0529;
 }
 
@@ -95,7 +128,7 @@ button {
   font-weight: bold;
   border: none;
   background: rgba(0, 0, 0, .30);
-  
+
 
 }
 

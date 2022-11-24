@@ -9,6 +9,7 @@ import style from '../style.css'
 import styleBanner from '../BannerTreino/bannerStyle.css'
 import CardExercicio from '../../../components/CardExercicio/index.jsx';
 import CardDieta from '../../../components/CardDieta/index.jsx';
+import EmptyModal from "../../../components/modalUser/components/emptyModal"
 
 
 function TreinoUsuario(props) {
@@ -16,6 +17,7 @@ function TreinoUsuario(props) {
     const [pageAtual, setPageAtual] = useState(window.location.pathname);
     const [treinos, setTreinos] = useState([]);
     const [dietas, setDieta] = useState([]);
+    const [vazio, setVazio] = useState([]);
     const [listaCarregada, setListaCarregada] = useState(false)
 
     const titulos = [
@@ -58,8 +60,8 @@ function TreinoUsuario(props) {
                 return titulos.title === 'Criar Treinos' && titulos.item === '/exercicios';
             case '/usuario/dietas':
                 return titulos.title === 'Dietas' && titulos.item === `/dietas/catalogo/${sessionStorage.getItem("personId")}`;
-                case '/usuario/minhasdietas':
-                    return titulos.title === 'Minhas Dietas' && titulos.item === `/dietas/favoritos/${sessionStorage.getItem("personId")}`; 
+            case '/usuario/minhasdietas':
+                return titulos.title === 'Minhas Dietas' && titulos.item === `/dietas/favoritos/${sessionStorage.getItem("personId")}`;
             default:
                 console.log('Mudando titulos');
 
@@ -102,30 +104,31 @@ function TreinoUsuario(props) {
                 <MenuUser />
                 <ModalUser>
                     {
-                        pageAtual === "/usuario/exercicios" || pageAtual === "/usuario/meustreinos"
-                            ? treinos.map((treinos, i) => {
+                        treinos ?
+                            pageAtual === "/usuario/exercicios" || pageAtual === "/usuario/meustreinos" ? treinos.map((treinos, i) => {
                                 return (
                                     <CardExercicio key={treinos.id}
                                         id={treinos.id}
                                         nome={treinos.nome}
                                         descricao={treinos.descricao}
+                                        tempo={treinos.tempo}
                                         imagem={treinos.imagem}
                                         favoritado={treinos.favoritado}
                                     />
                                 )
                             })
-                            : dietas.map((dietas, i) => {
-                                return (
-
-                                    <CardDieta key={dietas.id}
-                                        id={dietas.id}
-                                        nome={dietas.nome}
-                                        descricao={dietas.descricao}
-                                        imagem={dietas.imagem}
-                                        favoritado={dietas.favoritado}
-                                    />
-                                )
-                            })
+                                : dietas.map((dietas, i) => {
+                                    return (
+                                        <CardDieta key={dietas.id}
+                                            id={dietas.id}
+                                            nome={dietas.nome}
+                                            descricao={dietas.descricao}
+                                            imagem={dietas.imagem}
+                                            favoritado={dietas.favoritado}
+                                        />
+                                    )
+                                })
+                            : <EmptyModal />
                     }
                 </ModalUser>
             </div>

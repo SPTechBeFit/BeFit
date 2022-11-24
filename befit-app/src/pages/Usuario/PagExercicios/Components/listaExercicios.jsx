@@ -34,6 +34,7 @@ function ListaExercicios(props) {
                 <div className="series-lista">
                     <h2>Quantidade: {props.quantidade}<b> </b></h2>
                     <h2>Repetições: {props.repeticao}<b> </b> </h2>
+                    <h2>Tempo: {props.tempo}</h2>
                 </div>
                 <div className="descricao-listas">
                     <h2>{props.descricao}</h2>

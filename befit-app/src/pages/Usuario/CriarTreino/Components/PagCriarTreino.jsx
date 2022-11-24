@@ -11,6 +11,7 @@ import * as C from "./styles";
 import ButtonBack from "../../../../components/ButtonSignUp/buttonBack"
 import Input from '../../../../components/Input';
 import ButtonNext from '../../../../components/ButtonSignUp/button';
+import { useNavigate } from 'react-router-dom'
 
 
 Modal.setAppElement("#root")
@@ -20,6 +21,7 @@ let vaiAparecer = true;
 let vaiAparecerButton = true;
 
 function PagCriacaoExercicios(props) {
+    const navigate = useNavigate();
 
     const [tituloTreino, setTituloTreino] = useState("");
     const [descTreino, setDescTreino] = useState("");
@@ -70,7 +72,7 @@ function PagCriacaoExercicios(props) {
     }
 
     function adicionarTreino(evento) {
-        
+
         // if(validator.isEmpty(errorTituloTreino)){
         //     //setErrorNome("Nome não pode ser vazio")
         //     return;
@@ -83,24 +85,24 @@ function PagCriacaoExercicios(props) {
 
         evento.preventDefault();
 
-        
-        if(validator.isEmpty(tituloTreino)){
+
+        if (validator.isEmpty(tituloTreino)) {
             setErrorTitulo("Titulo não pode ser vazio")
             return;
         }
 
-        if(tituloTreino.length > 20){
+        if (tituloTreino.length > 20) {
             setErrorTitulo("O nome do treino não pode ter mais de 20 caracteres")
             return;
         }
-          
-          
+
+
         if (validator.isEmpty(descTreino)) {
             setErrorDesc("Descricão não pode ser vazia")
-            return;   
+            return;
         }
 
-        if(descTreino.length > 25){
+        if (descTreino.length > 25) {
             setErrorDesc("Descrição não pode ter mais de 25 caracteres")
             return;
         }
@@ -130,40 +132,47 @@ function PagCriacaoExercicios(props) {
 
     function salvarExercicioNaLista() {
         vaiAparecerButton = false
-        if(validator.isEmpty(repeticoesTreino)){
+        if (validator.isEmpty(repeticoesTreino)) {
             setErrorRepeticoes("não pode ser vazio")
             return;
         }
 
-        if(repeticoesTreino.length > 3){
+        if (repeticoesTreino.length > 3) {
             setErrorRepeticoes("Não pode ser maior que 3 caracteres")
             return;
         }
 
-        if(validator.isEmpty(quantidadeTreino)){
+        if (validator.isEmpty(quantidadeTreino)) {
             setErrorQuantidade("não pode ser vazio")
             return;
         }
 
-        if(validator.isEmpty(tempoTreino)){
+        if (validator.isEmpty(tempoTreino)) {
             setErrorTempo("não pode ser vazio")
             return;
         }
 
-        if(tempoTreino.length > 2){
+        if (tempoTreino.length > 2) {
             setErrorTempo("Não pode ser maior que 2 caracteres")
             return;
+        }
+
+        let tempoFormatadoEmMinutos = tempoTreino
+
+        if (tempoTreino < 10) {
+            tempoFormatadoEmMinutos = `0${tempoTreino}`
         }
 
         let series = {
             "exercicioId": idTreino,
             "quantidade": quantidadeTreino,
-            "repeticao": repeticoesTreino
+            "repeticao": repeticoesTreino,
+            "tempo": `00:${tempoFormatadoEmMinutos}:00`
         }
-
         listaDeExercicios.push(series)
 
         fechaModal()
+
     }
 
     function enviarTreino() {
@@ -181,7 +190,7 @@ function PagCriacaoExercicios(props) {
 
         axios.post('http://localhost:8080/treinos', body).then((res) => {
             alert('treino cadastrado com sucesso')
-
+            navigate('/usuario/exercicios')
         }
         ).catch(error => {
             console.log(error)
@@ -197,7 +206,7 @@ function PagCriacaoExercicios(props) {
             <div className="bodyCriacao">
                 <BannerTreino />
                 <div className="infoCriacao">
-                    <h1>{defaultMessage}</h1>
+
                     <h2>
                         <b>{tituloCriacao} </b>
                     </h2>
@@ -219,10 +228,10 @@ function PagCriacaoExercicios(props) {
                                             defaultValue={tituloTreino}
                                             onChange={(e) => { setTituloTreino(e.target.value) }}
                                         />
-                                        
+
                                         {/* <C.labelError>{errorTituloTreino}</C.labelError> */}
                                     </label>
-                                    <C.labelError>{errorTitulo}</C.labelError> 
+                                    <C.labelError>{errorTitulo}</C.labelError>
                                     <br />
                                     <label>
                                         <h1>
@@ -235,10 +244,10 @@ function PagCriacaoExercicios(props) {
                                             defaultValue={descTreino}
                                             onChange={(e) => { setDescTreino(e.target.value) }}
                                         />
-                                        
+
                                         {/* <C.labelError>{errorDescTreino}</C.labelError> */}
                                     </label>
-                                    <C.labelError>{errorDesc}</C.labelError> 
+                                    <C.labelError>{errorDesc}</C.labelError>
                                 </div>
                                 <button id="btn-enviar">Enviar</button>
                             </div>
@@ -280,24 +289,24 @@ function PagCriacaoExercicios(props) {
                             <div className='inputs-form'>
 
                                 <div className='input-wrapper'>
-                                <h1>Insira as repetições</h1>
+                                    <h1>Insira as repetições</h1>
                                     <label htmlFor='repeticoes'> </label>
                                     <Input placeholder='ex: 15' min="1" max="5" type="number" className='inputs-modal' id="repeticoes" onChange={(e) => { setRepeticoesTreino(e.target.value) }}></Input>
-                                     <C.labelError>{errorRepeticoes}</C.labelError> 
+                                    <C.labelError>{errorRepeticoes}</C.labelError>
                                 </div>
 
                                 <div className='input-wrapper'>
-                                <h1>Quantas vezes será feito</h1>
+                                    <h1>Quantas vezes será feito</h1>
                                     <label htmlFor='quantidade'></label>
                                     <Input placeholder='ex: 3' type="number" className='inputs-modal' id="quantidade" onChange={(e) => { setQuantidadeTreino(e.target.value) }}></Input>
-                                    <C.labelError>{errorQuantidade}</C.labelError> 
+                                    <C.labelError>{errorQuantidade}</C.labelError>
                                 </div>
 
                                 <div className='input-wrapper'>
-                                <h1>Tempo em minutos</h1>
+                                    <h1>Tempo em minutos</h1>
                                     <label htmlFor='tempo'></label>
                                     <Input placeholder='ex: 1' type="number" className='inputs-modal' id="tempo" onChange={(e) => { setTempoTreino(e.target.value) }}></Input>
-                                    <C.labelError>{errorTempo}</C.labelError> 
+                                    <C.labelError>{errorTempo}</C.labelError>
                                 </div>
 
                                 <C.ContainerForButtons>
