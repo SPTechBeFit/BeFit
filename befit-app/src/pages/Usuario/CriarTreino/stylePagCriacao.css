@@ -1,6 +1,7 @@
 .bodyCriacao {
     display: relative;
-    padding: 0vh 10vw 0px 10vw;;
+    padding: 0vh 10vw 0px 10vw;
+    ;
     font-family: Overpass;
     background-color: #D9D9D9;
     top: 300px;
@@ -8,22 +9,55 @@
     overflow-y: hidden;
 }
 
+.exercicio-lista {
+    display: flex;
+    justify-content: flex-start;
+    gap: 3vh;
+    width: 100%;
+    /* font-size: 22px; */
+    margin: 0px -800px 0px 0px;
+    
+}
 
-.modalCriar{
- 
-    background-color: #8C8C8C;
-    padding: 15px 60px 50px 60px;
+.teste {
+    background-color: #949596;
+    /* margin: 10px 0px 10px 0px; */
+    width: 100%;
+}
+
+.containerLista {
+    width: 100%;
+
 
 }
 
-.MainContainer { 
+.descTreino {
+    width: 301px;
+    height: 118px;
+    font-size: 26px;
+    resize: none;
+}
+
+
+.modalArea {
+    width: 50%;
+
+    height: 100%;
+}
+
+.modalCriar {
+    background-color: #8C8C8C;
+    padding: 15px 60px 50px 60px;
+}
+
+.MainContainer {
     display: flex;
     justify-content: center;
     align-items: center;
     text-align: center;
 }
 
-#btn-enviar { 
+#btn-enviar {
     margin-top: 15px !important;
     width: 170px;
     line-height: s12px;
@@ -32,39 +66,39 @@
     font-size: 20px;
     color: white;
     height: 40px;
-  }
-  
-  .btn-ok {
+}
+
+.btn-ok {
     width: 100%;
     line-height: 12px;
     background-color: rgb(0, 98, 255);
     margin-top: 60px;
     font-size: 20px;
     color: white;
-  }
+}
 
-  .btn-ok:hover { 
+.btn-ok:hover {
     cursor: pointer;
-  }
+}
 
-  .btn-cancelar { 
+.btn-cancelar {
     margin-top: 4px;
     text-align: center;
     color: rgb(0, 197, 197);
-  }
+}
 
-  .btn-cancelar:hover { 
+.btn-cancelar:hover {
     color: blue;
     cursor: pointer;
     text-decoration: underline;
-  }
+}
 
-  .input-time { 
+.input-time {
     display: inline;
     margin-left: 20px;
     height: 23px;
     width: 120px;
-  }
+}
 
 
 .fechaModalBotao {
@@ -80,52 +114,57 @@
     align-items: center;
 }
 
-.inputs-form h1{
+.inputs-form h1 {
     font-weight: bolder;
     font-family: Overpass;
 
 }
 
-.inputs-modal { 
+.inputs-modal {
     border-radius: 5px;
     margin-left: 20px;
     min-width: 180px;
-    
+
 }
 
-.input-wrapper { 
-   
+.input-wrapper {
+
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
-.ReactModalPortal { 
+.ReactModalPortal {
     top: 30px;
 }
 
-.ReactModal__Overlay{
+.ReactModal__Overlay {
     position: fixed;
     inset: 0px;
-  
+    background-color: rgb(60 60 60 / 41%) !important;
+
 }
 
 .ReactModal__Content {
-    position: absolute;
-    inset: 40px;
+
+    /* position: absolute; */
+    inset: 0px;
     border: 1px solid rgb(204, 204, 204);
-    background: rgb(255, 255, 255);
-    overflow: auto;
+    /* overflow: auto; */
     border-radius: 2px;
-    outline: none;
-    padding: 15px 30px 20px 30px;
-    margin: 30vh 30vw 0px 30vw!important;
+    /* outline: none; */
+    padding: 0px 0px 20px 0px !important;
+    margin: 415px 45vw 0px 928px !important;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
     height: 395px !important;
-    width: 540px !important;
+    width: 430px !important;
 }
 
 
-.contentBox{
+.contentBox {
     display: flex;
     background-color: white;
     flex-direction: column;
@@ -136,21 +175,38 @@
     padding: 15px 0px 40px 0px;
 }
 
-.title-modal { 
+.title-modal {
     text-transform: uppercase;
     font-weight: 550;
     font-size: large;
     font-family: Arial, Helvetica, sans-serif;
     text-align: center;
+    background-color: blue;
+    height: 4vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    font-weight: bold;
+    color: white;
 }
+
+.containerModal-lista {
+    font-family: overpass;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    overflow-x: hidden;
+    height: 45vh;
+    overflow-y: auto;
+  }
 
 #tempo {
     width: 50px;
 }
 
 
-.form-infos{
-    margin-top: 25px;
+.form-infos {
+     
     font-size: 30px;
     height: 50vh;
     display: flex;
@@ -161,62 +217,76 @@
     align-content: flex-start;
 }
 
-.infoTreinoCriacao{
+.infoTreinoCriacao {
     display: flex;
     gap: 14px;
     flex-direction: column;
- 
+
 }
 
 
-.ipt_nomeTreino{
+.ipt_nomeTreino {
     width: 100%;
     font-size: 24px;
     height: 30px;
 }
 
-.descTreino{
-    width: 301px;
-    height: 118px;  
-    font-size: 26px;
-    resize: none;
-}
+.listaExercicios {
 
-.listaExercicios{
     display: flex;
     flex-flow: row wrap;
     justify-content: flex-start;
     gap: 40px;
+    overflow-y: auto;
     /* width: 60%; */
     flex-direction: row;
 }
 
 
-.descricao-listas{
-    
-    width: 45%;
+.descricao-listas {
 
+    width: 45%;
     font-size: 18px;
     padding: 30px;
+    width: -20%;
+    font-size: 28px;
+    padding: 20px 0px 20px 0px;
+    min-width: 75%;
+    display: flex;
+    max-width: 45%;
+    flex-direction: column;
+    flex-wrap: wrap;
+    /* align-items: stretch; */
+    /* align-content: flex-start; */
+    /* overflow-wrap: break-word; */
+    /* white-space: pre-wrap; */
+    white-space: -moz-pre-wrap;
+    white-space: -pre-wrap;
+    white-space: -o-pre-wrap;
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+    -webkit-hyphens: auto;
+    hyphens: auto;
+
 }
 
-.infoExercicio{
-    background: blue!important;
-    color: white!important;
-    font-weight: lighter!important;
-    font-size: 30px!important;
+.infoExercicio {
+    background: blue !important;
+    color: white !important;
+    font-weight: lighter !important;
+    font-size: 30px !important;
     padding: 0px 0px 0px 30px;
 
 }
 
 
-.infoCriacao{
+.infoCriacao {
     height: 5vh;
     background-color: blue;
     display: flex;
     color: white;
     font-size: 28px;
-    
+
     padding: 4px 35vw 0px 3vw;
     /* margin-top: 11px; */
     align-items: center;
@@ -225,7 +295,7 @@
     flex-wrap: nowrap;
 }
 
-.infoCriacao h1{
+.infoCriacao h1 {
     display: flex;
     width: 80%;
     font-weight: bolder;
@@ -234,7 +304,8 @@
     align-items: stretch;
     justify-content: center;
 }
-.infoCriacao h2{
+
+.infoCriacao h2 {
     display: flex;
     width: 40%;
     font-weight: lighter;
@@ -243,4 +314,3 @@
     align-items: stretch;
     justify-content: center;
 }
-

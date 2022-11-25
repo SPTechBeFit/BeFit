@@ -10,9 +10,10 @@ import { Fragment } from "react";
 import useAuth from "../hooks/useAuth";
 import UserExercicios from "../pages/Usuario/TreinoUsuario/TreinoUsuario.jsx"
 //src\pages\Usuario\CriarTreino\Components\PagCriarTreino.jsx
-import CriarTreinos from "../pages/Usuario/CriarTreino/Components/PagCriarTreino"
-import PagExercicios from "../pages/Usuario/PagExercicios/index.jsx"
-import PagDieta from "../pages/Usuario/PagDietas/index.jsx"
+import PagCriarTreinos from "../pages/Usuario/CriarTreino/PagCriarTreino"
+import PagExercicios from "../pages/Usuario/PagExercicios/PagVerExercicios.jsx"
+
+import PagDieta from "../pages/Usuario/PagDietas/PagVerDietas.jsx"
 import NotFound from "../pages/NotFound/index.jsx"
 import RequireAuth from '../components/requireAuth.jsx'
 import HotSite from "../pages/HotSite/index.jsx";
@@ -40,15 +41,15 @@ const RoutesApp = () => {
                     <Route path="/signup" element={<Signup />} />
                     <Route path="/sobre/dietas" element={<SobreDietas />} />
                     <Route path="/exerciciosHome" element={<SobreExercicios />} />
-                    <Route path="/hotsite" element={<RequireAuth> <HotSite/> </RequireAuth>}/>
+                    <Route path="/hotsite" element={<RequireAuth> <HotSite /> </RequireAuth>} />
                     <Route path="/usuario/exercicios" element={<RequireAuth><UserExercicios /></RequireAuth >} />
                     <Route path="/usuario/meustreinos" element={<RequireAuth><UserExercicios /></RequireAuth >} />
                     <Route path="/usuario/minhasdietas" element={<RequireAuth><UserExercicios /></RequireAuth >} />
 
-                    <Route path="/usuario/criar/treinos" element={<RequireAuth><CriarTreinos /></RequireAuth >} />
-                    <Route path="/usuario/dietas" element={<RequireAuth><UserExercicios /></RequireAuth >} />
+                    <Route path="/usuario/criar/treinos" element={<RequireAuth><PagCriarTreinos /></RequireAuth >} />
+                    <Route path="/usuario/dietas" element={<RequireAuth><UserExercicios /></RequireAuth >} /> 
                     <Route path="/treino/*" element={<RequireAuth><PagExercicios /></RequireAuth >} />
-                    <Route path="/dieta/*" element={<RequireAuth><PagDieta /></RequireAuth >} />
+                    <Route path="/dietas/*" element={<RequireAuth><PagDieta /></RequireAuth >} />
 
 
                     {/* <Route path="/exercicios" element={<Private Item={Exercicios} />} /> */}

@@ -1,11 +1,10 @@
 
-import ListaExercicios from './Components/listaExercicios'
+import ListaExercicios from './Components/listaGetAll'
 import axios from "axios";
 import { useState, useEffect, react } from "react"
-import listaStyle from './exerciciosStyle.css'
-import api from '../../../services/api'
 import BannerTreino from '../BannerTreino';
 import Header from '../../../components/Header/Header';
+import style from './exerciciosStyle.css'
 
 
 
@@ -41,12 +40,15 @@ function PagExercicios(props) {
             < Header/>
                 <br />
                 <div className="corpo-lista">
-                    <BannerTreino />
+              
                     <div className="imagemExercicio-lista">
-                        {exercicioClicado && <><div className="imagemCoverTreino-lista">
+                       
+                        {exercicioClicado && <><div className="imagemCoverTreino-lista"> 
+                        
                             <div style={imagemExercicio} className="image-lista-painel" ></div>
-
+                            <div className="nomeTreino"> <h1>{exercicioClicado.nome}</h1></div>
                         </div>
+                      
 
                             <div class='descricao-do-exercicio'>
                                 <p>{exercicioClicado.descricao}</p>
@@ -54,7 +56,8 @@ function PagExercicios(props) {
                         </>
                         }
                     </div>
-                    <div className="containerModal-lista">
+                    
+                    <div className="containerModal-lista-todos">
 
                         {
                             exercicios.map((exercicios, index) => {

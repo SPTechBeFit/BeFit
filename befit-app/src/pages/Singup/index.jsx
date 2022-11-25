@@ -31,7 +31,7 @@ const Signup = () => {
       return;
     }
 
-    if(!validator.isAlpha(nome)){
+    if(validator.isNumeric(nome)){
       setErrorNome("Nome não pode conter numeros")
       return;
     }

@@ -17,7 +17,7 @@ export const SidebarData = [
     title: 'Criar Treinos',
     path: '/usuario/criar/treinos',
     cName: 'nav-text',
-    activeClassName: 'active'
+    activeClassName: 'true'
   },
   {
     title: 'Dietas',

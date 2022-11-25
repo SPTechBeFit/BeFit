@@ -6,7 +6,7 @@ import ModalUser from '../../../components/modalUser/index.jsx';
 import MenuUser from '../../../components/MenuLateralUser/index.jsx'
 import api from "../../../services/api"
 import style from '../style.css'
-import styleBanner from '../BannerTreino/bannerStyle.css'
+
 import CardExercicio from '../../../components/CardExercicio/index.jsx';
 import CardDieta from '../../../components/CardDieta/index.jsx';
 import EmptyModal from "../../../components/modalUser/components/emptyModal"

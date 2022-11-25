@@ -8,12 +8,12 @@ import { Component } from 'react';
 function Header(props) {
 
 
-  
+
 
   const pageAtual = (window.location.pathname);
   const navigate = useNavigate();
   function headerChange() {
-     
+
     switch (pageAtual) {
       case '/usuario/exercicios':
         return false
@@ -30,6 +30,8 @@ function Header(props) {
       case '/usuario/dietas':
         return false
 
+      case '/usuario/minhasdietas':
+        return false
 
       default:
         return true
@@ -55,8 +57,11 @@ function Header(props) {
       case '/usuario/dietas':
         return true
 
-        case '/treino/*':
-          return true
+ case '/usuario/minhasdietas':
+        return true
+
+      case '/treino/*':
+        return true
 
       default:
         return false
@@ -64,16 +69,16 @@ function Header(props) {
     }
   }
 
-  function headerHotSite(){
-    switch(pageAtual){
+  function headerHotSite() {
+    switch (pageAtual) {
       case '/hotsite':
         return false
 
       default:
-        return true  
+        return true
     }
 
-    
+
   }
 
 
@@ -102,16 +107,16 @@ function Header(props) {
     <div className="header">
       <nav className='navHeader'>
         <div className="container">
-          <Link to="/"> <img src={ImagemLogo} className="logo" /> </Link>
+          <Link to="/"> <img src={ImagemLogo} className="logo" alt='logo befit' /> </Link>
           <div className='options'>
             <ul>
-              {headerChange() && headerHotSite() && <li> <NavLink to="/" activeclassName="active" end> <a>Home</a></NavLink></li>}
+              {headerChange() && headerHotSite() && <li> <NavLink to="/" end> Home</NavLink></li>}
               {/* <li> <NavLink to="/exerciciosHome" activeClassName="active"> <a>Exercícios</a></NavLink></li> */}
-              {headerChange() && headerHotSite() && <li> <NavLink to="/sobre" activeclassName="active"><a>Sobre</a></NavLink></li>}
-              {headerChange() && <li> <NavLink to="/signin"> <a>Começar</a> </NavLink></li>}
-              {headerChangeUserPage() && headerHotSite() && <li>  <a className='user'>Olá {sessionStorage.getItem("nome")}!</a></li>}
-              {headerChangeUserPage() && headerHotSite() && <li> <button className='btn-voltar-pag'onClick={() => navigate(-1)}>Voltar</button></li>}
-              {headerChangeUserPage() && headerHotSite() && <li> <button className='btn-sair'onClick={handleLogOut}>Sair</button></li>}
+              {headerChange() && headerHotSite() && <li> <NavLink to="/sobre" >Sobre</NavLink></li>}
+              {headerChange() && <li> <NavLink to="/signin"> Começar </NavLink></li>}   
+              {headerChangeUserPage() && headerHotSite() && <li>  <span className='user'>Olá {sessionStorage.getItem("nome")}!</span></li>}
+              {headerChangeUserPage() && headerHotSite() && <li> <button className='btn-voltar-pag' onClick={() => navigate(-1)}>Voltar</button></li>}
+              {headerChangeUserPage() && headerHotSite() && <li> <button className='btn-sair' onClick={handleLogOut}>Sair</button></li>}
             </ul>
             <PersistentDrawerLeft />
           </div>

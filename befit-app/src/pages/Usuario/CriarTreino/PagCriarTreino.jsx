@@ -1,17 +1,21 @@
 
-import ListaExercicios from '../listaCriacao'
+import ListaExerciciosCriacao from './Components/listaCriacao'
 import axios from "axios";
-import { useState } from "react"
+import { useEffect, useState } from "react"
 import Modal from "react-modal"
-import Header from '../../../../components/Header/Header'
-import style from './listaStyle.css'
-import BannerTreino from '../../BannerTreino/index'
+import Header from '../../../components/Header/Header'
+import BannerTreino from '../BannerTreino/index'
 import validator from 'validator';
-import * as C from "./styles";
-import ButtonBack from "../../../../components/ButtonSignUp/buttonBack"
-import Input from '../../../../components/Input';
-import ButtonNext from '../../../../components/ButtonSignUp/button';
+import * as C from "./Components/styles";
+import ButtonBack from "../../../components/ButtonSignUp/buttonBack"
+import Input from '../../../components/Input';
+import ButtonNext from '../../../components/ButtonSignUp/button';
+import stylesLista from "./stylePagCriacao.css"
 import { useNavigate } from 'react-router-dom'
+import { width } from '@mui/system';
+import swal from 'sweetalert';
+
+
 
 
 Modal.setAppElement("#root")
@@ -33,7 +37,6 @@ function PagCriacaoExercicios(props) {
     const [errorRepeticoes, setErrorRepeticoes] = useState("");
     const [errorQuantidade, setErrorQuantidade] = useState("");
     const [errorTempo, setErrorTempo] = useState("");
-
     const [errorTitulo, setErrorTitulo] = useState("");
     const [errorDesc, setErrorDesc] = useState("");
 
@@ -50,10 +53,15 @@ function PagCriacaoExercicios(props) {
     function abreModal(idTreino) {
         setIdTreino(idTreino)
         setIsOpen(true)
+        //document.getElementById("lista").style.width = "50%";
+
     }
 
     function fechaModal() {
         setIsOpen(false)
+        document.getElementById("lista").style.width = "100%";
+        // document.getElementById("divModal").style.display = "none";
+        // document.getElementById("divModal").style.width = "0%";
     }
 
     function listar(props) {
@@ -71,21 +79,9 @@ function PagCriacaoExercicios(props) {
             });
     }
 
+
     function adicionarTreino(evento) {
-
-        // if(validator.isEmpty(errorTituloTreino)){
-        //     //setErrorNome("Nome não pode ser vazio")
-        //     return;
-        //   }
-
-        //   if(!validator.isAlpha(descTreino)){
-        //    // setErrorNome("Nome não pode conter numeros")
-        //     return;
-        //   }
-
         evento.preventDefault();
-
-
         if (validator.isEmpty(tituloTreino)) {
             setErrorTitulo("Titulo não pode ser vazio")
             return;
@@ -102,8 +98,8 @@ function PagCriacaoExercicios(props) {
             return;
         }
 
-        if (descTreino.length > 25) {
-            setErrorDesc("Descrição não pode ter mais de 25 caracteres")
+        if (descTreino.length > 50) {
+            setErrorDesc("Descrição não pode ter mais de 50 caracteres")
             return;
         }
 
@@ -113,21 +109,15 @@ function PagCriacaoExercicios(props) {
 
         vaiAparecer = false;
         listar()
+        
         document.getElementById("lista").style.display = "block";
+        document.getElementById("modalCriacao").style.display = "none";
+        document.getElementById("divModal").style.display = "block";
+        document.getElementById("divModal").style.width = "50%";
+
+
     }
 
-    // {
-    //     "nome": "string",
-    //     "descricao": "string",
-    //     "criadorId": 2,
-    //     "series": [
-    //       {
-    //         "exercicioId": 1,
-    //         "quantidade": 0,
-    //         "repeticao": 0,
-    //       }
-    //     ]
-    //   }
 
 
     function salvarExercicioNaLista() {
@@ -189,13 +179,37 @@ function PagCriacaoExercicios(props) {
         }
 
         axios.post('http://localhost:8080/treinos', body).then((res) => {
-            alert('treino cadastrado com sucesso')
+          
+            desfazerTreino()
             navigate('/usuario/exercicios')
         }
         ).catch(error => {
             console.log(error)
         })
     }
+
+
+    function desfazerTreino() {
+        // eslint-disable-next-line no-restricted-globals
+        if (confirm("Gostaria de desfazer o treino?")) {
+            axios.delete('http://localhost:8080/treinos/desfazer')
+                .then(function (respostaObtida) {
+                    console.log(respostaObtida.data);
+                    setExercicios(respostaObtida.data);
+                    console.log('Desfazendo treino')
+
+                })
+
+                .catch((errorOcorrido) => {
+                    console.log(errorOcorrido)
+                });
+        } else {
+            console.log('teste')
+        }
+
+    }
+
+    
 
     var tituloCriacao = tituloTreino != null ? tituloTreinoModal : defaultMessage;
 
@@ -211,7 +225,7 @@ function PagCriacaoExercicios(props) {
                         <b>{tituloCriacao} </b>
                     </h2>
                 </div>
-                <div className="modalCriar">
+                <div className="modalCriar" id="modalCriacao" style={{ display: "block" }}>
 
                     {vaiAparecer === true && <div>
                         <form onSubmit={adicionarTreino} className='form-infos'>
@@ -258,21 +272,21 @@ function PagCriacaoExercicios(props) {
                 <br />
                 <div className="containerModal-lista">
                     <div className="listaExercicios" id='lista' style={{ display: "none" }}>
+
                         {
                             exercicios.map((exercicio, index) => {
                                 return (
                                     <>
-                                        <div className='exercicio-lista' onClick={() => { abreModal(exercicio.id) }}>
-                                            <ListaExercicios key={index.id}
-                                                selecionado={exercicio.selecionado}
-                                                id={exercicio.id}
-                                                nome={exercicio.nome}
-                                                descricao={exercicio.descricao}
-                                                imagem={exercicio.imagem}
-                                                quantidade={exercicio.quantidade}
-                                                tempo={exercicio.tempo}
-                                                repeticao={exercicio.repeticao}
-                                            />
+                                        <div className="containerLista">
+                                            <div className='exercicio-lista' onClick={() => { abreModal(exercicio.id) }}>
+                                                <ListaExerciciosCriacao key={index.id}
+                                                    selecionado={exercicio.selecionado}
+                                                    id={exercicio.id}
+                                                    nome={exercicio.nome}
+                                                    descricao={exercicio.descricao}
+                                                    imagem={exercicio.imagem}
+                                                />
+                                            </div>
                                         </div>
                                     </>
                                 );
@@ -280,9 +294,14 @@ function PagCriacaoExercicios(props) {
 
                         }
 
-                        {vaiAparecerButton === false && <button id='salvarTreino' className='btn-salvar' onClick={enviarTreino}>Salvar treino</button>}
 
-                        <Modal isOpen={modalIsOpen} onRequestClose={fechaModal} contentLabel="ExerciciosInfo">
+
+
+                    </div>
+                    <div className="modalAra">
+                        <Modal isOpen={modalIsOpen}
+                            onRequestClose={fechaModal}
+                            contentLabel="ExerciciosInfo">
 
                             <h6 className='title-modal'>Insira as informações</h6>
 
@@ -315,11 +334,15 @@ function PagCriacaoExercicios(props) {
                                 </C.ContainerForButtons>
 
                                 {/* <button onClick={salvarExercicioNaLista} className='btn btn-ok'>Salvar exercício</button>
-                                <button onClick={fechaModal} className="btn-cancelar">Cancelar</button> */}
+    <button onClick={fechaModal} className="btn-cancelar">Cancelar</button> */}
 
                             </div>
                         </Modal>
                     </div>
+                    {vaiAparecerButton === false && <button id='salvarTreino' className='btn-salvar' onClick={enviarTreino}>Salvar treino</button>}
+
+
+
 
                 </div>
             </div>

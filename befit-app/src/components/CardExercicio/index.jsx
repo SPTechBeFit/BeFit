@@ -1,12 +1,10 @@
 import imagemTeste from '../../assets/images/exerciciosCover/exercioCardio.jpg'
-import style from './style.css'
 import { useState, useEffect, react } from "react"
 import { BrowserRouter as Router, Routes, Route, Link, NavLink, useNavigate, useParams } from 'react-router-dom'
 import likeButton from '../../assets/images/Icons/favoritoIcon.png'
 import likeButtonSelecionado from '../../assets/images/Icons/favoritoIconSelecionado.png'
 import api from '../../services/api'
-import PagExercicios from '../../pages/Usuario/PagExercicios'
-import axios from 'axios'
+
 
 function CardExercicio(props) {
     const imagem = {
@@ -87,7 +85,7 @@ function CardExercicio(props) {
                 </div>
                 <div className="infoTreino">
                     <h1>{props.nome}</h1>
-                    <h1>{props.tempo}</h1>
+                    
                     <h2 rows="5" cols="2" id="descricao" >{props.descricao}</h2>
                 </div>
 

@@ -1,11 +1,11 @@
 import imagemTeste from '../../assets/images/exerciciosCover/exercioCardio.jpg'
-import style from './style.css'
 import { useState, useEffect, react } from "react"
 import { BrowserRouter as Router, Routes, Route, Link, NavLink, useNavigate, useParams } from 'react-router-dom'
 import likeButton from '../../assets/images/Icons/favoritoIcon.png'
 import likeButtonSelecionado from '../../assets/images/Icons/favoritoIconSelecionado.png'
 import api from '../../services/api'
-import PagExercicios from '../../pages/Usuario/PagExercicios'
+import style from './styleDieta.css'
+
 
 function CardDieta(props) {
     const imagem = {
@@ -14,7 +14,6 @@ function CardDieta(props) {
 
     const [nome, setNome] = useState(props.nome);
     const [descricao, setDescricao] = useState(props.descricao);
-    const [criador, setAno] = useState(props.ano);
     const [selecionado, setSelecionado] = useState(props.favoritado);
 
 
@@ -70,21 +69,21 @@ function CardDieta(props) {
     }
 
     const routeChange = () => {
-        let path = (`/dietas/${props.nome}/${props.id}`);
+        let path = (`/dietas/${props.id}`);
         sessionStorage.setItem("idDieta", props.id);
         navegar(path);
         
     }
-    //navegar(`/treino/${props.nome}/${props.id}`)
+    //navegar(`/Dieta/${props.nome}/${props.id}`)
 
     return (
         <>
             <button
-                onClick={() => {routeChange()}} className="boxTreino">
-                <div className="imagemCoverTreino">
+                onClick={() => {routeChange()}} className="boxDieta">
+                <div className="imagemCoverDieta">
                     <div style={imagem} className="image"></div>
                 </div>
-                <div className="infoTreino">
+                <div className="infoDieta">
                     <h1>{props.nome}</h1>
                     <h2 rows="5" cols="2" id="descricao" >{props.descricao}</h2>
                 </div>
