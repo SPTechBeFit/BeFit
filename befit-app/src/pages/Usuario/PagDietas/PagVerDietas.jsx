@@ -70,7 +70,7 @@ function PagDietas(props) {
                 link.href = url;
                 link.setAttribute(
                     'download',
-                    `Dieta.txt`,
+                    `${dietas.nome}.txt`,
                 );
                 document.body.appendChild(link);
                 link.click();
