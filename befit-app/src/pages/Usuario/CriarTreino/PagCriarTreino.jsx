@@ -220,10 +220,11 @@ function PagCriacaoExercicios(props) {
             <div className="bodyCriacao">
                 <BannerTreino />
                 <div className="infoCriacao">
-
                     <h2>
                         <b>{tituloCriacao} </b>
                     </h2>
+
+                    {vaiAparecerButton === false && <button id='salvarTreino' className='btn-salvar' onClick={enviarTreino}>Salvar treino</button>}
                 </div>
                 <div className="modalCriar" id="modalCriacao" style={{ display: "block" }}>
 
@@ -245,9 +246,11 @@ function PagCriacaoExercicios(props) {
 
                                         {/* <C.labelError>{errorTituloTreino}</C.labelError> */}
                                     </label>
+                                    <div className="errorTitulo">
                                     <C.labelError>{errorTitulo}</C.labelError>
+                                    </div>
                                     <br />
-                                    <label>
+                                    <label className='descTreino'>
                                         <h1>
                                             Descrição do treino
                                         </h1>
@@ -261,7 +264,9 @@ function PagCriacaoExercicios(props) {
 
                                         {/* <C.labelError>{errorDescTreino}</C.labelError> */}
                                     </label>
+                                    <div className="errorDesc">
                                     <C.labelError>{errorDesc}</C.labelError>
+                                    </div>
                                 </div>
                                 <button id="btn-enviar">Enviar</button>
                             </div>
@@ -269,7 +274,7 @@ function PagCriacaoExercicios(props) {
 
                     </div>}
                 </div>
-                <br />
+               
                 <div className="containerModal-lista">
                     <div className="listaExercicios" id='lista' style={{ display: "none" }}>
 
@@ -339,7 +344,7 @@ function PagCriacaoExercicios(props) {
                             </div>
                         </Modal>
                     </div>
-                    {vaiAparecerButton === false && <button id='salvarTreino' className='btn-salvar' onClick={enviarTreino}>Salvar treino</button>}
+                  
 
 
 

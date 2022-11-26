@@ -2,21 +2,13 @@
   margin: 0px 20vw 0px 20vw;
 }
 
-.titulo-do-exercicio {
-  display: block;
-  position: absolute;
-  top: 14%;
-  text-transform: uppercase;
-  font-weight: 550;
-  font-size: 40px;
-}
 
-.infoExercicio-todos {
-  background: blue !important;
-  color: white !important;
-  font-weight: lighter !important;
-  font-size: 30px !important;
-  padding: 0px 0px 0px 30px
+.ContainerListaIngredientes {
+  height: 50vh;
+  overflow-y: auto;
+  background: #1f5fa4;
+  color: white;
+  font-size: 26px;
 }
 
 
@@ -37,6 +29,15 @@
   padding: 0px 0px 0px 30px;
 }
 
+
+.dietaImage-painel {
+  background-size: cover;
+  height: 300px;
+  width: 60%;
+  min-width: 500px;
+  margin-left: 20px;
+}
+
 .descricao-da-dieta {
   text-align: left;
   /* margin-left: 20px; */
@@ -46,15 +47,6 @@
   font-size: 26px;
   font-family: 'Overpass';
 }
-
-.dietaImage-lista-painel {
-  background-size: cover;
-  height: 300px;
-  width: 60%;
-  min-width: 500px;
-  margin-left: 20px;
-}
-
 
 .containerModal-lista-todos-dietas {
   font-family: overpass;
@@ -67,17 +59,6 @@
 }
 
 
-
-.imagemCoverTreino-lista-todos {
-  background-image: url(http://localhost:3000/static/media/exercioCardio.a625918….jpg);
-  display: flex;
-  /* height: auto; */
-  /* width: auto; */
-  /* max-width: 126px; */
-  width: 268px;
-  /* max-height: 126px; */
-  flex-direction: column;
-}
 
 
 .imageDieta-lista {
@@ -100,12 +81,3 @@
 
 }
 
-.identificacaoModal-lista {
-  height: 5vh;
-  background-color: #230F80;
-  display: flex;
-  justify-content: flex-start;
-  align-items: center;
-  font-size: 25px;
-  color: white;
-}

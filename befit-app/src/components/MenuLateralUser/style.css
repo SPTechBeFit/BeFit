@@ -20,7 +20,7 @@
 .nav-menu {
   background-color: #c2c2c2;
   /* width: 80vw; */
-  
+
   z-index: 1;
   height: 7vh;
   display: flex;
@@ -28,16 +28,16 @@
   position: relative;
   /* margin: 377px 0px 0px 0px; */
   top: 0;
-  
+
 }
 
 
 .nav-text {
   justify-content: start;
-    align-items: center;
-    list-style: none;
-    height: 30px;
-    width: 190px;
+  align-items: center;
+  list-style: none;
+  height: 30px;
+  width: 190px;
 }
 
 .nav-text a {
@@ -57,13 +57,13 @@
 }
 
 .nav-menu-items {
-     /* display: flex; */
-     width: 100%;
-     flex-direction: row;
-     /* margin-bottom: 26vh; */
-     align-items: center;
-     justify-content: space-around;
-     object-fit: cover;
+  /* display: flex; */
+  width: 100%;
+  flex-direction: row;
+  /* margin-bottom: 26vh; */
+  align-items: center;
+  justify-content: space-around;
+  object-fit: cover;
 }
 
 .navbar-toggle {
@@ -82,8 +82,76 @@ span {
 
 @media only screen and (max-width: 1312px) {
 
-  .nav-text{
-    display: flex!important;
+  .modal-user{
+    display: flex;
+    overflow-y: auto;
+    height: 70.9vh;
+    background-color: #8C8C8C;
+    gap: 20px;
+    flex-direction: row;
+    justify-content: center;
+    flex-wrap: wrap;
+    padding: 15px 10px 0px 10px;
+    overflow-x: hidden;
+  
   }
 
+
+  .modalVazio {
+    cursor: pointer;
+    margin: 100px 0px 100px 0px;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* height: 50%; */
+    width: 100%;
+    /* border-color: blue; */
+    /* border: 22px; */
+    /* border-style: dashed; */
+    /* border-spacing: 10px; */
+    background-color: white;
+}
+
+  .nav-text {
+    display: flex !important;
+    width: 120px;
+    margin: 0px 0px 0px 0px;
+  }
+
+  .nav-menu {
+    background-color: #c2c2c2;
+    width: 100%;
+    z-index: 1;
+    height: 7vh;
+    display: flex;
+    position: relative;
+    /* margin: 377px 0px 0px 0px; */
+    /* gap: 30px; */
+    top: 0;
+    justify-content: space-around;
+
+  }
+
+  .nav-menu-items {
+    display: flex; 
+    width: 100%;
+    flex-direction: row;
+    /* margin-bottom: 26vh; */
+    align-items: center;
+    justify-content: space-around;
+    object-fit: cover;
+  }
+
+  .nav-text a {
+    text-decoration: none;
+    font-size: 18px;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    padding: 0;
+    border-radius: 4px;
+    justify-content: center;
+}
 }

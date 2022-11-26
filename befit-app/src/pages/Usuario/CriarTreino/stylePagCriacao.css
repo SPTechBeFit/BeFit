@@ -16,7 +16,7 @@
     width: 100%;
     /* font-size: 22px; */
     margin: 0px -800px 0px 0px;
-    
+
 }
 
 .teste {
@@ -198,7 +198,7 @@
     overflow-x: hidden;
     height: 45vh;
     overflow-y: auto;
-  }
+}
 
 #tempo {
     width: 50px;
@@ -206,7 +206,7 @@
 
 
 .form-infos {
-     
+
     font-size: 30px;
     height: 50vh;
     display: flex;
@@ -281,18 +281,18 @@
 
 
 .infoCriacao {
-    height: 5vh;
+    height: 6vh;
+    /* width: 60%; */
     background-color: blue;
     display: flex;
     color: white;
     font-size: 28px;
-
     padding: 4px 35vw 0px 3vw;
     /* margin-top: 11px; */
     align-items: center;
     justify-content: space-between;
     flex-direction: row;
-    flex-wrap: nowrap;
+    flex-wrap: nowrap;   
 }
 
 .infoCriacao h1 {
@@ -313,4 +313,99 @@
     flex-direction: row;
     align-items: stretch;
     justify-content: center;
+}
+
+
+.btn-salvar {
+  
+    margin: 5px -210px 0px 0px!important;
+    color: rgb(34 34 34)!important;
+    background-color: white!important;
+    display: flex!important;
+    /* flex-direction: row; */
+    width: 20vw!important;
+    justify-content: space-around!important;
+
+}
+
+@media only screen and (max-width: 1312px) {
+    .bodyCriacao {
+        display: relative;
+        padding: 0vh 0vw 0px 0vw;
+        font-family: Overpass;
+        background-color: #D9D9D9;
+        top: 300px;
+        height: 100vh;
+        overflow-y: hidden;
+    }
+
+    .modalCriar {
+        background-color: #8C8C8C;
+        padding: 15px 10px 10px 10px;
+        height: 70vh;
+    }
+
+    .form-infos {
+        font-size: 30px;
+        height: 69vh;
+        display: flex;
+        width: 100%;
+        gap: 75px;
+        flex-direction: column;
+        align-items: center;
+        align-content: center;
+    }
+
+    .contentBox {
+        display: flex;
+        background-color: white;
+        flex-direction: column;
+        align-items: center;
+        width: 90vw;
+        margin: 0px 10vw 0px 10vw;
+        height: 62vh;
+        padding: 15px 0px 40px 0px;
+    }
+
+    .infoTreinoCriacao {
+        display: flex;
+        gap: 160px;
+        flex-direction: column;
+    }
+    .errorTitulo{
+        margin: 111px 0px 0px 0px;
+        position: absolute;
+    }
+
+    .descTreino {
+        width: 100%;
+        height: 118px;
+        font-size: 26px;
+        resize: none;
+    }
+
+    .containerModal-lista {
+        font-family: overpass;
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        overflow-x: hidden;
+        height: 75vh;
+        overflow-y: auto;
+    }
+
+
+    .btn-salvar {
+  
+        margin: 5px -120px 0px 0px!important;
+        color: rgb(34 34 34)!important;
+        background-color: white!important;
+        display: flex!important;
+        /* flex-direction: row; */
+        width: 35vw!important;
+        justify-content: space-around!important;
+    
+    }
+
+  
 }

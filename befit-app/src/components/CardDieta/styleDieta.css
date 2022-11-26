@@ -39,7 +39,7 @@ button:hover {
 }
 
 .imagemCoverDieta {
-  background-image: url(../../assets/images/exerciciosCover/exercioCardio.jpg);
+  background-image: url(../../assets/images/dietasPadrao.jpg);
   display: flex;
   /* height: auto; */
   /* width: auto; */
@@ -133,17 +133,5 @@ button:hover {
 }
 
 @media only screen and (max-width: 800px) {
-  .modal-user{
-    display: flex;
-    overflow-y: auto;
-    height: 51vh;
-    background-color: #8C8C8C;
-    gap: 20px;
-    flex-direction: row;
-    justify-content: center;
-    flex-wrap: wrap;
-    padding: 15px 30px 0px 30px;
-    overflow-x: hidden;
-  
-  }
+
 }

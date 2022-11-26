@@ -2,6 +2,7 @@
 import ListaDietas from './Components/listaGetAllDietas'
 import axios from "axios";
 import { useState, useEffect } from "react"
+import style from './pagDietaStyle.css'
 
 
 function PagDietas(props) {
@@ -11,7 +12,7 @@ function PagDietas(props) {
         listarIngredientes()
     }, [])
 
-    const [arqExport, setArqExport] = useState()
+    const [arqExport] = useState()
     const [dietaClicado, setDietaClicado] = useState(null)
     const [imagemDieta, setImagemDieta] = useState(null)
     const [dietas, setDietas] = useState([]);
@@ -25,7 +26,6 @@ function PagDietas(props) {
             .catch((errorOcorrido) => {
                 console.log(errorOcorrido)
             });
-
     }
 
     function listarIngredientes() {
@@ -40,20 +40,15 @@ function PagDietas(props) {
 
 
 
-    function handleDietaClicado(dieta) {
-        setDietaClicado(dieta)
-        setImagemDieta({
-            backgroundImage: `url(${dieta.imagem})`,
-        })
+    // function handleDietaClicado(dieta) {
+    //     setDietaClicado(dieta)
+    //     setImagemDieta({
+    //         backgroundImage: `url(${dieta.imagem})`,
+    //     })
 
-    }
+    // }
 
     function handleExport() {
-        // axios.get(`http://localhost:8080/dietas/exportar/${sessionStorage.getItem("idDieta")}`, arqExport, {
-        //     headers: {
-        //         'Content-Type': 'text/form-data'
-        //     }
-        // })
         fetch(`http://localhost:8080/dietas/exportar/${sessionStorage.getItem("idDieta")}`, arqExport, {
             method: 'GET',
             headers: {
@@ -70,7 +65,7 @@ function PagDietas(props) {
                 link.href = url;
                 link.setAttribute(
                     'download',
-                    `${dietas.nome}.txt`,
+                    `Dieta ${dietas.nome}.txt`,
                 );
                 document.body.appendChild(link);
                 link.click();
@@ -89,22 +84,22 @@ function PagDietas(props) {
         <>
             <br />
             <div className="corpoDieta-lista">
-                <div className="imagemDieta-lista">
-                    {dietaClicado && <><div className="dietaCoverTreino-lista">
-                        <div style={imagemDieta} className="dietaImage-lista-painel" ></div>
-                        <div className="nomeDieta"> <h1>{dietaClicado.nome}</h1></div>
-                    </div>
-                        <div class='descricao-da-dieta'>
-                            <p>{dietaClicado.descricao}</p>
+                <div className="containerDieta">
+                    <div className="imagemDieta-lista">
+                        {dietaClicado && <><div className="dietaCover-lista">
+                            <div style={imagemDieta} className="dietaImage-painel" ></div>
+                            <div className="nomeDieta"> <h1>{dietaClicado.nome}</h1></div>
                         </div>
-                    </>
-                    }
+                            <div class='descricao-da-dieta'>
+                                <p>{dietaClicado.descricao}</p>
+                            </div>
+                        </>
+                        }
+                    </div>
                 </div>
 
                 <div className="containerModal-lista-todos-dietas">
                     {/* <div className="teste" style={{ backgroundColor: 'red', height: "100vh", width: "50vw" }}></div> */}
-
-
                     <ListaDietas
                         selecionado={dietas.selecionado}
                         nome={dietas.nome}
@@ -113,41 +108,34 @@ function PagDietas(props) {
                     //onClick={() => { handleDietaClicado(dietas) }}
                     />
 
-                    <div className='teste'>
-                        {ingredientes?.map((ingredientes, i) => {
-                            return (
-                                <>
-                                    <p key={i}>
-                                        {ingredientes.nome} |
-                                        {ingredientes.porcao} |
-                                        {ingredientes.proteina} |
-                                        {ingredientes.lipidio} |
-                                        {ingredientes.carboidrato} |
-                                        {ingredientes.sodio} |
-                                        {ingredientes.caloria}
-                                    </p>
 
-
-                                    <div
-                                        id={ingredientes.id}
-                                        nome={ingredientes.nome}
-                                        porcao={ingredientes.porcao}
-                                        proteina={ingredientes.proteina}
-                                        lipidio={ingredientes.lipidio}
-                                        carboidrato={ingredientes.carboidrato}
-                                        sodio={ingredientes.sodio}
-                                        caloria={ingredientes.caloria}
-                                    ></div>
-                                </>
-                            )
-
-                        })
-                        }
-                    </div>
-                    <button id="botao-import-export" onClick={() => handleExport()}>Exportar</button>
 
                 </div>
+
+                <div className='ContainerListaIngredientes'>
+                    {ingredientes?.map((ingredientes, i) => {
+                        return (
+                            <>
+                                <div className="listaIngredientes" key={i}>
+                                    <h1>{ingredientes.nome} </h1>
+                                    <h1>{ingredientes.porcao} Gramas</h1>
+                                    <h2>proteina {ingredientes.proteina} </h2>
+                                    <h2>lipidio {ingredientes.lipidio}</h2>
+                                    <h2>carboidrato {ingredientes.carboidrato}</h2>
+                                    <h2>sodio {ingredientes.sodio}</h2>
+                                    <h2>caloria {ingredientes.caloria}</h2>
+
+                                </div>
+
+                            </>
+                        )
+
+                    })
+                    }
+                </div>
             </div>
+            <button id="botao-import-export" onClick={() => handleExport()}>Exportar</button>
+
         </>
     )
 }

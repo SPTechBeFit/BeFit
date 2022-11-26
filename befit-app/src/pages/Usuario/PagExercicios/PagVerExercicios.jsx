@@ -37,51 +37,54 @@ function PagExercicios(props) {
 
     return (
         <>
-            < Header/>
-                <br />
-                <div className="corpo-lista">
-              
-                    <div className="imagemExercicio-lista">
-                       
-                        {exercicioClicado && <><div className="imagemCoverTreino-lista"> 
-                        
-                            <div style={imagemExercicio} className="image-lista-painel" ></div>
-                            <div className="nomeTreino"> <h1>{exercicioClicado.nome}</h1></div>
+            < Header />
+            <br />
+            <br />
+            <br />
+            <br />
+            <div className="corpo-lista">
+
+                <div className="imagemExercicio-lista">
+
+                    {exercicioClicado && <><div className="imagemCoverTreino-lista">
+                        <div className="nomeTreino"> <h1>{exercicioClicado.nome}</h1></div>
+
+                        <div style={imagemExercicio} className="image-lista-painel" ></div>
+                    </div>
+
+
+                        <div class='descricao-do-exercicio'>
+                            <p>{exercicioClicado.descricao}</p>
                         </div>
-                      
-
-                            <div class='descricao-do-exercicio'>
-                                <p>{exercicioClicado.descricao}</p>
-                            </div>
-                        </>
-                        }
-                    </div>
-                    
-                    <div className="containerModal-lista-todos">
-
-                        {
-                            exercicios.map((exercicios, index) => {
-                                return (
-                                    <ListaExercicios
-                                        selecionado={exercicios.selecionado}
-                                        id={exercicios.id}
-                                        nome={exercicios.nome}
-                                        //descricao={exercicios.descricao}
-                                        imagem={exercicios.imagem}
-                                        quantidade={exercicios.quantidade}
-                                        tempo={exercicios.tempo}
-                                        repeticao={exercicios.repeticao}
-                                        onClick={() => { handleExercicioClicado(exercicios) }}
-                                    />
-                                );
-
-                            })
-
-                        }
-                    </div>
+                    </>
+                    }
                 </div>
-            </>
-            )
+
+                <div className="containerModal-lista-todos">
+
+                    {
+                        exercicios.map((exercicios, index) => {
+                            return (
+                                <ListaExercicios
+                                    selecionado={exercicios.selecionado}
+                                    id={exercicios.id}
+                                    nome={exercicios.nome}
+                                    //descricao={exercicios.descricao}
+                                    imagem={exercicios.imagem}
+                                    quantidade={exercicios.quantidade}
+                                    tempo={exercicios.tempo}
+                                    repeticao={exercicios.repeticao}
+                                    onClick={() => { handleExercicioClicado(exercicios) }}
+                                />
+                            );
+
+                        })
+
+                    }
+                </div>
+            </div>
+        </>
+    )
 }
 
-            export default PagExercicios
+export default PagExercicios

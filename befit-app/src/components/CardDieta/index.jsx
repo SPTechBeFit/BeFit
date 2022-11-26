@@ -1,4 +1,4 @@
-import imagemTeste from '../../assets/images/exerciciosCover/exercioCardio.jpg'
+import imagemTeste from '../../assets/images/dietasPadrao.jpg'
 import { useState, useEffect, react } from "react"
 import { BrowserRouter as Router, Routes, Route, Link, NavLink, useNavigate, useParams } from 'react-router-dom'
 import likeButton from '../../assets/images/Icons/favoritoIcon.png'
