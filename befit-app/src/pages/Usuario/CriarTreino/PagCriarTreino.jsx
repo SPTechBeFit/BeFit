@@ -191,20 +191,20 @@ function PagCriacaoExercicios(props) {
 
     function desfazerTreino() {
         // eslint-disable-next-line no-restricted-globals
-        if (confirm("Gostaria de desfazer o treino?")) {
-            axios.delete('http://localhost:8080/treinos/desfazer')
-                .then(function (respostaObtida) {
-                    console.log(respostaObtida.data);
-                    setExercicios(respostaObtida.data);
-                    console.log('Desfazendo treino')
-
-                })
-
-                .catch((errorOcorrido) => {
-                    console.log(errorOcorrido)
-                });
+        if (confirm("Gostaria de salvar o treino?")) {
+          console.log('treino gravado')
+            navigate('/usuario/exercicios')
         } else {
-            console.log('teste')
+            axios.delete('http://localhost:8080/treinos/desfazer')
+            .then(function (respostaObtida) {
+                console.log(respostaObtida.data);
+                setExercicios(respostaObtida.data);
+                console.log('Desfazendo treino')
+
+            })
+            .catch((errorOcorrido) => {
+                console.log(errorOcorrido)
+            });
         }
 
     }

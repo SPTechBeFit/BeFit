@@ -10,7 +10,7 @@ import style from './exerciciosStyle.css'
 
 function PagExercicios(props) {
 
-    useEffect(() => { listar(); }, [])
+    useEffect(() => { listar(); })
 
     const [exercicioClicado, setExercicioClicado] = useState(null)
     const [imagemExercicio, setImagemExercicio] = useState(null)

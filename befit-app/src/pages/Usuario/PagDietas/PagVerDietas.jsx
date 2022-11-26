@@ -1,52 +1,41 @@
 
 import ListaDietas from './Components/listaGetAllDietas'
 import axios from "axios";
-import { useState, useEffect, react } from "react"
-import Header from '../../../components/Header/Header';
-import style from './dietassStyle.css'
+import { useState, useEffect } from "react"
 
-let listaDeIngredientes = []
 
 function PagDietas(props) {
 
-    useEffect(() => { listar(); }, [])
+    useEffect(() => {
+        listarDietas();
+        listarIngredientes() 
+    }, [])
+
 
     const [dietaClicado, setDietaClicado] = useState(null)
     const [imagemDieta, setImagemDieta] = useState(null)
     const [dietas, setDietas] = useState([]);
-    const [idDieta, setIdDieta] = useState = ("")
-    const [nomeIngrediente, setNomeIngrediente] = useState = ("")
-    const [nome, setNome] = useState = ("")
-    const [porcao, setPorcao] = useState = ("")
-    const [proteina, setProteina] = useState = ("")
-    const [lipidio, setLipidio] = useState = ("")
-    const [carboidrato, setCarboidrato] = useState = ("")
-    const [sodio, setSodio] = useState = ("")
-    const [caloria, setCaloria] = useState = ("")
+    const [ingredientes, setIngredientes] = useState([]);
 
-    function listar() {
-        let dietas = axios.get('http://localhost:8080/dietas/' + sessionStorage.getItem("idDieta", props.id))
-        //transformar id em variavel
-        dietas
+    function listarDietas() {
+        axios.get(`http://localhost:8080/dietas/${sessionStorage.getItem("idDieta")}`)
             .then(function (respostaObtida) {
-                setDietas(respostaObtida.data);
-                let ingredientes = {
-                    "id": idDieta,
-                    "nome": nome,
-                    "porcao": porcao,
-                    "proteina": proteina,
-                    "lipidio": lipidio,
-                    "carboidrato": carboidrato,
-                    "sodio": sodio,
-                    "caloria": caloria
-                }
-                listaDeIngredientes.push(ingredientes)
+                setDietas(respostaObtida.data.dieta)
             })
-            .catch((e) => {
-                console.log(e)
+            .catch((errorOcorrido) => {
+                console.log(errorOcorrido)
             });
 
+    }
 
+    function listarIngredientes() {
+         axios.get(`http://localhost:8080/dietas/${sessionStorage.getItem("idDieta")}`)
+            .then(function (respostaObtida) {
+                setIngredientes(respostaObtida.data.ingredientes);
+            })
+            .catch((errorOcorrido) => {
+                console.log(errorOcorrido)
+            });
     }
 
 
@@ -56,11 +45,11 @@ function PagDietas(props) {
         setImagemDieta({
             backgroundImage: `url(${dieta.imagem})`,
         })
+
     }
 
     return (
         <>
-            < Header />
             <br />
             <div className="corpoDieta-lista">
                 <div className="imagemDieta-lista">
@@ -68,9 +57,7 @@ function PagDietas(props) {
                         <div style={imagemDieta} className="dietaImage-lista-painel" ></div>
                         <div className="nomeDieta"> <h1>{dietaClicado.nome}</h1></div>
                     </div>
-
-
-                        <div class='descricao-do-dieta'>
+                        <div class='descricao-da-dieta'>
                             <p>{dietaClicado.descricao}</p>
                         </div>
                     </>
@@ -78,39 +65,49 @@ function PagDietas(props) {
                 </div>
 
                 <div className="containerModal-lista-todos-dietas">
+                    {/* <div className="teste" style={{ backgroundColor: 'red', height: "100vh", width: "50vw" }}></div> */}
 
-                    {/* {
-                        dietas.map((dietas, index) => {
+
+                    <ListaDietas
+                        selecionado={dietas.selecionado}
+                        nome={dietas.nome}
+                        descricao={dietas.descricao}
+                        imagem={dietas.imagem}
+                    //onClick={() => { handleDietaClicado(dietas) }}
+                    />
+
+                    <div className='teste'>
+                        {ingredientes?.map((ingredientes, i) => {
                             return (
-                                <ListaDietas key={index}
-                                    selecionado={dietas.selecionado}
-                                    nome={dietas.nome}
-                                    descricao={dietas.descricao}
-                                    imagem={dietas.imagem}
-                                    onClick={() => { handleDietaClicado(dietas) }}
-                                />
-                            );
+                                <>
+                                <p key={i}>
+                                   {ingredientes.nome} |
+                                    {ingredientes.porcao} |
+                                    {ingredientes.proteina} |
+                                    {ingredientes.lipidio} |
+                                    {ingredientes.carboidrato} |
+                                    {ingredientes.sodio} |
+                                    {ingredientes.caloria}
+                                </p>
+
+
+                                <div 
+                                    id={ingredientes.id}
+                                    nome={ingredientes.nome}
+                                    porcao={ingredientes.porcao}
+                                    proteina={ingredientes.proteina}
+                                    lipidio={ingredientes.lipidio}
+                                    carboidrato={ingredientes.carboidrato}
+                                    sodio={ingredientes.sodio}
+                                    caloria={ingredientes.caloria}
+                                ></div>
+                                </>
+                            )
 
                         })
-                    }
-                    {
-                        <div className='teste'>
-                            {listaDeIngredientes.map((listaDeIngredientes, i) => {
-                                <div key={i}
-                                id={listaDeIngredientes.id}
-                                nome={listaDeIngredientes.nome}
-                                porcao={listaDeIngredientes.porcao}
-                                proteina={listaDeIngredientes.proteina}
-                                lipidio={listaDeIngredientes.lipidio}
-                                carboidrato={listaDeIngredientes.carboidrato}
-                                sodio={listaDeIngredientes.sodio}
-                                caloria={listaDeIngredientes.caloria}
-                                ></div>
-                            })
-                            }
-                        </div>
+                        }
+                    </div>
 
-                    } */}
 
                 </div>
             </div>

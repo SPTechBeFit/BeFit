@@ -148,17 +148,17 @@
 .ReactModal__Content {
 
     /* position: absolute; */
-    inset: 0px;
+    inset: 0px !important;
     border: 1px solid rgb(204, 204, 204);
     /* overflow: auto; */
     border-radius: 2px;
     /* outline: none; */
     padding: 0px 0px 20px 0px !important;
-    margin: 415px 45vw 0px 928px !important;
+    margin: 10% auto 0px auto !important;
     position: absolute;
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -50%);
+    /* transform: translate(-50%, -50%); */
     height: 395px !important;
     width: 430px !important;
 }

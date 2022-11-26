@@ -49,7 +49,7 @@ const RoutesApp = () => {
                     <Route path="/usuario/criar/treinos" element={<RequireAuth><PagCriarTreinos /></RequireAuth >} />
                     <Route path="/usuario/dietas" element={<RequireAuth><UserExercicios /></RequireAuth >} /> 
                     <Route path="/treino/*" element={<RequireAuth><PagExercicios /></RequireAuth >} />
-                    <Route path="/dietas/*" element={<RequireAuth><PagDieta /></RequireAuth >} />
+                    <Route path="/dietas/*" element={<PagDieta />}/>
 
 
                     {/* <Route path="/exercicios" element={<Private Item={Exercicios} />} /> */}

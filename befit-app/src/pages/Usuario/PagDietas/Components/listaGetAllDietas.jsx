@@ -20,6 +20,7 @@ function ListaDietas(props) {
 
     return (
         <>
+        
             <div className="infoExercicio-todos" key={props.key}>
                 <h1>{props.nome}</h1>
 

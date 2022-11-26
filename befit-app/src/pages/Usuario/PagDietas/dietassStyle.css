@@ -1,4 +1,4 @@
-.corpo-lista {
+.corpoDieta-lista {
   margin: 0px 20vw 0px 20vw;
 }
 
@@ -11,15 +11,6 @@
   font-size: 40px;
 }
 
-.exercicio-lista-todos {
-  display: flex;
-  justify-content: flex-start;
-  gap: 3vh;
-  width: 100%;
-  /* font-size: 22px; */
-
-}
-
 .infoExercicio-todos {
   background: blue !important;
   color: white !important;
@@ -28,15 +19,9 @@
   padding: 0px 0px 0px 30px
 }
 
-.imagemExercicio-lista {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  height: 55vh;
-  background-color: #8C8C8C;
-}
 
-.nomeTreino {
+
+.nomeDieta {
   position: absolute;
   margin: 30px 0px 9px 0px 0px;
   height: 3vh;
@@ -48,11 +33,11 @@
   font-weight: bold;
 }
 
-.nomeTreino h1 {
+.nomeDieta h1 {
   padding: 0px 0px 0px 30px;
 }
 
-.descricao-do-exercicio {
+.descricao-da-dieta {
   text-align: left;
   /* margin-left: 20px; */
   width: 40%;
@@ -62,7 +47,7 @@
   font-family: 'Overpass';
 }
 
-.image-lista-painel {
+.dietaImage-lista-painel {
   background-size: cover;
   height: 300px;
   width: 60%;
@@ -71,8 +56,7 @@
 }
 
 
-
-.containerModal-lista-todos {
+.containerModal-lista-todos-dietas {
   font-family: overpass;
   display: flex;
   flex-direction: column;
@@ -80,50 +64,6 @@
   overflow-x: hidden;
   height: 40vh;
   overflow-y: auto;
-}
-
-.series-lista-todos {
-  display: flex;
-  flex-direction: row;
-  gap: 50px;
-  font-weight: lighter;
-  /* width: 20%; */
-  font-size: 24px;
-  padding: 58px 0px 20px 0px;
-}
-
-.btn-salvar {
-  margin: 25px 70px 0px 0px;
-  color: white;
-  background-color: blue;
-  display: flex;
-  /* flex-direction: row; */
-  width: 100%;
-  justify-content: space-around;
-}
-
-.btn-salvar:hover {
-  background-color: #0c0529;
-}
-
-
-
-
-button {
-
-  outline: white solid 0.5px;
-  border-radius: 3px;
-  color: rgba(0, 0, 0, 0.4);
-  font-weight: bold;
-  border: none;
-  background: rgba(0, 0, 0, .30);
-
-
-}
-
-button:hover {
-  background-color: rgba(6, 18, 72, 0.491);
-  transition: ease-in 0.2s;
 }
 
 
@@ -140,7 +80,7 @@ button:hover {
 }
 
 
-.image-lista {
+.imageDieta-lista {
   /* height: auto; */
   height: 15vh;
   /* width: vw; */
@@ -167,60 +107,5 @@ button:hover {
   justify-content: flex-start;
   align-items: center;
   font-size: 25px;
-  color: white;
-}
-
-.identificacaoModal-lista h1 {
-  font-family: Rubik;
-  font-weight: bold;
-  margin: 0px 0px 0px 5vw;
-}
-
-.infoTreino-lista h1 {
-  font-family: Rubik;
-  display: flex;
-  justify-content: center;
-  font-size: 25px;
-
-}
-
-.infoTreino-lista h2 {
-  font-family: Rubik;
-  display: flex;
-  justify-content: center;
-  font-size: 25px;
-
-}
-
-
-.boxTreino-lista {
-  height: -moz-fit-content;
-  height: fit-content;
-  width: fit-content;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  height: fit-content;
-  width: -moz-fit-content;
-  width: fit-content;
-  display: flex;
-  flex-direction: column;
-  flex-wrap: wrap;
-  align-items: center;
-  /* height: 253px; */
-  max-width: 250px;
-  /* width: 333px; */
-  max-height: 326px;
-  gap: 30px;
-  align-content: center;
-  padding: 10px 7px 10px 7px;
-}
-
-
-.infoTreino-lista {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 30px;
   color: white;
 }
