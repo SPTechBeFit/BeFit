@@ -10,11 +10,12 @@
   height: 30px;
   font-size: 17px;
   align-items: center;  
-}
+  cursor: pointer;
+} 
 
 .btn-voltar-pag{
   display: flex;
-
+  margin-left: 800px;
   color: rgb(0, 0, 0);
   height: 30px;
   font-size: 17px;
@@ -64,10 +65,11 @@ nav ul {
 }
 
 nav ul li {
-  display: inline-block;
-  margin: 0;
+  display: flex;
+  margin: 0px 90px;
   padding: 0em .1em;
   height: 25%;
+
 }
 
 nav a {
@@ -79,6 +81,10 @@ nav a {
   text-decoration: none;
   font-size: 1.15em;
   font-weight: bold;
+}
+
+#home, #sobre, #comecar{
+  height: 30px;
 }
 
 .activeButton {
@@ -95,6 +101,21 @@ nav a {
 
 }
 
+.btn-hot-site{ 
+    background-color: #000000;
+    color: white;
+    border-color: white;
+    margin-left: 250px;
+    font-size: 17px;
+    width: 100px;
+    cursor: pointer;
+    height: 35px;
+} 
+
+.user{
+  margin: 0px 100px;
+  color: #000000;
+}
 
 
 .options {
