@@ -28,3 +28,8 @@
 #botao-import-export:hover{
     background-color: #5c43d6;
 }
+
+.modal-title{
+    font-size: 20px;
+    margin-bottom: 50px;
+}
