@@ -188,7 +188,7 @@ function Header(props) {
               {headerPagHome() && <li id='comecar'> <NavLink to="/signin"> Começar </NavLink></li>}   
               {headerChangeUserPage() && headerVoltar() && <li> <button className='btn-voltar-pag' onClick={() => navigate(-1)}>Voltar</button></li>}
               {headerChangeUserPage() && headerHotSite() && <li>  <span className='user'>Olá {sessionStorage.getItem("nome")}!</span></li>}
-              {headerHotSite() && <li> <button className='btn-hot-site'>Hot Site</button></li>}
+              {headerHotSite() && <li> <button className='btn-hot-site'>  <NavLink to="/hotsite">HotSite</NavLink></button></li>}
               {headerChangeUserPage() && headerSair() && <li> <button className='btn-sair' onClick={handleLogOut}>Sair</button></li>}
             </ul>
             <PersistentDrawerLeft />

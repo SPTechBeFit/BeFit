@@ -8,10 +8,10 @@ function PagDietas(props) {
 
     useEffect(() => {
         listarDietas();
-        listarIngredientes() 
+        listarIngredientes()
     }, [])
 
-
+    const [arqExport, setArqExport] = useState()
     const [dietaClicado, setDietaClicado] = useState(null)
     const [imagemDieta, setImagemDieta] = useState(null)
     const [dietas, setDietas] = useState([]);
@@ -29,7 +29,7 @@ function PagDietas(props) {
     }
 
     function listarIngredientes() {
-         axios.get(`http://localhost:8080/dietas/${sessionStorage.getItem("idDieta")}`)
+        axios.get(`http://localhost:8080/dietas/${sessionStorage.getItem("idDieta")}`)
             .then(function (respostaObtida) {
                 setIngredientes(respostaObtida.data.ingredientes);
             })
@@ -47,6 +47,43 @@ function PagDietas(props) {
         })
 
     }
+
+    function handleExport() {
+        // axios.get(`http://localhost:8080/dietas/exportar/${sessionStorage.getItem("idDieta")}`, arqExport, {
+        //     headers: {
+        //         'Content-Type': 'text/form-data'
+        //     }
+        // })
+        fetch(`http://localhost:8080/dietas/exportar/${sessionStorage.getItem("idDieta")}`, arqExport, {
+            method: 'GET',
+            headers: {
+                'Content-Type': 'text/form-data',
+            },
+        })
+            .then((response) => response.blob())
+            .then((blob) => {
+                // Create blob link to download
+                const url = window.URL.createObjectURL(
+                    new Blob([blob]),
+                );
+                const link = document.createElement('a');
+                link.href = url;
+                link.setAttribute(
+                    'download',
+                    `Dieta.txt`,
+                );
+                document.body.appendChild(link);
+                link.click();
+
+            })
+            .catch((errorOcorrido) => {
+                console.log(arqExport)
+                console.log(errorOcorrido)
+            })
+
+
+    }
+
 
     return (
         <>
@@ -80,34 +117,34 @@ function PagDietas(props) {
                         {ingredientes?.map((ingredientes, i) => {
                             return (
                                 <>
-                                <p key={i}>
-                                   {ingredientes.nome} |
-                                    {ingredientes.porcao} |
-                                    {ingredientes.proteina} |
-                                    {ingredientes.lipidio} |
-                                    {ingredientes.carboidrato} |
-                                    {ingredientes.sodio} |
-                                    {ingredientes.caloria}
-                                </p>
+                                    <p key={i}>
+                                        {ingredientes.nome} |
+                                        {ingredientes.porcao} |
+                                        {ingredientes.proteina} |
+                                        {ingredientes.lipidio} |
+                                        {ingredientes.carboidrato} |
+                                        {ingredientes.sodio} |
+                                        {ingredientes.caloria}
+                                    </p>
 
 
-                                <div 
-                                    id={ingredientes.id}
-                                    nome={ingredientes.nome}
-                                    porcao={ingredientes.porcao}
-                                    proteina={ingredientes.proteina}
-                                    lipidio={ingredientes.lipidio}
-                                    carboidrato={ingredientes.carboidrato}
-                                    sodio={ingredientes.sodio}
-                                    caloria={ingredientes.caloria}
-                                ></div>
+                                    <div
+                                        id={ingredientes.id}
+                                        nome={ingredientes.nome}
+                                        porcao={ingredientes.porcao}
+                                        proteina={ingredientes.proteina}
+                                        lipidio={ingredientes.lipidio}
+                                        carboidrato={ingredientes.carboidrato}
+                                        sodio={ingredientes.sodio}
+                                        caloria={ingredientes.caloria}
+                                    ></div>
                                 </>
                             )
 
                         })
                         }
                     </div>
-
+                    <button id="botao-import-export" onClick={() => handleExport()}>Exportar</button>
 
                 </div>
             </div>
