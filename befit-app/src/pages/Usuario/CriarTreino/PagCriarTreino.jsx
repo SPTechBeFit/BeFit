@@ -42,8 +42,7 @@ function PagCriacaoExercicios(props) {
 
 
     const defaultMessage = ('Insira o nome e descricao do seu treino')
-    // const [errorTituloTreino,setErrorTituloTreino ] = useState("")
-    // const [errorDescTreino,setErrorDescTreino ] = useState("")
+
 
 
 
@@ -53,19 +52,16 @@ function PagCriacaoExercicios(props) {
     function abreModal(idTreino) {
         setIdTreino(idTreino)
         setIsOpen(true)
-        //document.getElementById("lista").style.width = "50%";
 
     }
 
     function fechaModal() {
         setIsOpen(false)
         document.getElementById("lista").style.width = "100%";
-        // document.getElementById("divModal").style.display = "none";
-        // document.getElementById("divModal").style.width = "0%";
+
     }
 
     function listar(props) {
-        //transformar id em variavel
         axios.get('http://localhost:8080/exercicios')
             .then(function (respostaObtida) {
                 console.log(respostaObtida.data);
@@ -82,6 +78,7 @@ function PagCriacaoExercicios(props) {
 
     function adicionarTreino(evento) {
         evento.preventDefault();
+        document.getElementById("infoCriacaoTreino").style.display = "block";
         if (validator.isEmpty(tituloTreino)) {
             setErrorTitulo("Titulo não pode ser vazio")
             return;
@@ -114,6 +111,8 @@ function PagCriacaoExercicios(props) {
         document.getElementById("modalCriacao").style.display = "none";
         document.getElementById("divModal").style.display = "block";
         document.getElementById("divModal").style.width = "50%";
+    
+
 
 
     }
@@ -219,12 +218,13 @@ function PagCriacaoExercicios(props) {
             <Header />
             <div className="bodyCriacao">
                 <BannerTreino />
-                <div className="infoCriacao">
+                <div className="infoCriacao" id="infoCriacaoTreino" style={{display: "none"}}>
                     <h2>
                         <b>{tituloCriacao} </b>
                     </h2>
 
-                    {vaiAparecerButton === false && <button id='salvarTreino' className='btn-salvar' onClick={enviarTreino}>Salvar treino</button>}
+                    {vaiAparecerButton === false && <button id='salvarTreino' className='btn-salvar'
+                     onClick={enviarTreino}>Salvar treino</button>}
                 </div>
                 <div className="modalCriar" id="modalCriacao" style={{ display: "block" }}>
 

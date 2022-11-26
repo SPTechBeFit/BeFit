@@ -16,6 +16,7 @@ function ListaExercicios(props) {
     const handleClick = () => {
         setIsActive(current => !current);
         console.log(isActive)
+        
     };
 
     return (
@@ -26,6 +27,8 @@ function ListaExercicios(props) {
             </div>
             <div className="exercicio-lista-todos"
                 onClick={props.onClick}
+                
+            
                 style={{
                     backgroundColor: isActive ? 'blue' : '',
                     color: isActive ? 'white' : '',

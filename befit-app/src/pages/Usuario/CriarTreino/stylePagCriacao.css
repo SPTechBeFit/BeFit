@@ -218,9 +218,9 @@
 }
 
 .infoTreinoCriacao {
-    display: flex;
-    gap: 14px;
-    flex-direction: column;
+
+    gap: 0px;
+   
 
 }
 
@@ -271,28 +271,30 @@
 }
 
 .infoExercicio {
+    height: 4vh;
+    display: flex;
     background: blue !important;
     color: white !important;
     font-weight: lighter !important;
     font-size: 30px !important;
     padding: 0px 0px 0px 30px;
+    align-items: center;
 
 }
 
 
 .infoCriacao {
-    height: 6vh;
+    height: 5vh;
     /* width: 60%; */
-    background-color: blue;
+    background-color: #282865;
     display: flex;
     color: white;
     font-size: 28px;
-    padding: 4px 35vw 0px 3vw;
+    padding: 24px 35vw 0px 3vw;
     /* margin-top: 11px; */
     align-items: center;
-    justify-content: space-between;
     flex-direction: row;
-    flex-wrap: nowrap;   
+    flex-wrap: nowrap;
 }
 
 .infoCriacao h1 {
@@ -318,11 +320,10 @@
 
 .btn-salvar {
   
-    margin: 5px -210px 0px 0px!important;
+    margin: -35px 0px 0px 715px!important;
     color: rgb(34 34 34)!important;
     background-color: white!important;
     display: flex!important;
-    /* flex-direction: row; */
     width: 20vw!important;
     justify-content: space-around!important;
 
@@ -369,7 +370,7 @@
 
     .infoTreinoCriacao {
         display: flex;
-        gap: 160px;
+        gap: 70px;
         flex-direction: column;
     }
     .errorTitulo{
