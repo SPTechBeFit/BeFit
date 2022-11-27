@@ -193,7 +193,7 @@ function PagCriacaoExercicios(props) {
             text: "Seu treino ficará salvo na sua conta",
             icon: "success",
             buttons: ["desfazer treino", true],
-            dangerMode: true,
+            dangerMode: false,
         })
             .then((willDelete) => {
                 if (willDelete) {
