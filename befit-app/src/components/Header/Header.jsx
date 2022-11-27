@@ -14,6 +14,8 @@ function Header(props) {
 
   const pageAtual = (window.location.pathname);
   const navigate = useNavigate();
+  const [arqExport] = useState()
+  
   function headerChange() {
 
     switch (pageAtual) {
@@ -58,8 +60,14 @@ function Header(props) {
       case '/usuario/minhasdietas':
         return true
 
-      default:
-        return false
+      case '/treino/*':
+        return true 
+
+      case `/dietas/${sessionStorage.getItem('idDieta')}`:
+      return true     
+
+    default:
+      return false
     }
   }
 
@@ -71,6 +79,9 @@ function Header(props) {
       case `/treino/${sessionStorage.getItem("idTreino")}`:
         console.log(`/treino/${sessionStorage.getItem("idTreino")}`)
         return true
+
+      case `/dietas/${sessionStorage.getItem('idDieta')}`:
+      return true  
 
       default:
         return false
@@ -100,8 +111,11 @@ function Header(props) {
       case '/usuario/minhasdietas':
         return false
 
-      case !'/treino/*':
+      case `/treino/*`:
         return false
+       
+      case `/dietas/${sessionStorage.getItem('idDieta')}`:
+        return false  
 
       default:
         return true
@@ -132,6 +146,9 @@ function Header(props) {
       case `/treino/${sessionStorage.getItem("idTreino")}`:
         console.log(`/treino/${sessionStorage.getItem("idTreino")}`)
         return true
+      
+      case `/dietas/${sessionStorage.getItem('idDieta')}`:
+        return true  
 
       default:
         return false
@@ -159,6 +176,38 @@ function Header(props) {
 
 
   }
+
+
+  function handleExport() {
+    fetch(`http://localhost:8080/dietas/exportar/${sessionStorage.getItem("idDieta")}`, arqExport, {
+        method: 'GET',
+        headers: {
+            'Content-Type': 'text/form-data',
+        },
+    })
+        .then((response) => response.blob())
+        .then((blob) => {
+            // Create blob link to download
+            const url = window.URL.createObjectURL(
+                new Blob([blob]),
+            );
+            const link = document.createElement('a');
+            link.href = url;
+            link.setAttribute(
+                'download',
+                `Dieta.txt`,
+            );
+            document.body.appendChild(link);
+            link.click();
+
+        })
+        .catch((errorOcorrido) => {
+            console.log(arqExport)
+            console.log(errorOcorrido)
+        })
+
+
+}
 
 
 
@@ -214,6 +263,7 @@ function Header(props) {
               {headerChangeUserPage() && headerHotSite() && <li>  <span className='user'>Olá {sessionStorage.getItem("nome")}!</span></li>}
               {headerHotSite() && <li> <button className='btn-hot-site'>  <NavLink to="/hotsite">HotSite</NavLink></button></li>}
               {headerChangeUserPage() && headerSair() && <li> <button className='btn-sair' onClick={handleLogOut}>Sair</button></li>}
+              {headerChangeUserPage() && <button id="botao-import-export" onClick={() => handleExport()}>Exportar</button>}
             </ul>
             <PersistentDrawerLeft />
           </div>

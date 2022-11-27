@@ -1,0 +1,47 @@
+.info-dieta {
+    background: blue !important;
+    color: white !important;
+    font-weight: lighter !important;
+    font-size: 30px !important;
+    padding: 0px 0px 0px 30px
+}
+
+.lista-dieta {
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: column;
+    gap: 3vh;
+    width: 100%;
+    /* font-size: 22px; */
+  
+}
+
+.imagem-cover-dieta {
+    background-image: url(http://localhost:3000/static/media/exercioCardio.a625918….jpg);
+    display: flex;
+    /* height: auto; */
+    /* width: auto; */
+    /* max-width: 126px; */
+    width: 268px;
+    /* max-height: 126px; */
+    flex-direction: column;
+  }
+
+.dieta-image-lista {
+    height: 30vh;
+    width: 59.3vw;
+    background-size: cover;
+  }  
+
+  .descricao-dieta {
+
+    text-align: left;
+    /* margin-left: 20px; */
+    width: 100%;
+    height: 5vh;
+    padding: 0px 20px 0px 20px;
+    margin: 0px 0px 20px 0px;
+    font-size: 28px;
+    font-family: 'Overpass';
+    overflow-y: auto;
+  }
