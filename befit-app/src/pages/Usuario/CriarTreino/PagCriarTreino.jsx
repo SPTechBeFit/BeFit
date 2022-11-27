@@ -12,7 +12,6 @@ import Input from '../../../components/Input';
 import ButtonNext from '../../../components/ButtonSignUp/button';
 import stylesLista from "./stylePagCriacao.css"
 import { useNavigate } from 'react-router-dom'
-import { width } from '@mui/system';
 import swal from 'sweetalert';
 
 
@@ -106,12 +105,12 @@ function PagCriacaoExercicios(props) {
 
         vaiAparecer = false;
         listar()
-        
+
         document.getElementById("lista").style.display = "block";
         document.getElementById("modalCriacao").style.display = "none";
         document.getElementById("divModal").style.display = "block";
         document.getElementById("divModal").style.width = "50%";
-    
+
 
 
 
@@ -178,7 +177,7 @@ function PagCriacaoExercicios(props) {
         }
 
         axios.post('http://localhost:8080/treinos', body).then((res) => {
-          
+
             desfazerTreino()
             navigate('/usuario/exercicios')
         }
@@ -189,26 +188,36 @@ function PagCriacaoExercicios(props) {
 
 
     function desfazerTreino() {
-        // eslint-disable-next-line no-restricted-globals
-        if (confirm("Gostaria de salvar o treino?")) {
-          console.log('treino gravado')
-            navigate('/usuario/exercicios')
-        } else {
-            axios.delete('http://localhost:8080/treinos/desfazer')
-            .then(function (respostaObtida) {
-                console.log(respostaObtida.data);
-                setExercicios(respostaObtida.data);
-                console.log('Desfazendo treino')
+        swal({
+            title: "Treino salvo!",
+            text: "Seu treino ficará salvo na sua conta",
+            icon: "success",
+            buttons: ["desfazer treino", true],
+            dangerMode: true,
+        })
+            .then((willDelete) => {
+                if (willDelete) {
+                    swal("Seu Treino foi criado com sucesso!", {
+                        icon: "success",
+                    });
+                } else {
+                    axios.delete('http://localhost:8080/treinos/desfazer')
+                        .then(function (respostaObtida) {
+                            console.log(respostaObtida.data);
+                            setExercicios(respostaObtida.data);
+                            console.log('Desfazendo treino')
+                            window.location.reload(false);
 
-            })
-            .catch((errorOcorrido) => {
-                console.log(errorOcorrido)
+                        })
+                        .catch((errorOcorrido) => {
+                            console.log(errorOcorrido)
+                        });
+                    swal("Seu treino foi desfeito e não ficará salvo");
+                }
             });
-        }
-
     }
 
-    
+
 
     var tituloCriacao = tituloTreino != null ? tituloTreinoModal : defaultMessage;
 
@@ -218,13 +227,13 @@ function PagCriacaoExercicios(props) {
             <Header />
             <div className="bodyCriacao">
                 <BannerTreino />
-                <div className="infoCriacao" id="infoCriacaoTreino" style={{display: "none"}}>
+                <div className="infoCriacao" id="infoCriacaoTreino" style={{ display: "none" }}>
                     <h2>
                         <b>{tituloCriacao} </b>
                     </h2>
 
                     {vaiAparecerButton === false && <button id='salvarTreino' className='btn-salvar'
-                     onClick={enviarTreino}>Salvar treino</button>}
+                        onClick={enviarTreino}>Salvar treino</button>}
                 </div>
                 <div className="modalCriar" id="modalCriacao" style={{ display: "block" }}>
 
@@ -247,7 +256,7 @@ function PagCriacaoExercicios(props) {
                                         {/* <C.labelError>{errorTituloTreino}</C.labelError> */}
                                     </label>
                                     <div className="errorTitulo">
-                                    <C.labelError>{errorTitulo}</C.labelError>
+                                        <C.labelError>{errorTitulo}</C.labelError>
                                     </div>
                                     <br />
                                     <label className='descTreino'>
@@ -265,7 +274,7 @@ function PagCriacaoExercicios(props) {
                                         {/* <C.labelError>{errorDescTreino}</C.labelError> */}
                                     </label>
                                     <div className="errorDesc">
-                                    <C.labelError>{errorDesc}</C.labelError>
+                                        <C.labelError>{errorDesc}</C.labelError>
                                     </div>
                                 </div>
                                 <button id="btn-enviar">Enviar</button>
@@ -274,7 +283,7 @@ function PagCriacaoExercicios(props) {
 
                     </div>}
                 </div>
-               
+
                 <div className="containerModal-lista">
                     <div className="listaExercicios" id='lista' style={{ display: "none" }}>
 
@@ -344,7 +353,7 @@ function PagCriacaoExercicios(props) {
                             </div>
                         </Modal>
                     </div>
-                  
+
 
 
 

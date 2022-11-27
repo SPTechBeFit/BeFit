@@ -9,14 +9,16 @@ import Header from "../../components/Header/Header";
 import Footer from "../../components/Footer/Footer";
 import axios from 'axios'
 import validator from "validator";
+import swal from 'sweetalert';
+
 
 const Signup = () => {
   const [nome, setNome] = useState("");
   const [email, setEmail] = useState("");
-  const [emailConf, setEmailConf] = useState("");
+  const [senhaConf, setSenhaConf] = useState("");
   const [senha, setSenha] = useState("");
   const [errorEmail, setErrorEmail] = useState("");
-  const [errorConfEmail, setErrorConfEmail] = useState("");
+  const [errorConfSenha, setErrorConfSenha] = useState("");
   const [errorSenha, setErrorSenha] = useState("");
   const [errorNome, setErrorNome] = useState("");
   const navigate = useNavigate();
@@ -43,22 +45,15 @@ const Signup = () => {
       return;
     }
 
-    if(validator.isEmail(emailConf)){
-      setErrorConfEmail("")
-    } else {
-      setErrorConfEmail("Email invalido")
-      return;
-    }
 
-
-    if (!email | !emailConf | !senha) {
+    if (!email | !senhaConf | !senha) {
       setErrorSenha("Preencha todos os campos");
       return;
-    } else if (email !== emailConf) {
-      setErrorConfEmail("Os e-mails não são iguais");
+    } else if (senha !== senhaConf) {
+      setErrorConfSenha("As senhas não são iguais");
       return;
     }
-    alert("Usuário cadatrado com sucesso!");
+    swal("Usuario cadastrado!", "Redirecionando para login!", "success");
     navigate("/signin");
 
     axios.post('http://localhost:8080/usuarios',
@@ -90,20 +85,20 @@ const Signup = () => {
             onChange={(e) => [setEmail(e.target.value), setErrorEmail("")]}
           />
           <C.labelError>{errorEmail}</C.labelError>
-          <C.inputText>CONFIRMAR EMAIL</C.inputText>
-          <Input
-            type="email"
-            placeholder="Confirme seu E-mail"
-            value={emailConf}
-            onChange={(e) => [setEmailConf(e.target.value), setErrorConfEmail("")]}
-          />
-          <C.labelError>{errorConfEmail}</C.labelError>
           <C.inputText>SENHA</C.inputText>
           <Input
             type="password"
-            placeholder="Digite sua Senha"
+            placeholder="Insira sua senha"
             value={senha}
-            onChange={(e) => [setSenha(e.target.value), setErrorSenha("")]}
+            onChange={(e) => [setSenha(e.target.value), setErrorConfSenha("")]}
+          />
+          <C.labelError>{errorConfSenha}</C.labelError>
+          <C.inputText>CONFIRMAR SENHA</C.inputText>
+          <Input
+            type="password"
+            placeholder="Confirme sua Senha"
+            value={senhaConf}
+            onChange={(e) => [setSenhaConf(e.target.value), setErrorSenha("")]}
           />
           <C.labelError>{errorSenha}</C.labelError>
           <C.ContainerForButtons>

@@ -69,8 +69,9 @@ function CardExercicio(props) {
     }
 
     const routeChange = () => {
-        let path = (`/treino/${props.nome}/${props.id}`);
+        let path = (`/treino/${props.id}`);
         sessionStorage.setItem("idTreino", props.id);
+        sessionStorage.setItem("nomeTreino", props.nome);
         navegar(path);
 
     }
