@@ -3,6 +3,7 @@ import ListaDietas from './Components/listaGetAllDietas'
 import axios from "axios";
 import { useState, useEffect } from "react"
 import style from './pagDietaStyle.css'
+import Header from '../../../components/Header/Header';
 
 
 function PagDietas(props) {
@@ -12,9 +13,6 @@ function PagDietas(props) {
         listarIngredientes()
     }, [])
 
-    const [arqExport] = useState()
-    const [dietaClicado, setDietaClicado] = useState(null)
-    const [imagemDieta, setImagemDieta] = useState(null)
     const [dietas, setDietas] = useState([]);
     const [ingredientes, setIngredientes] = useState([]);
 
@@ -40,102 +38,50 @@ function PagDietas(props) {
 
 
 
-    // function handleDietaClicado(dieta) {
-    //     setDietaClicado(dieta)
-    //     setImagemDieta({
-    //         backgroundImage: `url(${dieta.imagem})`,
-    //     })
-
-    // }
-
-    function handleExport() {
-        fetch(`http://localhost:8080/dietas/exportar/${sessionStorage.getItem("idDieta")}`, arqExport, {
-            method: 'GET',
-            headers: {
-                'Content-Type': 'text/form-data',
-            },
-        })
-            .then((response) => response.blob())
-            .then((blob) => {
-                // Create blob link to download
-                const url = window.URL.createObjectURL(
-                    new Blob([blob]),
-                );
-                const link = document.createElement('a');
-                link.href = url;
-                link.setAttribute(
-                    'download',
-                    `Dieta ${dietas.nome}.txt`,
-                );
-                document.body.appendChild(link);
-                link.click();
-
-            })
-            .catch((errorOcorrido) => {
-                console.log(arqExport)
-                console.log(errorOcorrido)
-            })
-
-
-    }
-
-
     return (
         <>
+
+        <Header/>
+            <br/>
+            <br/>
+            <br/>
+            <br/>
             <br />
-            <div className="corpoDieta-lista">
-                <div className="containerDieta">
-                    <div className="imagemDieta-lista">
-                        {dietaClicado && <><div className="dietaCover-lista">
-                            <div style={imagemDieta} className="dietaImage-painel" ></div>
-                            <div className="nomeDieta"> <h1>{dietaClicado.nome}</h1></div>
-                        </div>
-                            <div class='descricao-da-dieta'>
-                                <p>{dietaClicado.descricao}</p>
-                            </div>
-                        </>
-                        }
-                    </div>
-                </div>
+            <div className="dieta-corpo">
 
                 <div className="containerModal-lista-todos-dietas">
-                    {/* <div className="teste" style={{ backgroundColor: 'red', height: "100vh", width: "50vw" }}></div> */}
                     <ListaDietas
-                        selecionado={dietas.selecionado}
                         nome={dietas.nome}
                         descricao={dietas.descricao}
                         imagem={dietas.imagem}
-                    //onClick={() => { handleDietaClicado(dietas) }}
                     />
-
-
-
-                </div>
+                </div> 
 
                 <div className='ContainerListaIngredientes'>
                     {ingredientes?.map((ingredientes, i) => {
                         return (
                             <>
                                 <div className="listaIngredientes" key={i}>
-                                    <h1>{ingredientes.nome} </h1>
-                                    <h1>{ingredientes.porcao} Gramas</h1>
-                                    <h2>proteina {ingredientes.proteina} </h2>
-                                    <h2>lipidio {ingredientes.lipidio}</h2>
-                                    <h2>carboidrato {ingredientes.carboidrato}</h2>
-                                    <h2>sodio {ingredientes.sodio}</h2>
-                                    <h2>caloria {ingredientes.caloria}</h2>
-
+                                <ol type="a">
+                                <div className='nome-ingrediente'>
+                                <li>Nome: {ingredientes.nome}</li>    
+                                </div>    
+                                    <div className='ingredientes'>
+                                        <li>Gramas: {ingredientes.porcao}g</li>
+                                        <li>Proteina: {(ingredientes.proteina).toFixed(2)}</li>
+                                        <li>Lipidio: {(ingredientes.lipidio).toFixed(2)}</li>
+                                        <li>Carboidrato: {(ingredientes.carboidrato).toFixed(2)}</li>
+                                        <li>Sodio: {(ingredientes.sodio).toFixed(2)}</li>
+                                        <li>Caloria: {(ingredientes.caloria).toFixed(2)}</li>
+                                    </div>
+                                </ol>
                                 </div>
-
                             </>
                         )
 
-                    })
-                    }
+                    })}
                 </div>
-            </div>
-            <button id="botao-import-export" onClick={() => handleExport()}>Exportar</button>
-
+        </div>
         </>
     )
 }
