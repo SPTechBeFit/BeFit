@@ -4,10 +4,9 @@ import Header from "../../components/Header/Header";
 import "./style.css";
 import Modal from "react-modal";
 import axios from "axios";
-
 function HotSite() {
   const [arqImport, setArqImport] = useState();
-
+  const pageAtual = (window.location.pathname);
   function handleImport() {
     axios
       .post(
@@ -35,6 +34,9 @@ function HotSite() {
     <>
       <Header />
 
+{
+    console.log(pageAtual)
+}
       <div className="hotsite-container">
         <Modal isOpen={true} contentLabel="import-file">
           <h2 className="title-modal">Importe o seu arquivo</h2>
