@@ -15,11 +15,11 @@
 
 .btn-voltar-pag {
   display: flex;
-  margin-left: 800px;
   color: rgb(0, 0, 0);
   height: 30px;
   font-size: 17px;
   align-items: center;
+  cursor: pointer;
 }
 
 
@@ -102,9 +102,16 @@ nav a {
   border-radius: 4px;
 
 }
+#botao-export{
+  display: flex;
+  color: rgb(0, 0, 0);
+  height: 30px;
+  font-size: 17px;
+  align-items: center;
+  cursor: pointer;
+}
 
 .btn-hot-site {
-
   color: white;
   border-color: white;
   /* margin-left: 250px; */
@@ -134,12 +141,11 @@ nav a {
   /* margin: 0 auto; */
   display: flex;
   height: 100%;
-  margin: 0vh 10vw 0 25vw;
+  margin: 0vh 10vw 0 27vw;
   position: absolute;
   padding: 0 10vw 0vh 25vw;
   justify-content: space-around;
-
-
+  align-items: center;
 }
 
 
@@ -150,8 +156,7 @@ _________________________________ */
   .sideMenuButtonImg {
     display: block !important;
     position: absolute;
-    margin: 7vh 0vw 0 40vw;
-
+    margin: 0vh 0vw 0 40vw;
   }
 
 
@@ -181,7 +186,7 @@ _________________________________ */
   .sideMenuButtonImg {
     display: block !important;
     position: absolute;
-    margin: 7vh 0vw 0 15vw;
+    margin: 0vh 0vw 0 15vw;
 
   }
 

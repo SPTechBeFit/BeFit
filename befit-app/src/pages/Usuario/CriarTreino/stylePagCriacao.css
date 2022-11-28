@@ -66,6 +66,7 @@
     font-size: 20px;
     color: white;
     height: 40px;
+    cursor: pointer;
 }
 
 .btn-ok {
@@ -75,9 +76,6 @@
     margin-top: 60px;
     font-size: 20px;
     color: white;
-}
-
-.btn-ok:hover {
     cursor: pointer;
 }
 
@@ -85,11 +83,12 @@
     margin-top: 4px;
     text-align: center;
     color: rgb(0, 197, 197);
+    cursor: pointer;
+
 }
 
 .btn-cancelar:hover {
     color: blue;
-    cursor: pointer;
     text-decoration: underline;
 }
 
@@ -326,7 +325,7 @@
     display: flex!important;
     width: 20vw!important;
     justify-content: space-around!important;
-
+    cursor: pointer;
 }
 
 @media only screen and (max-width: 1312px) {
@@ -405,6 +404,7 @@
         /* flex-direction: row; */
         width: 35vw!important;
         justify-content: space-around!important;
+        cursor: pointer;
     
     }
 

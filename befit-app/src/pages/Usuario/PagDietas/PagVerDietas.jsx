@@ -64,7 +64,7 @@ function PagDietas(props) {
                                 <div className="listaIngredientes" key={i}>
                                 <ol type="a">
                                 <div className='nome-ingrediente'>
-                                <li>Nome: {ingredientes.nome}</li>    
+                                <li>{ingredientes.nome}</li>    
                                 </div>    
                                     <div className='ingredientes'>
                                         <li>Gramas: {ingredientes.porcao}g</li>

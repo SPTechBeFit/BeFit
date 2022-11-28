@@ -64,7 +64,7 @@ function Header(props) {
         return true 
 
       case `/dietas/${sessionStorage.getItem('idDieta')}`:
-      return true     
+      return false     
 
     default:
       return false
@@ -82,6 +82,9 @@ function Header(props) {
 
       case `/dietas/${sessionStorage.getItem('idDieta')}`:
       return true  
+
+      case '/hotsite':
+        return true
 
       default:
         return false
@@ -115,6 +118,9 @@ function Header(props) {
         return false
        
       case `/dietas/${sessionStorage.getItem('idDieta')}`:
+        return false  
+
+      case `/hotsite`:
         return false  
 
       default:
@@ -170,11 +176,23 @@ function Header(props) {
       case '/usuario/minhasdietas':
         return true
 
+    
+
       default:
         return false
     }
 
 
+  }
+
+  function headerExportar(){
+    switch(pageAtual){
+      case `/dietas/${sessionStorage.getItem('idDieta')}`:
+        return true
+
+      default:
+        return false
+    }
   }
 
 
@@ -259,11 +277,11 @@ function Header(props) {
               {/* <li> <NavLink to="/exerciciosHome" activeClassName="active"> <a>Exercícios</a></NavLink></li> */}
               {headerPagHome() && headerChange() && <li id='sobre'> <NavLink to="/sobre" >Sobre</NavLink></li>}
               {headerPagHome() && <li id='comecar'> <NavLink to="/signin"> Começar </NavLink></li>}
+              {headerChangeUserPage() && headerExportar() && <button id="botao-export" onClick={() => handleExport()}>Exportar</button>}
               {headerChangeUserPage() && headerVoltar() && <li> <button className='btn-voltar-pag' onClick={() => navigate(-1)}>Voltar</button></li>}
               {headerChangeUserPage() && headerHotSite() && <li>  <span className='user'>Olá {sessionStorage.getItem("nome")}!</span></li>}
               {headerHotSite() && <li> <button className='btn-hot-site'>  <NavLink to="/hotsite">HotSite</NavLink></button></li>}
               {headerChangeUserPage() && headerSair() && <li> <button className='btn-sair' onClick={handleLogOut}>Sair</button></li>}
-              {headerChangeUserPage() && <button id="botao-import-export" onClick={() => handleExport()}>Exportar</button>}
             </ul>
             <PersistentDrawerLeft />
           </div>
