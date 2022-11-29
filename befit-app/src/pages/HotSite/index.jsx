@@ -4,7 +4,14 @@ import Header from "../../components/Header/Header";
 import "./style.css";
 import Modal from "react-modal";
 import axios from "axios";
+import swal from 'sweetalert';
+import { useNavigate } from "react-router-dom";
+
+
+
 function HotSite() {
+  const navegar = useNavigate();
+  
   const [arqImport, setArqImport] = useState();
   const pageAtual = (window.location.pathname);
   function handleImport() {
@@ -22,7 +29,13 @@ function HotSite() {
       )
       .then(function (res) {
         console.log(res);
-        alert("Dieta salva com sucesso");
+        swal({
+          title: "Dieta Importada com sucesos!",
+          icon: "success",
+        });
+        navegar("/usuario/dietas")
+        
+
       })
       .catch((errorOcorrido) => {
         console.log(arqImport);

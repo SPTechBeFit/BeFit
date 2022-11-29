@@ -65,7 +65,7 @@
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
-  gap: 3vh;
+ 
   width: 100%;
   /* font-size: 22px; */
 }
@@ -102,4 +102,11 @@
   text-decoration: none;
   color: black;
   font-size: 20px;
+}
+
+
+@media only screen and (max-width: 1312px) {
+  .dieta-corpo {
+    margin: 0px 0vw 0px 0vw;
+  }
 }

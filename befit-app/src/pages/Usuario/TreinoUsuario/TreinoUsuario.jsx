@@ -86,16 +86,20 @@ function TreinoUsuario(props) {
                     console.log("Lista nao carregada")
                     console.log(errorOcorrido)
                     setListaCarregada(false)
-                    console.log(treinos)
+                    console.log("lista vazia")
+                    
                 });
         })
+        if(listaCarregada){
+            console.log("lista carregada")
+        }console.log("lista nao carregada")
+        return(
+            <div className="teste">
+                <h1>a</h1>
+            </div>
+        )
+
     }
-
-
-
-
-
-
     return (
         <>
             <Header />
@@ -111,25 +115,24 @@ function TreinoUsuario(props) {
                                         id={treinos.id}
                                         nome={treinos.nome}
                                         descricao={treinos.descricao}
-                                        tempo={treinos.tempo}
                                         imagem={treinos.imagem}
                                         favoritado={treinos.favoritado}
                                     />
                                 )
                             })
-                                : dietas.map((dietas, i) => {
-                                    return (
-                                        <CardDieta key={dietas.id}
-                                            id={dietas.id}
-                                            nome={dietas.nome}
-                                            descricao={dietas.descricao}
-                                            imagem={dietas.imagem}
-                                            favoritado={dietas.favoritado}
-                                        />
-                                    )
-                                })
+                            : dietas.map((dietas, i) => {
+                                return (
+                                    <CardDieta key={dietas.id}
+                                        id={dietas.id}
+                                        nome={dietas.nome}
+                                        descricao={dietas.descricao}
+                                        imagem={dietas.imagem}
+                                        favoritado={dietas.favoritado}
+                                    />
+                                )
+                            })
                             : <EmptyModal />
-                    }
+                        }
                 </ModalUser>
             </div>
 

@@ -19,8 +19,8 @@ function ContainerHomePage() {
                 </div>
 
                 <div className="banner3-home">
-                    <Link link to="/sobre/exercicios"><img src={Banner3Exercicio} className='banner3-exercicio-home' /></Link>
-                    <Link link to="/sobre/dietas"> <img src={Banner4Dietas} className='banner4-dietas-home' /></Link>
+                    <Link link to="/sobre"><img src={Banner3Exercicio} className='banner3-exercicio-home' /></Link>
+                    <Link link to="/sobre"> <img src={Banner4Dietas} className='banner4-dietas-home' /></Link>
                 </div>
                 <div className="banner4-home">
                     <img src={Banner5Sobre} className='banner5-sobre-home' />

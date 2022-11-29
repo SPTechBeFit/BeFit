@@ -16,12 +16,14 @@
 .lista-dieta {
   display: flex;
   flex-direction: column;
-  gap: 3vh;
+  gap: 5vh;
+  padding: 0px 0px 1.5vh 0px;
   width: 100%;
   /* font-size: 22px; */
   background: #607860;
   color: white;
   align-items: flex-start;
+
 }
 
 .imagem-cover-dieta {
@@ -37,7 +39,7 @@
 
 .dieta-image-lista {
   height: 30vh;
-  width: 60vw;
+  width: 59.5vw;
   background-size: cover;
 }
 
@@ -57,4 +59,14 @@
   overflow-y: auto;
   justify-content: center;
   align-items: center;
+}
+
+
+@media only screen and (max-width: 1312px) {
+  .dieta-image-lista {
+    height: 30vh;
+    margin: 0px 20vw 0px 20vw;
+    width: 59.5vw;
+    background-size: cover;
+  }
 }
