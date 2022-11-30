@@ -66,7 +66,7 @@ function BannerTreino(props) {
 
 
       default:
-        console.log('teste');
+
 
     }
 

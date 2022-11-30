@@ -38,7 +38,6 @@ function HotSite() {
 
       })
       .catch((errorOcorrido) => {
-        console.log(arqImport);
         console.log(errorOcorrido);
       });
   }

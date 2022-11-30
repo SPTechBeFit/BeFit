@@ -63,7 +63,7 @@ function TreinoUsuario(props) {
             case '/usuario/minhasdietas':
                 return titulos.title === 'Minhas Dietas' && titulos.item === `/dietas/favoritos/${sessionStorage.getItem("personId")}`;
             default:
-                console.log('Mudando titulos');
+           
 
         }
     });

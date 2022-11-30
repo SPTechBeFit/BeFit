@@ -72,7 +72,6 @@ function Header(props) {
         return true;
 
       case `/treino/${sessionStorage.getItem("idTreino")}`:
-        console.log(`/treino/${sessionStorage.getItem("idTreino")}`);
         return true;
 
       case `/dietas/${sessionStorage.getItem("idDieta")}`:
@@ -139,7 +138,6 @@ function Header(props) {
         return true;
 
       case `/treino/${sessionStorage.getItem("idTreino")}`:
-        console.log(`/treino/${sessionStorage.getItem("idTreino")}`);
         return true;
 
       case `/dietas/${sessionStorage.getItem("idDieta")}`:
@@ -229,10 +227,7 @@ function Header(props) {
           .then((res) => {
             console.log(res);
             var autenticado = sessionStorage.setItem("autenticado", false);
-            console.log(
-              "usuario autenticado? ",
-              `${sessionStorage.getItem("autenticado")}`
-            );
+           
             if (!autenticado) {
               sessionStorage.clear();
               navigate("/");
@@ -240,7 +235,6 @@ function Header(props) {
           })
           .catch((err) => {
             console.log(err);
-            console.log("erro no .logout");
           });
         swal("Poof! Você foi deslogado!", {
           icon: "success",

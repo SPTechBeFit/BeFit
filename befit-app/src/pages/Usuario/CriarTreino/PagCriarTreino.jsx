@@ -65,8 +65,6 @@ function PagCriacaoExercicios(props) {
             .then(function (respostaObtida) {
                 console.log(respostaObtida.data);
                 setExercicios(respostaObtida.data);
-                console.log('Fazendo requisição da lista de exercicios testando')
-
             })
 
             .catch((errorOcorrido) => {
