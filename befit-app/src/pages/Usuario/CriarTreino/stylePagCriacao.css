@@ -19,6 +19,21 @@
 
 }
 
+
+.containerInfo {
+    height: 5vh;
+    display: flex;
+    background-color: blue;
+    color: white;
+    font-size: 32px;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.containerInfo h1 {
+    padding: 16px 0px 10px 5vw;
+}
+
 .teste {
     background-color: #949596;
     /* margin: 10px 0px 10px 0px; */
@@ -32,10 +47,13 @@
 }
 
 .descTreino {
-    width: 301px;
+    display: flex;
+    width: 300px;
     height: 118px;
     font-size: 26px;
     resize: none;
+    flex-direction: column;
+    align-items: center;
 }
 
 
@@ -58,9 +76,9 @@
 }
 
 #btn-enviar {
-    margin-top: 15px !important;
+    margin-top: 45px !important;
     width: 170px;
-    line-height: s12px;
+    line-height: 12px;
     background-color: rgb(0, 98, 255);
     margin-top: 10px;
     font-size: 20px;
@@ -169,9 +187,10 @@
     flex-direction: column;
     align-items: center;
     width: 30vw;
-    margin: 0px 19vw 0px 21vw;
-    height: 45vh;
+    margin: 0px 21vw 0px 21vw;
+    height: 44vh;
     padding: 15px 0px 40px 0px;
+
 }
 
 .title-modal {
@@ -219,7 +238,7 @@
 .infoTreinoCriacao {
 
     gap: 0px;
-   
+
 
 }
 
@@ -307,24 +326,26 @@
 }
 
 .infoCriacao h2 {
+
     display: flex;
-    width: 40%;
+    width: 60%;
     font-weight: lighter;
     font-family: Overpass;
     flex-direction: row;
     align-items: stretch;
     justify-content: center;
+
 }
 
 
 .btn-salvar {
-  
-    margin: -35px 0px 0px 715px!important;
-    color: rgb(34 34 34)!important;
-    background-color: white!important;
-    display: flex!important;
-    width: 20vw!important;
-    justify-content: space-around!important;
+
+    margin: -35px 0px 0px 715px !important;
+    color: rgb(34 34 34) !important;
+    background-color: white !important;
+    display: flex !important;
+    width: 20vw !important;
+    justify-content: space-around !important;
     cursor: pointer;
 }
 
@@ -372,7 +393,8 @@
         gap: 70px;
         flex-direction: column;
     }
-    .errorTitulo{
+
+    .errorTitulo {
         margin: 111px 0px 0px 0px;
         position: absolute;
     }
@@ -396,17 +418,17 @@
 
 
     .btn-salvar {
-  
-        margin: -25px 0px 0px 625px!important;
-        color: rgb(34 34 34)!important;
-        background-color: white!important;
-        display: flex!important;
+
+        margin: -25px 0px 0px 625px !important;
+        color: rgb(34 34 34) !important;
+        background-color: white !important;
+        display: flex !important;
         /* flex-direction: row; */
-        width: 35vw!important;
-        justify-content: space-around!important;
+        width: 35vw !important;
+        justify-content: space-around !important;
         cursor: pointer;
-    
+
     }
 
-  
+
 }

@@ -70,7 +70,6 @@ function TreinoUsuario(props) {
 
     useEffect(() => { listar(); }, [])
     function listar(props) {
-        console.log("Requisição dos treinos está sendo feita: ");
         console.log(sessionStorage.getItem("personId"))
 
         nomeFiltrado.map((item) => {
@@ -80,24 +79,16 @@ function TreinoUsuario(props) {
                     setTreinos(respostaObtida.data);
                     setDieta(respostaObtida.data)
                     setListaCarregada(true);
-                    console.log(`${item.item}`)
                 })
                 .catch((errorOcorrido) => {
-                    console.log("Lista nao carregada")
                     console.log(errorOcorrido)
                     setListaCarregada(false)
-                    console.log("lista vazia")
-                    
+
                 });
         })
         if(listaCarregada){
             console.log("lista carregada")
         }console.log("lista nao carregada")
-        return(
-            <div className="teste">
-                <h1>a</h1>
-            </div>
-        )
 
     }
     return (

@@ -4,11 +4,12 @@ import Banner4Dietas from '../../assets/images/banners/banner4.jpg';
 import Banner5Sobre from '../../assets/images/banners/banner5.jpg';
 import BotaoTreino from '../../assets/images/buttons/treinosButton.jpg';
 import BotaoDieta from '../../assets/images/buttons/dietasButton.jpg';
-
+import { useNavigate } from 'react-router-dom';
 import FooterApp from '../../assets/images/banners/bannerApp.jpg';
 import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom'
 
 function ContainerHomePage() {
+    const navegar = useNavigate();
     return (
         <>
             <div className="container-home">
@@ -38,7 +39,7 @@ function ContainerHomePage() {
 
                 <div className="container-home-texto">
                     <h1>Venha ser mais saudável</h1>
-                    <button className='buttonComeceAgora'><Link link to="/signin">Comece agora</Link></button>
+                    <button onClick={() => navegar('/signin')} className='buttonComeceAgora'>Comece agora</button>
                 </div>
 
                 <div className="footer-app">

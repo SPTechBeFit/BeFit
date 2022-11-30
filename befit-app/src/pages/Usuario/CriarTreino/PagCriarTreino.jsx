@@ -77,29 +77,34 @@ function PagCriacaoExercicios(props) {
 
     function adicionarTreino(evento) {
         evento.preventDefault();
-        document.getElementById("infoCriacaoTreino").style.display = "block";
+       
         if (validator.isEmpty(tituloTreino)) {
             setErrorTitulo("Titulo não pode ser vazio")
+            document.getElementById("infoCriacaoTreino").style.display = "none";
             return;
         }
 
         if (tituloTreino.length > 20) {
             setErrorTitulo("O nome do treino não pode ter mais de 20 caracteres")
+            document.getElementById("infoCriacaoTreino").style.display = "none";
             return;
         }
 
 
         if (validator.isEmpty(descTreino)) {
             setErrorDesc("Descricão não pode ser vazia")
+            document.getElementById("infoCriacaoTreino").style.display = "none";
             return;
         }
 
         if (descTreino.length > 50) {
             setErrorDesc("Descrição não pode ter mais de 50 caracteres")
+            document.getElementById("infoCriacaoTreino").style.display = "none";
             return;
         }
 
         setTituloTreinoModal(tituloTreino)
+        document.getElementById("infoCriacaoTreino").style.display = "block";
         console.log(tituloTreino)
 
 
@@ -227,6 +232,9 @@ function PagCriacaoExercicios(props) {
             <Header />
             <div className="bodyCriacao">
                 <BannerTreino />
+                <div className="containerInfo">
+                    <h1>Clique em um exercicio para adicioná-lo ao treino</h1>
+                </div>
                 <div className="infoCriacao" id="infoCriacaoTreino" style={{ display: "none" }}>
                     <h2>
                         <b>{tituloCriacao} </b>
