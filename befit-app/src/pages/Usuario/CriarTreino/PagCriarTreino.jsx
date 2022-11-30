@@ -41,10 +41,6 @@ function PagCriacaoExercicios(props) {
 
 
     const defaultMessage = ('Insira o nome e descricao do seu treino')
-
-
-
-
     const [modalIsOpen, setIsOpen] = useState(false)
     const [exercicios, setExercicios] = useState([]);
 
@@ -82,8 +78,8 @@ function PagCriacaoExercicios(props) {
             return;
         }
 
-        if (tituloTreino.length > 20) {
-            setErrorTitulo("O nome do treino não pode ter mais de 20 caracteres")
+        if (tituloTreino.length > 25) {
+            setErrorTitulo("O nome do treino não pode ter mais de 25 caracteres")
             document.getElementById("infoCriacaoTreino").style.display = "none";
             return;
         }
@@ -104,23 +100,15 @@ function PagCriacaoExercicios(props) {
         setTituloTreinoModal(tituloTreino)
         document.getElementById("infoCriacaoTreino").style.display = "block";
         console.log(tituloTreino)
-
-
         vaiAparecer = false;
         listar()
-
         document.getElementById("lista").style.display = "block";
         document.getElementById("modalCriacao").style.display = "none";
         document.getElementById("divModal").style.display = "block";
         document.getElementById("divModal").style.width = "50%";
 
 
-
-
     }
-
-
-
     function salvarExercicioNaLista() {
         vaiAparecerButton = false
         if (validator.isEmpty(repeticoesTreino)) {
@@ -208,8 +196,10 @@ function PagCriacaoExercicios(props) {
                         .then(function (respostaObtida) {
                             console.log(respostaObtida.data);
                             setExercicios(respostaObtida.data);
-                            console.log('Desfazendo treino')
-                            window.location.reload(false);
+                            setInterval(()=>{
+                                window.location.reload(false);
+                            }, 3000);
+               
 
                         })
                         .catch((errorOcorrido) => {
