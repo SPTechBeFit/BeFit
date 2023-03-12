@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 
-var rota = 'http://54.147.103.96';
+var rota = 'http://3.227.245.71';
 
 const api = axios.create(
     {

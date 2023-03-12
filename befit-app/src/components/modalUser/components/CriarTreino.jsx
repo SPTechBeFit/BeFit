@@ -4,7 +4,7 @@ import axios from "axios";
 import { useState, useEffect } from "react"
 import apiExercicios from '../../../services/apiExercicios'
 
-var rota = 'http://54.147.103.96';
+var rota = 'http://3.227.245.71';
 
 function PagExerciciosCriar(props) {
     useEffect(() => { listar(); }, [])

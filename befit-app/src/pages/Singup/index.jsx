@@ -11,7 +11,7 @@ import axios from 'axios'
 import validator from "validator";
 
 
-var rota = 'http://54.147.103.96';
+var rota = 'http://3.227.245.71';
 
 const Signup = () => {
   const [nome, setNome] = useState("");

@@ -8,7 +8,7 @@ import BannerTreino from '../BannerTreino';
 import Header from '../../../components/Header/Header';
 
 
-var rota = 'http://54.147.103.96';
+var rota = 'http://3.227.245.71';
 
 function PagExercicios(props) {
 
