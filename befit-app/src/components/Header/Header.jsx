@@ -5,6 +5,10 @@ import React, { useState } from "react";
 import { BrowserRouter as Router, Routes, Route, useNavigate, Link, NavLink } from 'react-router-dom'
 import axios from 'axios';
 import { Component } from 'react';
+
+
+var rota = 'http://54.147.103.96';
+
 function Header(props) {
 
 
@@ -79,7 +83,7 @@ function Header(props) {
 
 
   const handleLogOut = () => {
-    axios.patch(`http://localhost:8080/usuarios/logout/${sessionStorage.getItem("personId")}`)
+    axios.patch(`${rota}:8080/usuarios/logout/${sessionStorage.getItem("personId")}`)
       .then((res) => {
         console.log(res)
         var autenticado = sessionStorage.setItem("autenticado", false)

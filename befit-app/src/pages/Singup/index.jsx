@@ -10,6 +10,9 @@ import Footer from "../../components/Footer/Footer";
 import axios from 'axios'
 import validator from "validator";
 
+
+var rota = 'http://54.147.103.96';
+
 const Signup = () => {
   const [nome, setNome] = useState("");
   const [email, setEmail] = useState("");
@@ -61,7 +64,7 @@ const Signup = () => {
     alert("Usuário cadatrado com sucesso!");
     navigate("/signin");
 
-    axios.post('http://localhost:8080/usuarios',
+    axios.post(rota+':8080/usuarios',
       { nome: nome, email: email, senha: senha }).then((res) => { console.log(res) });
 
 

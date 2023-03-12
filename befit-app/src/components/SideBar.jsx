@@ -15,6 +15,8 @@ import { BrowserRouter as Router, Routes, Route, Link, useNavigate } from 'react
 import axios from 'axios';
 
 
+var rota = 'http://54.147.103.96';
+
 const useStyles = makeStyles({
   list: {
     width: 250,
@@ -84,7 +86,7 @@ export default function SwipeableTemporaryDrawer() {
   const classes = useStyles();
   const [state, setState] = React.useState({ right: false, });
   const handleLogOut = () => {
-    axios.patch(`http://localhost:8080/usuarios/logout/${sessionStorage.getItem("personId")}`)
+    axios.patch(`${rota}:8080/usuarios/logout/${sessionStorage.getItem("personId")}`)
       .then((res) => {
         console.log(res)
         var autenticado = sessionStorage.setItem("autenticado", false)

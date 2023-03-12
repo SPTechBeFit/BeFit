@@ -4,13 +4,15 @@ import axios from "axios";
 import { useState, useEffect } from "react"
 import apiExercicios from '../../../services/apiExercicios'
 
+var rota = 'http://54.147.103.96';
+
 function PagExerciciosCriar(props) {
     useEffect(() => { listar(); }, [])
     const [exercicios, setExercicios] = useState([]);
     const [exercicioSelecionado, setExercicioSelecionado] = useState(false)
     function listar(props) {
         //transformar id em variavel
-        let exercicios = apiExercicios.get('http://localhost:8080/exercicios')
+        let exercicios = apiExercicios.get(rota+':8080/exercicios')
         exercicios
             .then(function (respostaObtida) {
                 console.log(respostaObtida.data);

@@ -1,8 +1,11 @@
 import axios from 'axios';
 
+
+var rota = 'http://54.147.103.96';
+
 const api = axios.create(
     {
-        baseURL : `http://localhost:8080/treinos/`
+        baseURL : `${rota}:8080/treinos/`
     }
 )
 export default api;

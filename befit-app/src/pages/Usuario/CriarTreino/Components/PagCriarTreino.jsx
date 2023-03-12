@@ -18,6 +18,7 @@ Modal.setAppElement("#root")
 let listaDeExercicios = []
 let vaiAparecer = true;
 let vaiAparecerButton = true;
+var rota = 'http://54.147.103.96';
 
 function PagCriacaoExercicios(props) {
 
@@ -56,7 +57,7 @@ function PagCriacaoExercicios(props) {
 
     function listar(props) {
         //transformar id em variavel
-        let exercicios = axios.get('http://localhost:8080/exercicios')
+        let exercicios = axios.get(rota+':8080/exercicios')
         exercicios
             .then(function (respostaObtida) {
                 console.log(respostaObtida.data);
@@ -168,7 +169,7 @@ function PagCriacaoExercicios(props) {
             "series": listaDeExercicios
         }
 
-        axios.post('http://localhost:8080/treinos', body).then((res) => {
+        axios.post(rota+':8080/treinos', body).then((res) => {
             alert('treino cadastrado com sucesso')
 
         }

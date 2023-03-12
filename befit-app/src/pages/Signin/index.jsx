@@ -12,6 +12,8 @@ import Header from "../../components/Header/Header"
 import Footer from "../../components/Footer/Footer"
 import validator from "validator";
 
+var rota = 'http://54.147.103.96';
+
 function SignIn() {
 
   const [email, setEmail] = useState("");
@@ -46,7 +48,7 @@ function SignIn() {
 
     axios({
       method: "patch",
-      url: `http://localhost:8080/usuarios/login/${email}/${senha}`,
+      url: `${rota}:8080/usuarios/login/${email}/${senha}`,
     })
       .then(function (res) {
         if (res.status === 200) {
