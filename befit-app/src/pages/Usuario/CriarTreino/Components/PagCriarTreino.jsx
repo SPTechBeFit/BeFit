@@ -18,7 +18,7 @@ Modal.setAppElement("#root")
 let listaDeExercicios = []
 let vaiAparecer = true;
 let vaiAparecerButton = true;
-var rota = 'http://3.227.245.71';
+var rota = 'http://34.232.149.218';
 
 function PagCriacaoExercicios(props) {
 

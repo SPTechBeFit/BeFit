@@ -15,7 +15,7 @@ import { BrowserRouter as Router, Routes, Route, Link, useNavigate } from 'react
 import axios from 'axios';
 
 
-var rota = 'http://3.227.245.71';
+var rota = 'http://34.232.149.218';
 
 const useStyles = makeStyles({
   list: {

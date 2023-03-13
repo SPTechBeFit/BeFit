@@ -12,7 +12,7 @@ import Header from "../../components/Header/Header"
 import Footer from "../../components/Footer/Footer"
 import validator from "validator";
 
-var rota = 'http://3.227.245.71';
+var rota = 'http://34.232.149.218';
 
 function SignIn() {
 
