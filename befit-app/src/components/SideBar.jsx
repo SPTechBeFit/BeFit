@@ -20,6 +20,8 @@ import {
 } from "react-router-dom";
 import axios from "axios";
 
+var rota = 'http://34.232.149.218:8080';
+
 const useStyles = makeStyles({
   list: {
     width: 250,
@@ -78,7 +80,7 @@ export default function SwipeableTemporaryDrawer() {
   const handleLogOut = () => {
     axios
       .patch(
-        `http://localhost:8080/usuarios/logout/${sessionStorage.getItem(
+        `${rota}/usuarios/logout/${sessionStorage.getItem(
           "personId"
         )}`
       )

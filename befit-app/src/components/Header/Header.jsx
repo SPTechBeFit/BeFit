@@ -14,6 +14,8 @@ import axios from "axios";
 import { Component } from "react";
 import swal from "sweetalert";
 
+var rota = 'http://34.232.149.218:8080';
+
 function Header(props) {
   const pageAtual = window.location.pathname;
   const navigate = useNavigate();
@@ -182,7 +184,7 @@ function Header(props) {
 
   function handleExport() {
     fetch(
-      `http://localhost:8080/dietas/exportar/${sessionStorage.getItem(
+      `${rota}/dietas/exportar/${sessionStorage.getItem(
         "idDieta"
       )}`,
       arqExport,
@@ -220,7 +222,7 @@ function Header(props) {
       if (willDelete) {
         axios
           .patch(
-            `http://localhost:8080/usuarios/logout/${sessionStorage.getItem(
+            `${rota}/usuarios/logout/${sessionStorage.getItem(
               "personId"
             )}`
           )

@@ -7,7 +7,7 @@ import axios from "axios";
 import swal from 'sweetalert';
 import { useNavigate } from "react-router-dom";
 
-
+var rota = 'http://34.232.149.218:8080';
 
 function HotSite() {
   const navegar = useNavigate();
@@ -17,7 +17,7 @@ function HotSite() {
   function handleImport() {
     axios
       .post(
-        `http://localhost:8080/dietas/importar/${sessionStorage.getItem(
+        `${rota}/dietas/importar/${sessionStorage.getItem(
           "personId"
         )}`,
         arqImport,

@@ -5,7 +5,7 @@ import { useState, useEffect } from "react"
 import style from './pagDietaStyle.css'
 import Header from '../../../components/Header/Header';
 
-
+var rota = 'http://34.232.149.218:8080';
 function PagDietas(props) {
 
     useEffect(() => {
@@ -17,7 +17,7 @@ function PagDietas(props) {
     const [ingredientes, setIngredientes] = useState([]);
 
     function listarDietas() {
-        axios.get(`http://localhost:8080/dietas/${sessionStorage.getItem("idDieta")}`)
+        axios.get(`${rota}/dietas/${sessionStorage.getItem("idDieta")}`)
             .then(function (respostaObtida) {
                 setDietas(respostaObtida.data.dieta)
             })
@@ -27,7 +27,7 @@ function PagDietas(props) {
     }
 
     function listarIngredientes() {
-        axios.get(`http://localhost:8080/dietas/${sessionStorage.getItem("idDieta")}`)
+        axios.get(`${rota}/dietas/${sessionStorage.getItem("idDieta")}`)
             .then(function (respostaObtida) {
                 setIngredientes(respostaObtida.data.ingredientes);
             })

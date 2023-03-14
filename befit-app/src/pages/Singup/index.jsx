@@ -11,6 +11,7 @@ import axios from 'axios'
 import validator from "validator";
 import swal from 'sweetalert';
 
+var rota = 'http://34.232.149.218:8080';
 
 const Signup = () => {
   const [nome, setNome] = useState("");
@@ -56,7 +57,7 @@ const Signup = () => {
     swal("Usuario cadastrado!", "Redirecionando para login!", "success");
     navigate("/signin");
 
-    axios.post('http://localhost:8080/usuarios',
+    axios.post(rota+'/usuarios',
       { nome: nome, email: email, senha: senha }).then((res) => { console.log(res) });
 
 

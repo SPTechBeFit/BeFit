@@ -17,7 +17,7 @@ function PagExercicios(props) {
     const [exercicios, setExercicios] = useState([]);
 
     function listar() {
-        let exercicios = axios.get('http://localhost:8080/treinos/' + sessionStorage.getItem("idTreino", props.id))
+        let exercicios = axios.get(rota+'/treinos/' + sessionStorage.getItem("idTreino", props.id))
         //transformar id em variavel
         exercicios
             .then(function (respostaObtida) {

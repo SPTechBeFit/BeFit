@@ -15,7 +15,7 @@ import { useNavigate } from 'react-router-dom'
 import swal from 'sweetalert';
 
 
-
+var rota = 'http://34.232.149.218:8080';
 
 Modal.setAppElement("#root")
 
@@ -57,7 +57,7 @@ function PagCriacaoExercicios(props) {
     }
 
     function listar(props) {
-        axios.get('http://localhost:8080/exercicios')
+        axios.get(rota+'/exercicios')
             .then(function (respostaObtida) {
                 console.log(respostaObtida.data);
                 setExercicios(respostaObtida.data);
@@ -167,7 +167,7 @@ function PagCriacaoExercicios(props) {
             "series": listaDeExercicios
         }
 
-        axios.post('http://localhost:8080/treinos', body).then((res) => {
+        axios.post(rota+'/treinos', body).then((res) => {
 
             desfazerTreino()
             navigate('/usuario/exercicios')
@@ -192,7 +192,7 @@ function PagCriacaoExercicios(props) {
                         icon: "success",
                     });
                 } else {
-                    axios.delete('http://localhost:8080/treinos/desfazer')
+                    axios.delete(rota+'/treinos/desfazer')
                         .then(function (respostaObtida) {
                             console.log(respostaObtida.data);
                             setExercicios(respostaObtida.data);
