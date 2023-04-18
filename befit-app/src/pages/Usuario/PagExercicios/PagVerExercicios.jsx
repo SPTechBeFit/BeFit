@@ -6,7 +6,7 @@ import BannerTreino from '../BannerTreino';
 import Header from '../../../components/Header/Header';
 import style from './exerciciosStyle.css'
 
-
+var rota = 'http://34.232.149.218:8080';
 
 function PagExercicios(props) {
 
