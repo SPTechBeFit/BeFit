@@ -1,0 +1,329 @@
+:root {
+  --cyan: #5ce1e6;
+  --blue: #38b6ff;
+  --pink: #d88b92;
+  --off-white: #f2f2f2;
+  --pure-black: #000000;
+  --pure-black-transparent: #000000b2;
+  --dark-color: #333333;
+  --btn-green: #27ae60;
+  --font-defaut: "Roboto Mono", monospace;
+  --font-dark-color: #383838;
+  --purple: #5662b7;
+  --light-color: #f2f2f2;
+  --light-color-2: #8f8f8f;
+}
+
+/*mudar para nossas cores ^ */
+
+@font-face {
+  font-family: "Overpass";
+  src: local("Overpass"),
+    url(../fonts/Overpass-VariableFont_wght.ttf) format("truetype");
+}
+
+@font-face {
+  font-family: "Rubik";
+  src: local("Rubik"),
+    url(../fonts/Rubik-VariableFont_wght.ttf) format("truetype");
+}
+
+/* pagina home */
+
+.container-home {
+  /* z-index: 1; */
+  /* margin: 82px 7vw 0 7vw; */
+  /* height: 100vh; */
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.banner1-home {
+  object-fit: cover;
+  height: 295px;
+  width: 60vw;
+  margin-top: 15vh;
+}
+
+.container-home-texto {
+  display: flex;
+  margin: 5vh 0px 5vh 0px;
+  justify-content: center;
+  font-size: 42px;
+  font-family: Rubik;
+  font-weight: 600;
+  flex-direction: column;
+  align-items: center;
+}
+
+a {
+  color: #3b24ad;
+}
+
+.MuiList-padding {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.banner3-home {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  object-fit: cover;
+  height: 295px;
+  width: 60vw;
+  margin-top: 15vh;
+  justify-content: space-between;
+  margin-bottom: 20vh;
+}
+
+.banner4-home {
+  display: flex;
+  flex-direction: column;
+  /* flex-wrap: nowrap; */
+  object-fit: cover;
+  /* height: 295px; */
+  width: 60vw;
+  margin-top: 35vh;
+  justify-content: space-between;
+
+}
+
+.banner3-exercicio-home {
+  object-fit: cover;
+  width: 100%;
+  margin: 0vh 0px 10vh 0px;
+}
+
+.banner4-dietas-home {
+  object-fit: cover;
+  width: 100%;
+  margin: 0vh 0px 20vh 0px;
+}
+
+.banner5-sobre-home {
+  object-fit: cover;
+  width: 100%;
+}
+
+.container-opcoes {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: space-around;
+  margin-bottom: 10vh;
+}
+
+.exericioButton {
+  height: 360px;
+  object-fit: cover;
+}
+
+.dietaButton {
+  height: 360px;
+  object-fit: cover;
+}
+
+.footerBanner {
+  width: 100%;
+
+  object-fit: cover;
+  object-position: bottom;
+}
+
+.buttonComeceAgora {
+  margin-top: 3vh;
+  background-color: #3b24ad;
+  border-radius: 9px;
+  font-family: Overpass;
+  border-width: 0px;
+  color: white;
+  height: 56px;
+  font-size: 39px;
+  display: flex;
+  /* width: 160px; */
+  width: 270px;
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex-wrap: nowrap;
+}
+
+/* pagina sobre */
+
+.container-sobre {
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.banner-sobre {
+  object-fit: cover;
+  /* width: 100%; */
+  height: 230px;
+  margin-top: 8vh;
+}
+
+.texto-sobre {
+  font-family: "Rubik";
+  margin: 15vh 20vw 15vh 20vw;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  align-items: flex-start;
+  font-size: 36px;
+}
+
+/*Responsive */
+
+@media only screen and (max-width: 1312px) {
+  .banner1-home {
+    object-fit: cover;
+    width: 100%;
+    height: 450px;
+  }
+
+  .container-home {
+    z-index: 1;
+    margin: 0vh 0vw 0 0vw;
+
+  }
+
+  .banner2-home-texto {
+    display: flex;
+    object-fit: cover;
+    /* margin: 5vh 0px 5vh 0px; */
+    justify-content: center;
+    font-size: 36px;
+    font-family: Rubik;
+    font-weight: 600;
+  }
+
+
+  .banner3-home {
+    width: 100%;
+    object-fit: cover;
+  }
+
+  .banner3-exercicio-home {
+    object-fit: cover;
+    width: 100%;
+  }
+
+  .banner4-home {
+    object-fit: cover;
+    width: 100%;
+  }
+
+  .banner4-dietas-home {
+    object-fit: cover;
+    width: 100%;
+  }
+
+
+
+
+  .banner-sobre {
+    object-fit: cover;
+    width: 100%;
+    height: 230px;
+    margin-top: 8vh;
+  }
+
+  @media only screen and (max-width: 800px) {
+    .banner1-home {
+      object-fit: cover;
+      width: 100%;
+      height: 450px;
+    }
+
+    .container-home {
+      z-index: 1;
+      margin: 0vh 0vw 0 0vw;
+
+    }
+
+    .container-home-texto h1 {
+      display: flex;
+      align-items: center;
+      flex-direction: column;
+    }
+
+    .banner2-home-texto {
+      display: flex;
+      object-fit: cover;
+      /* margin: 5vh 0px 5vh 0px; */
+      justify-content: center;
+      font-size: 36px;
+      font-family: Rubik;
+      font-weight: 600;
+    }
+
+    .banner3-home {
+      width: 100%;
+      object-fit: cover;
+      display: flex;
+      flex-direction: column;
+      flex-wrap: nowrap;
+      object-fit: cover;
+      margin-top: 0vh;
+    }
+
+    .container-opcoes {
+      display: flex;
+      flex-direction: column;
+      flex-wrap: nowrap;
+    }
+
+    .banner3-exercicio-home {
+      object-fit: cover;
+      width: 100%;
+    }
+
+    .banner4-home {
+      object-fit: cover;
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      margin-top: 0vh !important;
+    }
+
+    .banner4-dietas-home {
+      object-fit: cover;
+      width: 100%;
+    }
+
+    .banner-sobre {
+      object-fit: cover;
+      width: 100%;
+      height: 230px;
+      margin-top: 8vh;
+    }
+
+
+
+    .banner-sobre {
+      object-fit: cover;
+      width: 100%;
+      height: 230px;
+      margin-top: 8vh;
+    }
+
+    .texto-sobre {
+      font-family: "Rubik";
+      margin: 15vh 1vw 15vh 1vw;
+      display: flex;
+      flex-direction: column;
+      flex-wrap: nowrap;
+      font-size: 36px;
+    }
+  }
+
+}

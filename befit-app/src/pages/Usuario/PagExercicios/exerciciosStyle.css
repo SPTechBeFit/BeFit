@@ -1,0 +1,253 @@
+.corpo-lista {
+  margin: 0px 20vw 0px 20vw;
+}
+
+.titulo-do-exercicio {
+  display: block;
+  position: absolute;
+  top: 14%;
+  text-transform: uppercase;
+  font-weight: 550;
+  font-size: 40px;
+}
+
+.exercicio-lista-todos {
+  display: flex;
+  justify-content: flex-start;
+  gap: 3vh;
+  width: 100%;
+  background: #9285859c;
+  /* font-size: 22px; */
+  font-size: 28px;
+  font-weight: bold;
+
+
+}
+
+.infoExercicio-todos {
+  background: blue !important;
+  color: white !important;
+  font-weight: lighter !important;
+  font-size: 30px !important;
+  padding: 0px 0px 0px 30px
+}
+
+.imagemExercicio-lista {
+  display: flex;
+  padding: 35px 0px 0px 0px;
+  align-items: center;
+  height: 45vh;
+  background-color: #8C8C8C;
+  flex-direction: row;
+}
+
+.nomeTreino {
+  display: flex;
+  margin: 0px 0px 0px 0px;
+  /* background-color: blue; */
+  /* width: 60vw; */
+  /* color: white; */
+  height: 13vh;
+  font-size: 36px;
+  font-family: overpass;
+  font-weight: bold;
+  flex-direction: column;
+  align-items: center;
+}
+
+.nomeTreino h1 {
+  padding: 0px 0px 0px 30px;
+}
+
+.descricao-do-exercicio {
+  text-align: left;
+  /* margin-left: 20px; */
+  width: 100%;
+  background-color: #4e4e4e;
+  height: 34.2vh;
+  border-radius: 11px;
+  padding: 0px 20px 0px 20px;
+  color: white;
+  margin: 25px 0px 20px 0px;
+  font-size: 28px;
+  font-family: 'Overpass';
+  overflow-y: auto;
+  line-height: 1.5;
+  text-align: justify;
+}
+
+
+
+.image-lista-painel {
+  background-size: cover;
+  height: 350px;
+  width: 35vw;
+  min-width: 500px;
+  /* margin-left: 20px; */
+  margin: 0px 0px 45px 0px;
+}
+
+
+
+.containerModal-lista-todos {
+
+  font-family: overpass;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  overflow-x: hidden;
+  height: 45vh;
+  overflow-y: auto;
+
+}
+
+.series-lista-todos {
+  display: flex;
+  flex-direction: row;
+  gap: 30px;
+  font-weight: lighter;
+  /* width: 20%; */
+  font-size: 24px;
+  /* padding: 58px 0px 20px 0px; */
+  align-items: center;
+}
+
+.btn-salvar {
+  margin: 25px 70px 0px 0px;
+  color: white;
+  background-color: blue;
+  display: flex;
+  /* flex-direction: row; */
+  width: 100%;
+  justify-content: space-around;
+}
+
+.btn-salvar:hover {
+  background-color: #0c0529;
+}
+
+
+
+
+button {
+
+  outline: white solid 0.5px;
+  border-radius: 3px;
+  color: rgba(0, 0, 0, 0.4);
+  font-weight: bold;
+  border: none;
+  background: rgba(0, 0, 0, .30);
+
+
+}
+
+button:hover {
+  background-color: rgba(6, 18, 72, 0.491);
+  transition: ease-in 0.2s;
+}
+
+
+
+.imagemCoverTreino-lista-todos {
+  background-image: url(http://localhost:3000/static/media/exercioCardio.a625918….jpg);
+  display: flex;
+  /* height: auto; */
+  /* width: auto; */
+  /* max-width: 126px; */
+  width: 268px;
+  /* max-height: 126px; */
+  flex-direction: column;
+}
+
+
+.image-lista {
+  /* height: auto; */
+  height: 15vh;
+  /* width: vw; */
+  background-size: cover;
+}
+
+.modal-lista {
+  display: flex;
+  overflow-y: auto;
+  height: 51vh;
+  background-color: #8C8C8C;
+  gap: 30px;
+  flex-direction: row;
+  justify-content: center;
+  flex-wrap: wrap;
+  padding: 15px 0px 0px 0px;
+
+}
+
+.identificacaoModal-lista {
+  height: 5vh;
+  background-color: #230F80;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  font-size: 25px;
+  color: white;
+}
+
+.identificacaoModal-lista h1 {
+  font-family: Rubik;
+  font-weight: bold;
+  margin: 0px 0px 0px 5vw;
+}
+
+.infoTreino-lista h1 {
+  font-family: Rubik;
+  display: flex;
+  justify-content: center;
+  font-size: 25px;
+
+}
+
+.infoTreino-lista h2 {
+  font-family: Rubik;
+  display: flex;
+  justify-content: center;
+  font-size: 25px;
+
+}
+
+
+.boxTreino-lista {
+  height: -moz-fit-content;
+  height: fit-content;
+  width: fit-content;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  align-items: center;
+  /* height: 253px; */
+  max-width: 250px;
+  /* width: 333px; */
+  max-height: 326px;
+  gap: 30px;
+  align-content: center;
+  padding: 10px 7px 10px 7px;
+}
+
+
+.infoTreino-lista {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 30px;
+  color: white;
+}
+
+
+@media only screen and (max-width: 1312px) {
+  .corpo-lista {
+    margin: 0px 0vw 0px 0vw;
+  }
+}

@@ -1,0 +1,112 @@
+.dieta-corpo {
+  margin: 0px 20vw 0px 20vw;
+}
+
+.ContainerListaIngredientes {
+  font-family: overpass;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  overflow-x: hidden;
+  height: 40vh;
+  overflow-y: auto;
+}
+
+.listaIngredientes {
+  border-bottom: 2px solid #000000;
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  background-color: #c6c6c6;
+}
+
+.listaIngredientes ol {
+  width: 100%;
+}
+
+.nomeDieta {
+  position: absolute;
+  margin: 30px 0px 9px 0px 0px;
+  height: 3vh;
+  /* background-color: blue; */
+  /* width: 60vw; */
+  /* color: white; */
+  font-size: 36px;
+  font-family: overpass;
+  font-weight: bold;
+}
+
+.nomeDieta h1 {
+  padding: 0px 0px 0px 30px;
+}
+
+.dieta-imagem {
+  background-color: red;
+  background-size: cover;
+  height: 300px;
+  width: 60%;
+  min-width: 500px;
+  margin-left: 20px;
+}
+
+.descricao-da-dieta {
+  text-align: left;
+  /* margin-left: 20px; */
+  width: 40%;
+  /* height: 24vh; */
+  margin: 20px 20px 20px 20px;
+  font-size: 26px;
+  font-family: "Overpass";
+  display: flex;
+  flex-direction: column;
+}
+
+.containerModal-lista-todos-dietas {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+ 
+  width: 100%;
+  /* font-size: 22px; */
+}
+
+.modal-lista {
+  display: flex;
+  overflow-y: auto;
+  height: 51vh;
+  background-color: #8c8c8c;
+  gap: 30px;
+  flex-direction: row;
+  justify-content: center;
+  flex-wrap: wrap;
+  padding: 15px 0px 0px 0px;
+}
+
+.nome-ingrediente {
+  height: 3vh;
+  display: flex;
+  flex-direction: row;
+  font-size: 28px;
+  align-items: center;
+  background-color: #2f4739;
+  color: white;
+}
+
+.ingredientes {
+  display: flex;
+}
+
+.ingredientes li {
+  display: flex;
+  padding: 2vw;
+  text-decoration: none;
+  color: black;
+  font-size: 20px;
+}
+
+
+@media only screen and (max-width: 1312px) {
+  .dieta-corpo {
+    margin: 0px 0vw 0px 0vw;
+  }
+}

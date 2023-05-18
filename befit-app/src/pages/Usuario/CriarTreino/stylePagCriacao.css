@@ -1,0 +1,434 @@
+.bodyCriacao {
+    display: relative;
+    padding: 0vh 10vw 0px 10vw;
+    ;
+    font-family: Overpass;
+    background-color: #D9D9D9;
+    top: 300px;
+    height: 100vh;
+    overflow-y: hidden;
+}
+
+.exercicio-lista {
+    display: flex;
+    justify-content: flex-start;
+    gap: 3vh;
+    width: 100%;
+    /* font-size: 22px; */
+    margin: 0px -800px 0px 0px;
+
+}
+
+
+.containerInfo {
+    height: 5vh;
+    display: flex;
+    background-color: blue;
+    color: white;
+    font-size: 32px;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.containerInfo h1 {
+    padding: 16px 0px 10px 5vw;
+}
+
+.teste {
+    background-color: #949596;
+    /* margin: 10px 0px 10px 0px; */
+    width: 100%;
+}
+
+.containerLista {
+    width: 100%;
+
+
+}
+
+.descTreino {
+    display: flex;
+    width: 300px;
+    height: 118px;
+    font-size: 26px;
+    resize: none;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+.modalArea {
+    width: 50%;
+
+    height: 100%;
+}
+
+.modalCriar {
+    background-color: #8C8C8C;
+    padding: 15px 60px 50px 60px;
+}
+
+.MainContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+#btn-enviar {
+    margin-top: 45px !important;
+    width: 170px;
+    line-height: 12px;
+    background-color: rgb(0, 98, 255);
+    margin-top: 10px;
+    font-size: 20px;
+    color: white;
+    height: 40px;
+    cursor: pointer;
+}
+
+.btn-ok {
+    width: 100%;
+    line-height: 12px;
+    background-color: rgb(0, 98, 255);
+    margin-top: 60px;
+    font-size: 20px;
+    color: white;
+    cursor: pointer;
+}
+
+.btn-cancelar {
+    margin-top: 4px;
+    text-align: center;
+    color: rgb(0, 197, 197);
+    cursor: pointer;
+
+}
+
+.btn-cancelar:hover {
+    color: blue;
+    text-decoration: underline;
+}
+
+.input-time {
+    display: inline;
+    margin-left: 20px;
+    height: 23px;
+    width: 120px;
+}
+
+
+.fechaModalBotao {
+    width: 120px;
+}
+
+.inputs-form {
+    margin-top: 20px;
+    text-align: right;
+    gap: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.inputs-form h1 {
+    font-weight: bolder;
+    font-family: Overpass;
+
+}
+
+.inputs-modal {
+    border-radius: 5px;
+    margin-left: 20px;
+    min-width: 180px;
+
+}
+
+.input-wrapper {
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.ReactModalPortal {
+    top: 30px;
+}
+
+.ReactModal__Overlay {
+    position: fixed;
+    inset: 0px;
+    background-color: rgb(60 60 60 / 41%) !important;
+
+}
+
+.ReactModal__Content {
+
+    /* position: absolute; */
+    inset: 0px !important;
+    border: 1px solid rgb(204, 204, 204);
+    /* overflow: auto; */
+    border-radius: 2px;
+    /* outline: none; */
+    padding: 0px 0px 20px 0px !important;
+    margin: 10% auto 0px auto !important;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    /* transform: translate(-50%, -50%); */
+    height: 395px !important;
+    width: 430px !important;
+}
+
+
+.contentBox {
+    display: flex;
+    background-color: white;
+    flex-direction: column;
+    align-items: center;
+    width: 30vw;
+    margin: 0px 21vw 0px 21vw;
+    height: 44vh;
+    padding: 15px 0px 40px 0px;
+
+}
+
+.title-modal {
+    text-transform: uppercase;
+    font-weight: 550;
+    font-size: large;
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: center;
+    background-color: blue;
+    height: 4vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    font-weight: bold;
+    color: white;
+}
+
+.containerModal-lista {
+    font-family: overpass;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    overflow-x: hidden;
+    height: 45vh;
+    overflow-y: auto;
+}
+
+#tempo {
+    width: 50px;
+}
+
+
+.form-infos {
+
+    font-size: 30px;
+    height: 50vh;
+    display: flex;
+    width: 100%;
+    gap: 75px;
+    flex-direction: column;
+    align-items: flex-start;
+    align-content: flex-start;
+}
+
+.infoTreinoCriacao {
+
+    gap: 0px;
+
+
+}
+
+
+.ipt_nomeTreino {
+    width: 100%;
+    font-size: 24px;
+    height: 30px;
+}
+
+.listaExercicios {
+
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: flex-start;
+    gap: 40px;
+    overflow-y: auto;
+    /* width: 60%; */
+    flex-direction: row;
+}
+
+
+.descricao-listas {
+
+    width: 45%;
+    font-size: 18px;
+    padding: 30px;
+    width: -20%;
+    font-size: 28px;
+    padding: 20px 0px 20px 0px;
+    min-width: 75%;
+    display: flex;
+    max-width: 45%;
+    flex-direction: column;
+    flex-wrap: wrap;
+    /* align-items: stretch; */
+    /* align-content: flex-start; */
+    /* overflow-wrap: break-word; */
+    /* white-space: pre-wrap; */
+    white-space: -moz-pre-wrap;
+    white-space: -pre-wrap;
+    white-space: -o-pre-wrap;
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+    -webkit-hyphens: auto;
+    hyphens: auto;
+
+}
+
+.infoExercicio {
+    height: 4vh;
+    display: flex;
+    background: blue !important;
+    color: white !important;
+    font-weight: lighter !important;
+    font-size: 30px !important;
+    padding: 0px 0px 0px 30px;
+    align-items: center;
+
+}
+
+
+.infoCriacao {
+    height: 5vh;
+    /* width: 60%; */
+    background-color: #282865;
+    display: flex;
+    color: white;
+    font-size: 28px;
+    padding: 24px 35vw 0px 3vw;
+    /* margin-top: 11px; */
+    align-items: center;
+    flex-direction: row;
+    flex-wrap: nowrap;
+}
+
+.infoCriacao h1 {
+    display: flex;
+    width: 80%;
+    font-weight: bolder;
+    font-family: Overpass;
+    flex-direction: row;
+    align-items: stretch;
+    justify-content: center;
+}
+
+.infoCriacao h2 {
+
+    display: flex;
+    width: 60%;
+    font-weight: lighter;
+    font-family: Overpass;
+    flex-direction: row;
+    align-items: stretch;
+    justify-content: center;
+
+}
+
+
+.btn-salvar {
+
+    margin: -35px 0px 0px 715px !important;
+    color: rgb(34 34 34) !important;
+    background-color: white !important;
+    display: flex !important;
+    width: 20vw !important;
+    justify-content: space-around !important;
+    cursor: pointer;
+}
+
+@media only screen and (max-width: 1312px) {
+    .bodyCriacao {
+        display: relative;
+        padding: 0vh 0vw 0px 0vw;
+        font-family: Overpass;
+        background-color: #D9D9D9;
+        top: 300px;
+        height: 100vh;
+        overflow-y: hidden;
+    }
+
+    .modalCriar {
+        background-color: #8C8C8C;
+        padding: 15px 10px 10px 10px;
+        height: 70vh;
+    }
+
+    .form-infos {
+        font-size: 30px;
+        height: 69vh;
+        display: flex;
+        width: 100%;
+        gap: 75px;
+        flex-direction: column;
+        align-items: center;
+        align-content: center;
+    }
+
+    .contentBox {
+        display: flex;
+        background-color: white;
+        flex-direction: column;
+        align-items: center;
+        width: 90vw;
+        margin: 0px 10vw 0px 10vw;
+        height: 62vh;
+        padding: 15px 0px 40px 0px;
+    }
+
+    .infoTreinoCriacao {
+        display: flex;
+        gap: 70px;
+        flex-direction: column;
+    }
+
+    .errorTitulo {
+        margin: 111px 0px 0px 0px;
+        position: absolute;
+    }
+
+    .descTreino {
+        width: 100%;
+        height: 118px;
+        font-size: 26px;
+        resize: none;
+    }
+
+    .containerModal-lista {
+        font-family: overpass;
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        overflow-x: hidden;
+        height: 75vh;
+        overflow-y: auto;
+    }
+
+
+    .btn-salvar {
+
+        margin: -25px 0px 0px 625px !important;
+        color: rgb(34 34 34) !important;
+        background-color: white !important;
+        display: flex !important;
+        /* flex-direction: row; */
+        width: 35vw !important;
+        justify-content: space-around !important;
+        cursor: pointer;
+
+    }
+
+
+}

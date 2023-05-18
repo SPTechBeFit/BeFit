@@ -1,0 +1,48 @@
+.NaoEcontrado {
+    margin: 0px 0px 0px 0px;
+    display: flex;
+    background-color: #2d2d2d;
+    font-family: 'Overpass';
+    margin-top: 34px;
+    height: 68vh;
+    flex-direction: column;
+    align-items: flex-start;
+
+    background-image: url("../../assets/images/naoEncontrado.jpg");
+    
+    background-position: center; /* Center the image */
+    background-repeat: no-repeat; /* Do not repeat the image */
+    background-size: cover; /* Resize the background image to cover the entire container */
+    
+}
+
+.backGroundImg {
+
+    
+}
+
+.mensagem {
+    color: white;
+    font-size: 64px;
+    margin: 90px 0px 0px 130px;
+    font-weight: bold;
+}
+
+.btn-voltar {
+    margin-top: 3vh;
+    background-color: #3b24ad;
+    border-radius: 9px;
+    font-family: Overpass;
+    border-width: 0px;
+    color: white;
+    height: 56px;
+    margin: 105px 0px 0px 0px;
+    font-size: 39px;
+    display: flex;
+    /* width: 160px; */
+    width: 270px;
+    align-items: center;
+    justify-content: space-around;
+    flex-wrap: nowrap;
+    flex-direction: row;
+}
