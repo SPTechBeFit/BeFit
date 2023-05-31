@@ -15,7 +15,7 @@ import { useNavigate } from 'react-router-dom'
 import swal from 'sweetalert';
 
 
-var rota = 'http://34.232.149.218:8080';
+var rota = 'https://backbefit.duckdns.org';
 
 Modal.setAppElement("#root")
 

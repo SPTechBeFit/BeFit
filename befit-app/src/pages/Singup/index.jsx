@@ -11,7 +11,7 @@ import axios from 'axios'
 import validator from "validator";
 import swal from 'sweetalert';
 
-var rota = 'http://34.232.149.218:8080';
+var rota = 'https://backbefit.duckdns.org';
 
 const Signup = () => {
   const [nome, setNome] = useState("");

@@ -20,7 +20,7 @@ import {
 } from "react-router-dom";
 import axios from "axios";
 
-var rota = 'http://34.232.149.218:8080';
+var rota = 'https://backbefit.duckdns.org';
 
 const useStyles = makeStyles({
   list: {
