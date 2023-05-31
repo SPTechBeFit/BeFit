@@ -14,7 +14,7 @@ import axios from "axios";
 import { Component } from "react";
 import swal from "sweetalert";
 
-var rota = 'http://34.232.149.218:8080';
+var rota = 'https://backbefit.duckdns.org';
 
 function Header(props) {
   const pageAtual = window.location.pathname;

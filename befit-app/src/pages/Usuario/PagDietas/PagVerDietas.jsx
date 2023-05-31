@@ -5,7 +5,7 @@ import { useState, useEffect } from "react"
 import style from './pagDietaStyle.css'
 import Header from '../../../components/Header/Header';
 
-var rota = 'http://34.232.149.218:8080';
+var rota = 'https://backbefit.duckdns.org';
 function PagDietas(props) {
 
     useEffect(() => {

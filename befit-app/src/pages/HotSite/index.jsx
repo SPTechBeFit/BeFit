@@ -7,7 +7,7 @@ import axios from "axios";
 import swal from 'sweetalert';
 import { useNavigate } from "react-router-dom";
 
-var rota = 'http://34.232.149.218:8080';
+var rota = 'https://backbefit.duckdns.org';
 
 function HotSite() {
   const navegar = useNavigate();
